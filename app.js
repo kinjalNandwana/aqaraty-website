@@ -119,10 +119,6 @@
           templateUrl: 'pages/pricing.html',
           controller: 'PricingPageController'
         })
-        .when('/rental-management', {
-          templateUrl: 'pages/rental.html',
-          controller: 'RentalPageController'
-        })
         .when('/customer-owner-association', {
           templateUrl: 'pages/customer-owner-association.html',
           controller: 'CustomerOwnerAssociationPageController'
