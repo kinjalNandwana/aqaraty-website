@@ -5,13 +5,13 @@
 }
 
 .product:hover {
-  box-shadow: 0 0px 7px 3px #ffbc00;
+  box-shadow: 0 0px 7px 3px #E4003A;
   opacity: 2;
   cursor:pointer;
   transition: box-shadow 0.3s ease-in-out;
 }
 .fdb-block .fdb-touch {
-  border-top: solid 5px yellow !important
+  border-top: solid 5px #E4003A !important
 }
 .btn {
   font-size: 0.8rem;
@@ -30,7 +30,7 @@
 }
 .mkd-pricing-slider .mkd-pricing-slider-bar-holder {
   height: 8px;
-  background-color: #ffbc00;
+  background-color: #E4003A;
   position: relative;
   border-radius: 5px;
 }
@@ -225,7 +225,7 @@ h1 {
 }
 
 .thm-touch-top {
-  border-bottom: solid 5px #FEB94D;
+  border-bottom: solid 5px #E0E0E0;
 }
 
 /* fonts */
@@ -299,7 +299,7 @@ h1 {
 }
 
 .btn-dark {
-  color: #FEB900 !important;
+  color: #E4003A !important;
 }
  .global-coliving-report {
   background-image: url(../images/world-map.svg);  
@@ -314,7 +314,7 @@ h1 {
 }
 
 .coliving-button {
-  background-color: #FFBC00 !important;
+  background-color: #E4003A !important;
   border-radius: 5px;
   color: #263272 !important;
   font-weight: bold;
