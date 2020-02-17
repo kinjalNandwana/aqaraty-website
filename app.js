@@ -123,17 +123,9 @@
           templateUrl: 'pages/rental.html',
           controller: 'RentalPageController'
         })
-        .when('/building-management', {
-          templateUrl: 'pages/management.html',
-          controller: 'ManagementPageController'
-        })
         .when('/customer-owner-association', {
           templateUrl: 'pages/customer-owner-association.html',
           controller: 'CustomerOwnerAssociationPageController'
-        })
-        .when('/customer-builder', {
-          templateUrl: 'pages/customer-builder.html',
-          controller: 'CustomerBuilderPageController'
         })
         .when('/customer-facility-management', {
           templateUrl: 'pages/customer-facility-management.html',
@@ -148,41 +140,9 @@
           templateUrl: 'pages/choose-product.html',
           controller: 'ChooseProductPageController'
         })
-        .when('/rental-property-management', {
-          templateUrl: 'pages/rental-property-management.html',
-          controller: 'RentalPropertyManagementPageController'
-        })
-        .when('/customer-co-living', {
-          templateUrl: 'pages/customer-co-living.html',
-          controller: 'CustomerCoLivingPageController'
-        })
-        .when('/customer-co-working', {
-          templateUrl: 'pages/customer-co-working.html',
-          controller: 'CustomerCoWorkingPageController'
-        })
-        .when('/customer-rental-property-management', {
+        .when('/rental-management', {
           templateUrl: 'pages/customer-rental-property-management.html',
           controller: 'CustomerRentalPropertyManagementPageController'
-        })
-        .when('/data-management', {
-          templateUrl: 'pages/data-management.html',
-          controller: 'DataManagementPageController'
-        })
-        .when('/accounts-finance', {
-          templateUrl: 'pages/accounts-finance.html',
-          controller: 'AccountFinancePageController'
-        })
-        .when('/operations-management', {
-          templateUrl: 'pages/operations-management.html',
-          controller: 'OperationManagementPageController'
-        })
-        .when('/community-builder', {
-          templateUrl: 'pages/community-builder.html',
-          controller: 'CommunityBuilderPageController'
-        })
-        .when('/visitor-management', {
-          templateUrl: 'pages/visitor-management.html',
-          controller: 'VisitorManagementPageController'
         })
         .otherwise({
           redirectTo: '/'
