@@ -1,0 +1,56 @@
+
+<div ng-controller="PricingPageController">
+        <section class="fdb-block"><div class="wpb_wrapper"><div class="mkd-pricing-slider" data-units-range="1000" data-units-breakpoints="100" data-unit-name="unit" data-price-per-unit="5">
+        <div class="mkd-pricing-slider-inner">
+            <h4 class="mkd-pricing-slider-title">
+            Start for free. Pay as you grow.         </h4>
+            <div class="mkd-pricing-slider-pricing">
+                <h1>
+                    <span class="mkd-price-label">Monthly subcription fee: </span>
+                    <span class="mkd-value" ng-class="{'change-price-color': price>200}">$</span><span class="mkd-price" ng-class="{'change-price-color': price>200}">{{price}}</span> until {{regionUnit}} units
+                </h1>
+            </div>
+            <h3 class="mkd-pricing-slider-title" ng-if="price>200">Billed at: ${{billedAt}} per unit/month</h3>
+            <div class="mkd-pricing-slider-priceList col-md-2">
+                <label>Select your region</label>
+                <select name="priceByCountry" ng-model="countryPrice" ng-init="countryPrice = 'India'" ng-change="updatePrice(unit.value)" class="form-control" autofocus>
+                    <option ng-repeat="price in priceList" value="{{price.name}}">{{price.name}}</option>
+                </select>
+            </div>
+            <div class="container" >
+                    <div class="col-12">
+                            <div class="row text-left mt-5">
+                              <div class="col-sm-2"></div>
+                              <div class="col-12 col-sm-8">
+                            <rzslider rz-slider-model="unit.value" rz-slider-options="options"></rzslider>
+                        </div>
+
+                        <div class="col-sm-2"></div>
+                    </div>
+                    </div>
+            <!-- <input type="range" min="0" max="2500" ng-model="unit.value" ng-change="updatePrice()" class="slider mkd-pricing-slider-bar-holder" id="myRange" style="width:60%"> -->
+            <!-- <div class="mkd-pricing-slider-bar-holder">
+               
+                <div class="mkd-pricing-slider-bar" style="width: 90%;">
+                    <span class="mkd-pricing-slider-drag ui-draggable ui-draggable-handle" style="width: 135px; right: auto; left: 377px; top: -10px;">
+                        <span class="mkd-pricing-slider-value">0 units</span>
+                    </span>
+                </div>
+            </div> -->
+            <div class="mkd-pricing-slider-description">
+                <p>Move the slider to indicate how many units you want to manage through TheHouseMonk. <br>A 'Unit' can be a bed, a seat or an apartment depending on your business</p>
+            </div>
+        </div>
+    </div></div>
+    <div class="container">
+        <div class="col-12">
+            <div class="row text-left mt-5">
+              <div class="col-sm-3 col-md-4"></div>
+              <a class="col-12 col-sm-6 col-md-3 m-auto btn btn-primary" href="/choose-product">START YOUR FREE TRIAL
+              </a>
+              <div class="col-sm-3 col-md-4"></div>
+            </div>
+          </div>
+        </div>
+    </section>
+</div>

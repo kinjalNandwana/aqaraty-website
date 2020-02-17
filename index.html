@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang='en' ng-app="app">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+  <meta name="description" content="Helping new age real estate companies give a great experience to their customers. Coliving, coworking, hostels and student housing, real estate developers and others can avail this one stop solution">
+  <meta name="author" content="">
+  <title>Real Estate Customer Experience Management Platform | Property Management Solutions</title>
+  <base href="/">
+
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" content="black">
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="black">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="img/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+  <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="img/favicons/manifest.json">
+  <meta name="msapplication-TileColor" content="black">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+
+
+  <!-- lib -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+  crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/froala-design-blocks/1.0.2/css/froala_blocks.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/3.0.0/toaster.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/css/theme.css" type="text/css">
+<link rel="stylesheet" href="/assets/css/custom.css" type="text/css">
+<link rel="stylesheet" href="/assets/css/rzslider.css" type="text/css">
+ 
+</head>
+
+<body ng-cloak ng-controller="MainController">
+  <div ng-include="'/pages/view-demo-modal.html'"></div>
+
+  <header class="grey-background" id="header">
+    <div class="container">
+      <nav class="navbar fixed-top navbar-light navbar-expand-lg white-background " change-class-on-scroll offset="50"
+        scroll-class="raised">
+        <div class="col-md-0 col-lg-0 col-xl-1 d-none d-md-none d-lg-block d-xl-block col-md-0 col-sm-0"></div>
+        <div class="col-0 d-none d-md-none d-lg-block d-xl-block text-left">
+          <a class="navbar-brand" href="/#main">
+            <img src="/assets/images/logo-final.png" height="40" alt="image">
+          </a>
+        </div>
+        <div class="col-sm-1  d-block d-md-block d-lg-none d-xl-none text-left" style="width:100px;">
+          <a class="navbar-brand" href="/#main">
+            <img src="/assets/images/logo-final.png" height="40"  style="width:100px;" alt="image">
+          </a>
+        </div>
+        <button class="navbar-toggler offset-md-10 topnav-right" type="button" data-toggle="collapse" data-target="#navbarNav3"
+          aria-controls="navbarNav3" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center offset-md-2 offset-lg-0 col-lg-8 col-md-7 navbar-collapse-1" id="navbarNav3">
+          <ul class="navbar-nav justify-content-center col-12">
+            <li class="nav-item">
+              <a class="nav-link" href="/#main"><span ng-class="{'nav-thm-active': isActive('/')}">Home</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle "  ng-class="{'nav-active': isProductActive()}" href="#"
+                id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span ng-class="{'nav-thm-active': isProductActive()}">Products</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/data-management#main">Data Management</a>
+                <a class="dropdown-item" href="/accounts-finance#main">Accounts & Finance</a>
+                <a class="dropdown-item" href="/operations-management#main">Operations Management</a>
+                <a class="dropdown-item" href="/community-builder#main">Community Builder</a>
+                <a class="dropdown-item" href="/visitor-management#main">Visitor Management</a>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" ng-class="{'nav-active': isCustomerActive()}"
+                href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <span ng-class="{'nav-thm-active': isCustomerActive()}">Solutions</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/customer-co-living#main">Co-Living</a>
+                <a class="dropdown-item" href="/customer-co-working#main">Co-Working</a>
+                <a class="dropdown-item" href="/customer-builder#main">Real Estate Developers</a>
+                <a class="dropdown-item" href="/customer-rental-property-management#main">Rental Property Management</a>
+                <a class="dropdown-item" href="/customer-owner-association#main">Owner Association</a>
+                <a class="dropdown-item" href="/customer-facility-management#main">Facility Management</a>
+                <!-- <div class="dropdown-divider"></div> -->
+                <a class="dropdown-item" href="/customer-rental-owners#main">Landlords</a>
+
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pricing"><span
+                  ng-class="{'nav-thm-active': isActive('/pricing')}">Pricing</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" ng-class="{'nav-active': isServiceActive()}" href="#"
+                id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span ng-class="{'nav-thm-active': isServiceActive()}">Services</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/rental-property-management#main">Rental Property Management</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/partners"><span
+                  ng-class="{'nav-thm-active': isActive('/partners')}">Partners</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://blog.thehousemonk.com/" style="margin-right: 10px"target="_blank">Blog</a>
+            </li>
+            <li class="nav-item d-sm-block  d-lg-none d-xl-none">
+              <button class="btn btn-primary btn-sm border mt-2" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="margin-top:13px">
+                <a class="dropdown-item" href="#" ng-click="routeToLoginPage()">Building management</a>
+                <a class="dropdown-item" href="#" ng-click="routeToRenatlLoginPage()">Rental management</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <ul class="navbar-nav col-2 justify-content-end offset-md-2 offset-lg-0 d-none d-md-none d-lg-flex">
+            <li class="nav-item">
+                <a class="btn btn-white ml-md-3 btn-sm border border-primary" style="margin-left: 10px"id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+                <!-- <a class="btn btn-white ml-md-3 btn-sm raised nav-link" href="#" id="navbarDropdown"
+                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Login
+              </a> -->
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="margin-top:16px">
+                  <a class="dropdown-item" href="#" ng-click="routeToLoginPage()">Building management</a>
+                  <a class="dropdown-item" href="#" ng-click="routeToRenatlLoginPage()">Rental management</a>
+                </div>
+            </li>
+            <li class="nav-item" style="margin-right: 28px">
+              <a class="btn btn-primary ml-md-3 btn-sm" href="/choose-product">Sign Up <sup>Free</sup></a>
+            </li>
+            <!-- <li class="nav-item d-none d-md-none d-lg-block d-xl-block" style="margin-right: 28px">
+              <a class="btn btn-primary ml-md-3 btn-sm" href="/choose-product">Sign Up <sup>Free</sup></a>
+            </li> -->
+          </ul>
+        <div class="col-0 col-md-1 col-lg-1 "></div>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- <header class="grey-background" id="header">
+    <div class="container">
+      <nav class="navbar fixed-top navbar-light navbar-expand-md white-background" change-class-on-scroll offset="50"
+        scroll-class="raised">
+        <div class="col-0 col-md-1 col-lg-1"></div>
+        <a class="navbar-brand" href="/#main">
+          <img src="/assets/images/logo-final.png" height="40" alt="image">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav3" aria-controls="navbarNav3"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center col-md-8 navbar-collapse-1" id="navbarNav3">
+          <ul class="navbar-nav justify-content-center ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/#main"><span ng-class="{'nav-thm-active': isActive('/')}">Home</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" ng-class="{'nav-active': isProductActive()}" href="#" id="navbarDropdown"
+                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span ng-class="{'nav-thm-active': isProductActive()}">Products</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/building-management#main">Building management</a>
+                <a class="dropdown-item" href="/rental-management#main">Rental management</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" ng-class="{'nav-active': isCustomerActive()}" href="#" id="navbarDropdown"
+                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span ng-class="{'nav-thm-active': isCustomerActive()}">Customers</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="font-weight-bold grey-text pl-3">Enterprise</div>
+                <a class="dropdown-item" href="/customer-owner-association#main">Owner Association</a>
+                <a class="dropdown-item" href="/customer-builder#main">Builders</a>
+                <a class="dropdown-item" href="/customer-facility-management#main">Facility Management</a>
+                <div class="dropdown-divider"></div>
+                <div class="font-weight-bold grey-text pl-3">Consumer</div>
+                <a class="dropdown-item" href="/customer-rental-owners#main">Rental Owners</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/partners"><span ng-class="{'nav-thm-active': isActive('/partners')}">Partners</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://blog.thehousemonk.com/" target="_blank">Blog</a>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-primary ml-md-3 btn-sm raised" ng-click="routeToLoginPage()">Login</button>
+            </li>
+          </ul>
+          <ul class="navbar-nav  ml-auto">
+
+          </ul>
+        </div>
+        <div class="col-0 col-md-1 col-lg-1"></div>
+      </nav>
+    </div>
+  </header> -->
+  <toaster-container toaster-options="{'time-out': 1600}"></toaster-container>
+  <div class="m-app-loading" style="min-height: 70vh;background: #F5F5F5;"></div>
+
+  <div ng-view autoscroll="true"></div>
+  <!-- Footer -->
+  <bottom-footer></bottom-footer>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"
+    defer></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-route.min.js"
+    defer></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"
+    defer></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.11.2/ui-bootstrap-tpls.js"
+    defer></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-animate.min.js"
+    defer></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/3.0.0/toaster.min.js"
+    defer></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-slider/7.0.0/rzslider.min.js"
+    defer></script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"
+    defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"
+    defer></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"
+    defer></script>
+    
+
+  <script type="text/javascript" src="/app.js" defer></script>
+<script src="/services/country.service.js" defer></script>
+  <script type="text/ng-template" id="home.html">
+
+    <div ng-controller="HomePageController">
+        <div ng-include="'/pages/contact-us-modal.html'"></div>
+        <section class="fdb-block pb-50" id="main">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-12 col-md-6 col-lg-5">
+                <h1>Give a world class customer experience</h1>
+                <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
+                  <img alt="image" class="img-fluid" src="/assets/imgs/1-home-header.png">
+                </div>
+                <p class="lead" style="font-size: 1.15rem">
+                  Unlock the benefits of connecting your team, customers and real estate through the same platform.
+                </p>
+                <br>
+                <p class="lead text-center">
+                    Explore our solutions.
+                </p>
+                <p class="mt-4">
+                  <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1 overflow-hidden" style=" white-space: normal" href="/choose-product">START A FREE TRIAL</a>
+                  <a class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1"  data-toggle="modal"
+                  data-target="#exampleModal">BOOK A FREE DEMO</a>
+                </p>
+              </div>
+              <div class="d-none d-sm-none d-md-block col-10 col-sm-6 col-md-6 col-lg-7 m-auto m-md-0">
+                <img alt="image" class="img-fluid" src="/assets/imgs/1-home-header.png">
+              </div>
+            </div>
+          </div>
+        </section>
+      
+        <section class="fdb-block grey-background pt-50 pb-50" id="stats">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-sm-5 col-md">
+                <h3><strong>10Mn+ sqft</strong></h3>
+                <p>Managed via TheHouseMonk solutions</p>
+              </div>
+              <div class="offset-sm-1 offset-md-1 col-12 col-sm-5 col-md pt-3 pt-sm-0">
+                <h3><strong>10k+ users</strong></h3>
+                <p>Use our solutions daily</p>
+              </div>
+      
+              <div class="offset-md-1 col-12 col-sm-5 col-md pt-3 pt-md-0">
+                <h3><strong>10+ cities</strong></h3>
+                <p>Where TheHouseMonk has been deployed</p>
+              </div>
+      
+              <div class="offset-sm-1 offset-md-1 col-12 col-sm-5 col-md pt-3 pt-md-0">
+                <h3><strong>100+ service providers</strong></h3>
+                <p>Work with us</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- <section class="fdb-block">
+            <div class="container">
+              <div class="row text-center">
+                <div class="col-12">
+                  <h1>Complete set of features to manage any kind of real estate asset</h1>
+                </div>
+              </div>
+              <div class="row text-left mt-5">
+                <div class="col-12 col-md-4">
+                  <div class="row">
+                    <div class="col-3">
+                      <img alt="image" class="fdb-icon" src="/assets/images/data-management-icon.png">
+                    </div>
+                    <div class="col-9">
+                      <h3><strong>Data management</strong></h3>
+                      <p>Store information about properties, owners, tenants, suppliers and more</p>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col-12 col-md-4 pt-3 pt-sm-4 pt-md-0">
+                  <div class="row">
+                    <div class="col-3">
+                      <img alt="image" class="fdb-icon" src="/assets/images/communication-icon.png">
+                    </div>
+                    
+                    <div class="col-9">
+                        <h3><strong>Communication</strong></h3>
+                        <p>Allow your owners and tenants to have structured conversations with your team and with each other</p>
+                      
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col-12 col-md-4 pt-3 pt-sm-4 pt-md-0">
+                  <div class="row">
+                    <div class="col-3">
+                      <img alt="image" class="fdb-icon" src="/assets/images/accounting-icon.png">
+                    </div>
+                    <div class="col-9">
+                      <h3><strong>Accounts and Finance</strong></h3>
+                      <p>Invoicing, receipts, supplier payments, and more - All in 1 tool</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+              <div class="row text-left pt-3 pt-sm-4 pt-md-5">
+                <div class="col-12 col-md-4">
+                  <div class="row">
+                    <div class="col-3">
+                      <img alt="image" class="fdb-icon" src="/assets/images/helpdesk-icon.png">
+                    </div>
+                    <div class="col-9">
+                      <h3><strong>Helpdesk</strong></h3>
+                      <p>Give a better experience to owners and tenants by equipping your team with best in class ticketing software </p>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col-12 col-md-4 pt-3 pt-sm-4 pt-md-0">
+                  <div class="row">
+                    <div class="col-3">
+                      <img alt="image" class="fdb-icon" src="/assets/images/gate-management-icon.png">
+                    </div>
+                    <div class="col-9">
+                      <h3><strong>Gate Management</strong></h3>
+                      <p>Track movement of visitors in your facility and enhance the security</p>
+                    </div>
+                  </div>
+                </div>
+          
+                <div class="col-12 col-md-4 pt-3 pt-sm-4 pt-md-0">
+                  <div class="row">
+                    <div class="col-3">
+                      <img alt="image" class="fdb-icon" src="/assets/images/cloud-icon.png">
+                    </div>
+                    <div class="col-9">
+                        <h3><strong>Document storage</strong></h3>
+                        <p>From IDs of customers to pics of home maintenance activities - Everything on the cloud</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="col-12">
+                <div class="row text-left mt-5">
+                  <div class="col-sm-3 col-md-4"></div>
+                  <a class="col-12 col-sm-6 col-md-3 m-auto btn btn-primary raised" href="/choose-product">Start your free trial
+                  </a>
+                  <div class="col-sm-3 col-md-4"></div>
+                </div>
+              </div>
+            </div>
+          </section> -->
+          <!-- <section class="fdb-block pt-0">
+              <div class="container">
+                <div class="row text-center pb-50">
+                  <div class="col-12">
+                    <h1>Every stakeholder in the ecosystem can come onboard TheHouseMonk</h1>
+                  </div>
+                </div>
+                <div class="row text-lg-right align-items-center pt-0">
+                  <div class="col-7 col-sm-4 col-lg-4 m-auto pb-5 pt-lg-0 order-lg-1">
+                      <img alt="image" class="img-fluid" src="/assets/images/management-scoll-6.png">
+                    </div>
+                  <div class="col-12 col-sm-6 col-lg-3">
+                    <div style="padding-top:10px">
+                    <h4><strong>Landlords and Property Owners</strong></h4>
+                    <p>Manage your rental units and interact with your society, or property managers</p>
+                    </div>
+                    <div style="padding-top:10px">
+                    <h4><strong>Tenants</strong></h4>
+                    <p>Pay rent, maintenance. Interact with your community</p>
+                    </div>
+                    <div style="padding-top:10px">
+                    <h4><strong>Facility Managers</strong></h4>
+                    <p>Take work on the go and complete tasks through our mobile apps</p>
+                    </div>
+                  </div>
+            
+                  <div class="col-12 col-sm-6 col-lg-3 text-left pt-3 pt-sm-0 order-lg-12">
+                      <div style="padding-top:10px">
+                    <h4><strong>Property and Community Managers</strong></h4>
+                    <p>Manage finance, handle customer queries and more </p>
+                      </div>
+                      <div style="padding-top:10px">
+                    <h4><strong>Security Guards</strong></h4>
+                    <p>Keep the premises safe by using our Gate Management App</p>
+                      </div>
+                      <div style="padding-top:10px">
+                    <h4><strong>Senior Management</strong></h4>
+                    <p>Interactive dashboard and real time reports help you stay on top of the game</p>
+                      </div>
+                  </div>
+            
+                 
+                </div>
+              </div>
+              <div class="row text-lg-right align-items-center">
+                <div class="col-12 col-sm-6 text-center col-lg-3 ml-auto">
+                    <div class="row">
+                        <h3 class="col thm-content-body"><strong>For residents</strong></h3>
+                      </div>
+                      <div class="row">
+                        <a class="col" href="https://play.google.com/store/apps/details?id=com.thehousemonk.residentsapp" target="_blank">
+                          <img src="/assets/imgs/app-icons-android.png" alt="Apple Download" height="40">
+                        </a>
+                      </div>
+                      <br>
+                      <div class="row">
+                        <a class="col" href="https://itunes.apple.com/in/app/thehousemonk-for-residents/id1242077561?mt=8" target="_blank">
+                          <img src="/assets/imgs/app-icons-apple.png" alt="Apple Download" height="40">
+                        </a>
+                      </div>
+                  </div>
+            
+                  <div class="col-12 col-sm-6 col-lg-3 text-center pt-3 pt-sm-0 order-lg-12 mr-auto">
+                      <div class="row">
+                          <h3 class="col thm-content-body"><strong>For facility managers</strong></h3>
+                        </div>
+                        <div class="row">
+                          <a class="col" href="https://play.google.com/store/apps/details?id=com.thehousemonk.business" target="_blank">
+                            <img src="/assets/imgs/app-icons-android.png" alt="Apple Download" height="40">
+                          </a>
+                        </div>
+                        <br>
+                        <div class="row">
+                          <a class="col" href="https://itunes.apple.com/in/app/thehousemonk-business/id1260958211?mt=8" target="_blank">
+                            <img src="/assets/imgs/app-icons-apple.png" alt="Apple Download" height="40">
+                          </a>
+                        </div>
+                   
+                </div>
+              </div>
+            </section> -->
+        <section class="fdb-block pt-50 pb-50" id="for-property-managers">
+          <div class="container">
+              <div>
+                <h1>A complete technology solution for your customers and your team</h1>
+              </div>
+            <div class="row align-items-center">
+            </div>
+            <div class="row align-items-center">
+              <div class="d-none d-sm-none d-md-block col-10 col-sm-6 col-md-6 col-lg-5 m-auto m-md-0 offset-lg-1">
+                <img alt="image" class="img-fluid" style="margin-left: 60px;height: 300px" src="/assets/images/residentsApp.png">
+              </div>
+              <div class="col-12 col-md-6">
+                <h2 class="thm-scroll-heading">For Your Customers</h2>
+                <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
+                  <img alt="image" class="img-fluid" style="margin-left: 60px;height: 300px" src="/assets/images/residentsApp.png">
+                </div>
+                <p class="lead thm-content-body grey-text">
+                  White labelled mobile apps to boost their experience
+                </p>
+                <div class="row">
+                  <div class="col-12">
+                    <i class="fas fa-check primary-color"></i> Make Rent and Other Payments
+                  </div>
+                  <div class="col-12">
+                    <i class="fas fa-check primary-color"></i> Interact with their neighbours
+                  </div>
+                  <div class="col-12">
+                    <i class="fas fa-check primary-color"></i> Raise Complaints
+                  </div>
+                  <div class="col-12">
+                    <i class="fas fa-check primary-color"></i> Invite Guests
+                  </div>
+                  <div class="col-12">
+                      <i class="fas fa-check primary-color"></i> Book Facilities
+                  </div>
+                </div>
+                <p class="mt-4">
+                    <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1" href="/choose-product">START A FREE TRIAL</a>
+                    <a  style="border-color:  !important" class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1" data-toggle="modal"
+                    data-target="#exampleModal">BOOK A FREE DEMO</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="fdb-block" style="padding: 0px" id="for-home-owners">
+          <div class="container">
+            <div class="row align-items-center">
+              <!-- removed  ml-auto pt-5 pt-md-0 from class -->
+              <div class="col-12 col-md-6">
+                <h2 class="thm-scroll-heading">For Your Team</h2>
+                <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
+                  <img alt="image" class="img-fluid" src="/assets/images/forBusinesses.png">
+                </div>
+                <p class="lead thm-content-body grey-text">
+                  State of the art Web + Mobile ERP system to give a great customer experience
+                </p>
+                <div class="row">
+                  <div class="col-12 black-text">
+                    <i class="fas fa-check primary-color"></i> Inventory Management
+                  </div>
+                  <div class="col-12 black-text">
+                    <i class="fas fa-check primary-color"></i> Helpdesk and Ticketing
+                  </div>
+                  <div class="col-12 black-text">
+                    <i class="fas fa-check primary-color"></i> Payment Collections and Reconciliation
+                  </div>
+                  <div class="col-12 black-text">
+                    <i class="fas fa-check primary-color"></i> Facility and Asset Management
+                  </div>
+                  <div class="col-12 black-text">
+                      <i class="fas fa-check primary-color"></i> Visitor Management
+                  </div>
+                  <div class="col-12 black-text">
+                      <i class="fas fa-check primary-color"></i> Digital Noticeboard
+                    </div>
+                </div>
+                <p class="mt-4">
+                    <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1" href="/choose-product">START A FREE TRIAL</a>
+                    <a  style="border-color:  !important" class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1" data-toggle="modal"
+                    data-target="#exampleModal">BOOK A FREE DEMO</a>
+                </p>
+              </div>
+              <div class="d-none d-sm-none d-md-block col-10 col-sm-6 col-md-6 col-lg-6 m-auto m-md-0">
+                <img alt="image" class="img-fluid" src="/assets/images/forBusinesses.png">
+              </div>
+            </div>
+          </div>
+        </section>
+      
+        <!-- <section class="fdb-block pt-50 pb-50" id="why-thehousemonk">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-8 text-center">
+                  <h2>Why TheHouseMonk</h2>
+                </div>
+                <div class="d-block d-sm-block d-md-block d-lg-none col-12 col-sm-12 col-md-10 mb-3">
+                  <iframe style="width:100%;height:300px;" src="https://www.youtube.com/embed/Yc5Rd8j_-eA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              </div>
+              <div class="row align-items-center ml-5 mr-5">
+                <div class="col-12 col-sm-6 col-lg-3 text-center">
+                  <div>
+                      <img alt="image" class="img-fluid" style="height:100px;" src="/assets/imgs/blob-icon-trust.png">
+                    <p>Trusted by 1000s of <br> customers across the globe</p>
+                  </div>
+                  <div>
+                    <img alt="image" class="img-fluid" style="height:100px;" src="/assets/imgs/blob-icon-mobile.png">
+                    <p>Complete mobile <br> experience</p>
+                  </div>
+                </div>
+        
+                <div class="col-12 col-sm-6 col-lg-3 order-lg-12 text-center">
+                  <div>
+                      <img alt="image" class="img-fluid" style="height:100px;" src="/assets/imgs/blob-icon-support.png">
+                    <p>24 x 7 Customer  <br> support </p>
+                  </div>
+                  <div>
+                      <img alt="image" class="img-fluid" style="height:100px;" src="/assets/imgs/blob-icon-feature.png">
+                    <p>Feature rich <br> solution</p>
+                  </div>
+                </div>
+        
+                <div class="d-none d-sm-none d-md-none d-lg-block col-12 col-sm-12 col-lg-6">
+                    <iframe style="width:100%;height:350px;" src="https://www.youtube.com/embed/Yc5Rd8j_-eA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+            
+          </section> -->
+        <!-- <section class="fdb-block pt-50 pb-50" id="testimonials">
+          <div class="container">
+            <div class="row text-center justify-content-center">
+              <div class="col-md-10 col-lg-7">
+                <h2>Our customer love us!</h2>
+              </div>
+            </div>
+      
+            <div class="row mt-5 justify-content-center">
+      
+              <div class="col-md-10 col-lg-4 p-3 text-center">
+                <div class="card raised" style="width: 100%;">
+                  <div class="card-img-top p-3 pb-5 grey-background" style="min-height:280px;">
+                    <div style="font-size: 18px;">
+                      <i class="fas fa-quote-left primary-color"></i>
+                      TheHouseMonk has been managing more than 20 of my properties in Bangalore for over 3 years now and I
+                      love their service. I get my rent on time and they manage any issue that comes up. Fantastic solution!</div>
+                  </div>
+                  <p style="margin-top:-70px;"><img alt="image" height="140" class="rounded-circle raised" src="/assets/images/john.jpg"></p>
+                  <div class="card-body" style="height:120px;">
+                    <p class="lead text-muted">
+                      <strong class="font-weight-bold ">John Louis</strong>
+                    </p>
+                    <p class="text-muted" style="margin-top:-16px;">Owner of Infants Jasmine and Infants Lotus, Bangalore</p>
+                  </div>
+                </div>
+              </div>
+      
+      
+              <div class="col-md-10 col-lg-4 p-3 text-center">
+                <div class="card raised" style="width: 100%;">
+                  <div class="card-img-top p-3 pb-5 grey-background" style="min-height:280px;background: #FEB94D;">
+                    <div style="font-size: 18px;">
+                      <i class="fas fa-quote-left primary-color"></i>
+                      TheHouseMonk is a transformational software. We’re able to track and manage over 100 technicians,
+                      engineers, and other staff members through the same.</div>
+                  </div>
+                  <p style="margin-top:-70px;"><img alt="image" height="140" class="rounded-circle raised" src="/assets/images/abid.jpg"></p>
+                  <div class="card-body" style="height:120px;">
+                    <p class="lead text-muted">
+                      <strong class="font-weight-bold ">Abid Junaid</strong>
+                    </p>
+                    <p class="text-muted" style="margin-top:-16px;">Chairman, Radiant Star Group, UAE</p>
+                  </div>
+                </div>
+              </div>
+      
+      
+              <div class="col-md-10 col-lg-4 p-3 text-center">
+                <div class="card raised" style="width: 100%;">
+                  <div class="card-img-top p-3 pb-5 grey-background" style="min-height:280px;">
+                    <div style="font-size: 18px;">
+                      <i class="fas fa-quote-left primary-color"></i>
+                      Being an NRI, it was very difficult to rent out and manage my 3BHK in Whitefield, Bangalore. Once I
+                      found TheHouseMonk, all my problems got instantly solved. For almost 3 years now, they have completely
+                      taken care of property. Kudos to the team</div>
+                  </div>
+                  <p style="margin-top:-70px;"><img alt="image" height="140" class="rounded-circle raised" src="/assets/images/sakina.jpg"></p>
+                  <div class="card-body" style="height:120px;">
+                    <p class="lead text-muted">
+                      <strong class="font-weight-bold ">Sakina Sarwath</strong>
+                    </p>
+                    <p class="text-muted" style="margin-top:-16px;">Owner of 3BHK in Nitesh Forest Hills</p>
+                  </div>
+                </div>
+              </div>
+      
+      
+            </div>
+          </div>
+        </section> -->
+      
+      
+      
+        <!-- <section class="fdb-block pt-50 pb-50 grey-background" id="blog">
+          <div class="container">
+            <div class="row text-center justify-content-center">
+              <div class="col-md-10 col-lg-8 col-xl-7">
+                <h2>From our blog</h2>
+              </div>
+            </div>
+      
+            <div class="row mt-5 align-items-center justify-content-center">
+              <div class="col-md-8 col-lg-4 mt-4 mt-lg-0">
+                <div class="card raised" style="width: 100%;">
+                  <img class="card-img-top" src="/assets/images/blog-1.jpg" alt="Card image cap" style="min-height:263px">
+                  <div class="card-body">
+                    <h3 class="card-title"><b>How bright environment used thehousemonk to streamline their operations.</b></h3>
+                    <p class="card-text">Bright Environment is a facility management company based of Dubai, managing over 6 million sqft in real estate assets in the GCC.</p>
+                    <a href="http://blog.thehousemonk.com/index.php/2018/12/28/how-bright-environment-used-thehousemonk-to-streamline-their-operations/" target="_blank" class="btn btn-white primary-color">Read more</a>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col-md-8 col-lg-4 mt-4 mt-lg-0">
+                <div class="card raised" style="width: 100%;">
+                  <img class="card-img-top" src="/assets/images/blog-2.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h3 class="card-title"><b>How mahaveer group implemented thehousemonk and streamlined their operations – a case study</b></h3>
+                    <p class="card-text">Mahaveer Group has over 25 projects delivered so far among which 5 projects consisting of 2000 apartment units in total utilize TheHouseMonk.</p>
+                    <a href="http://blog.thehousemonk.com/index.php/2018/12/27/how-mahaveer-group-implemented-thehousemonk-and-streamlined-their-operations-a-case-study/" target="_blank" class="btn btn-white primary-color">Read more</a>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col-md-8 col-lg-4 mt-4 mt-lg-0">
+                <div class="card raised" style="width: 100%;">
+                  <img class="card-img-top" src="/assets/images/blog-3.jpeg" alt="Card image cap">
+                  <div class="card-body">
+                    <h3 class="card-title"><b>How heritage shankara solved their accounting problem using thehousemonk – a case study</b></h3>
+                    <p class="card-text">Heritage Sankara is an apartment society, which like any apartment society, had its unique challenges in accounting and finances.</p>
+                    <a href="http://blog.thehousemonk.com/index.php/2018/12/27/how-heritage-shankara-solved-their-accounting-problem-using-thehousemonk-a-case-study/" target="_blank" class="btn btn-white primary-color">Read more</a>
+                  </div>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </section>
+      
+        <section class="fdb-block pt-50 pb-50" style="background:#424242;" id="contact-us">
+          <div class="container">
+            <div class="row justify-content-center align-items-center">
+              <div class="col-12 col-lg-3">
+                <h2 class="light-grey-text">Get a call back</h2>
+              </div>
+              <div class="col-12 col-lg-9">
+                <div class="row">
+                  <div class="col-12 col-md-4 mb-1">
+                    <input class="form-control" type="text" ng-model="callbackForm.name" placeholder="Name">
+                  </div>
+                  <div class="col-12 col-md-3 mb-1">
+                    <input class="form-control" type="text" ng-model="callbackForm.phoneNumber" placeholder="Phone">
+                  </div>
+                  <div class="col-12 col-md-3 mb-2">
+                    <select class="form-control" ng-model="callbackForm.product">
+                      <option value="Building Management">Building Management</option>
+                      <option value="Rental Management">Rental Management</option>
+                    </select>
+                  </div>
+                  <div class="col-12 col-md-2 mb-1">
+                    <button type="submit" class="col-12 btn btn-dark raised" ng-click="onCallbackSubmitHandler()">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+        <section class="fdb-block" style="background-color: #FFBC00; padding: 0px">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-9 text-center">
+                <br><br><br>
+                <h1>1Community Coliving Spaces</h1>
+                <h3 >"TheHouseMonk helped us map each business process back onto a customer pain point. We are definitely giving a better experience
+                  to our tenants because of them."
+                </h3>
+                <h3><b>P. Evan, Co-Founder & COO</b></h3>
+              </div>
+              
+              <div class="d-lg-block d-none d-md-none col-lg-3 col-md-12 col-sm-12" >
+                <img alt="image" class="img-fluid" style="height: 350px" src="/img/assets/sample3.jpg">
+              </div>
+              <div class="d-block d-sm-block d-lg-none offset-2 offset-md-4" >
+                <img alt="image" class="img-fluid" style="height: 350px" src="/img/assets/sample3.jpg">
+            </div>
+            </div>
+          </div>
+        </section>
+        
+        <section  class="fdb-block">
+        <div class="container">
+            <div class="row text-center">
+              <div class="col-12">
+                <h1>3 Simple Reasons To Sign Up With Us</h1>
+              </div>
+            </div>
+        
+            <div class="row text-center justify-content-center mt-5">
+              <div class="col-12 col-sm-4 col-xl-3 m-md-auto">
+                <img alt="image" style="height: 100px" src="/img/assets/logo.svg">
+                <h3><strong>Increase Brand Awareness</strong></h3>
+                <p>Launch our white labelled apps under your brand name to your customers</p>
+              </div>
+              <div class="col-12 col-sm-4 col-xl-3 m-auto pt-4 pt-sm-0">
+                  <img alt="image" style="height: 100px" src="/img/assets/integrate.svg">
+                  <h3><strong>All In 1</strong></h3>
+                  <p>Bring all your company functions on 1 platform and integrate operations for a smooth experience </p>
+                </div>
+              <div class="col-12 col-sm-4 col-xl-3 m-auto pt-4 pt-sm-0">
+                <img alt="image" style="height: 100px" src="/img/assets/money.svg">
+                <h3><strong>Save Money</strong></h3>
+                <p>With no setup fee, and a pricing plan that scales with your organization, it's easy to get started</p>
+              </div>
+        
+              
+            </div>
+          </div>
+        </section>
+
+          <section class="fdb-block grey-background">
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-12 text-center">
+                    <h1>For Every Type Of Real Estate Business</h1>
+                    <p class="lead">
+                      A wide range of companies use TheHouseMonk to give a A+ customer experience
+                    </p>
+                  </div>
+                </div>
+            
+                <div class="row text-center mt-5">
+                  <div class="col-12 col-sm-8 col-md-4 col-lg-4 m-sm-auto mr-md-auto ml-md-0">
+                    <a  href="/customer-co-living#main">
+                    <img alt="image" class="img-fluid rounded" src="/img/assets/coliving.jpg">
+                    <h3 style="color: #444444"><strong>Co-Living</strong></h3>
+                    </a>
+                  </div>
+            
+                  <div class="col-12 col-sm-8 col-md-4 col-lg-4 m-sm-auto pt-5 pt-md-0">
+                    <a  href="/customer-co-working#main">
+                    <img alt="image" class="img-fluid rounded" src="/img/assets/coworking.jpg">
+                    <h3 style="color: #444444"><strong>Co-Working</strong></h3>
+                    </a>
+                  </div>
+            
+                  <div class="col-12 col-sm-8 col-md-4 col-lg-4 m-sm-auto ml-md-auto mr-md-0 pt-5 pt-md-0">
+                    <a  href="/customer-builder#main">
+                    <img alt="image" class="img-fluid rounded" src="/img/assets/builders.jpg">
+                    <h3 style="color: #444444"><strong>Real Estate Developers</strong></h3>
+                    </a>
+                  </div>
+                  <div class="col-lg-12">
+                    <br><br>
+                  </div>                  
+
+                  <div class="col-12 col-sm-8 col-md-4 col-lg-4 m-sm-auto mr-md-auto ml-md-0">
+                    <a  href="/customer-owner-association#main">
+                      <img alt="image" class="img-fluid rounded" src="/img/assets/HOA.jpg">
+                      <h3 style="color: #444444"><strong>Home Owner Associations</strong></h3>
+                    </a>
+                    </div>
+              
+                    <div class="col-12 col-sm-8 col-md-4 col-lg-4 m-sm-auto pt-5 pt-md-0">
+                      <a  href="/customer-facility-management#main">
+                      <img alt="image" class="img-fluid rounded" src="/img/assets/Facility2.jpg">
+                      <h3 style="color: #444444"><strong>Facility Management</strong></h3>
+                      </a>
+                    </div>
+              
+                    <div class="col-12 col-sm-8 col-md-4 col-lg-4 m-sm-auto pt-5 pt-md-0">
+                      <a  href="/customer-rental-property-management#main">
+                        <img alt="image" class="img-fluid rounded" src="/img/assets/rebntalBuild6.jpg">
+                        <h3 style="color: #444444"><strong>Rental & Property Management</strong></h3>
+                      </a>
+                    </div>
+                    <div class="offset-md-3 col-md-6 center">
+                        <p class="mt-4">
+                            <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1" href="/choose-product">START A FREE TRIAL</a>
+                            <a  style="color: gray !important" class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1" data-toggle="modal"
+                            data-target="#exampleModal">BOOK A FREE DEMO</a>
+                          </p>
+                        </div>
+                </div>
+              </div>
+            </section>
+            <section class="fdb-block">
+                <div class="container">
+                  <div class="row">
+                    <div class="col text-center">
+                      <h1>Join 100's of Real Estate Business Who Are Already On TheHouseMonk</h1>
+                    </div>
+                  </div>
+              
+                  <div class="row pt-5 justify-content-center align-items-center">
+                    <div class="col-6 col-md-3 text-center">
+                      <img alt="image" class="img-fluid" src="/img/assets/mahaveer.png">
+                    </div>
+                    <div class="col-6 col-md-3 text-center">
+                      <img alt="image" class="img-fluid" src="/img/assets/grexter.png">
+                    </div>
+                    <div class="col-6 col-md-3 text-center mt-4 mt-md-0">
+                      <img alt="image" class="img-fluid" src="/img/assets/devtraco.png">
+                    </div>
+                    <div class="col-6 col-md-3 text-center mt-4 mt-md-0">
+                      <img alt="image" class="img-fluid" src="/img/assets/brigade.png">
+                    </div>
+                    <div class="col-6 col-md-3 text-center mt-4 mt-md-0">
+                        <img alt="image" class="img-fluid" src="/img/assets/bright.png">
+                    </div>
+                    <div class="col-6 col-md-3 text-center mt-4 mt-md-0">
+                      <img alt="image" class="img-fluid" src="/img/assets/concorde.jpg">
+                    </div>
+                    <div class="col-6 col-md-3 text-center mt-4 mt-md-0">
+                      <img alt="image" class="img-fluid" src="/img/assets/rent.png">
+                    </div>
+                    <div class="col-6 col-md-3 text-center mt-4 mt-md-0">
+                        <img alt="image" class="img-fluid" src="/img/assets/ramaniyam.png">
+                    </div>
+                    <div class="col-6 col-md-3 text-center mt-4 mt-md-0">
+                      <img alt="image" class="img-fluid" src="/img/assets/tandomAlide.png">
+                    </div>
+                    <div class="col-6 col-md-3 text-center mt-4 mt-md-0">
+                      <img alt="image" class="img-fluid" src="/img/assets/totalEnvirnoment.jpg">
+                    </div>
+                    <div class="col-6 col-md-3 text-center mt-4 mt-md-0">
+                      <img alt="image" class="img-fluid" style="height: 90px" src="/img/assets/monarch.jpg">
+                    </div>
+                    <div class="col-6 col-md-3 text-center mt-4 mt-md-0">
+                      <img alt="image" class="img-fluid" src="/img/assets/beeUrban.jpg">
+                    </div>
+                     
+                  </div>
+                
+                </div>
+              </section>
+
+              <section class="fdb-block grey-background">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col">
+                        <div class="fdb-box fdb-touch" style="border-top: solid 5px #FFBC00 !important">
+                          <div class="row text-center justify-content-center">
+                            <div class="col-12 col-md-9 col-lg-7">
+
+                              <h1>Contact Us</h1>
+                              <p> Get an instant call back from our team to answer any queries you may have </p>
+                            </div>
+                          </div>
+                
+                          <div class="row justify-content-center pt-4">
+                            <div class="col-12 col-md-8">
+                              <form name="callbackForm" novalidate>
+                                <div class="row">
+                                  <div class="col-12 col-md">
+                                      <label>Name: </label>
+                                    <input type="text" name="name" ng-disabled="progressBarLoading" class="form-control"
+                                      placeholder="Enter your name" ng-model="callbackModalForm.name" required>
+                                    <p ng-show="callbackForm.name.$invalid && callbackForm.name.$touched" class="help-block pt-1">name is
+                                      required</p>
+                                  </div>
+                                  <div class="col-12 col-md mt-4 mt-md-0">
+                                      <label>Country Code: </label>
+                                      <select name="countryCode" ng-model="callbackModalForm.countryCode" ng-init="callbackModalForm.countryCode = '+91'" class="form-control" >
+                                        <option ng-repeat="cityObj in citiCodes" value="{{cityObj.code}}">{{cityObj.code}}</option>
+                                      </select>
+                                  </div>
+                                  <div class="col-12 col-md mt-4 mt-md-0">
+                                    <label>Phone Number: </label>
+                                  <input type="number" name="phoneNumber" ng-disabled="progressBarLoading" class="form-control"
+                                    placeholder="Enter your phone  number" ng-model="callbackModalForm.phoneNumber" ng-minlength="4" required>
+                                  <p ng-show="callbackForm.phoneNumber.$invalid && callbackForm.phoneNumber.$touched" class="help-block pt-1">
+                                    phone number is
+                                    required and must be length 4</p>
+                                </div>
+                                </div>
+                
+                                <div class="row mt-4">
+                                  <div class="col">
+                                    <label>Message: </label>
+                                    <textarea class="form-control" placeholder="Leave your message here" ng-model="callbackModalForm.message" rows="3"></textarea>
+                                  </div>
+                                </div>
+                                <div class="row mt-4">
+                                  <div class="col text-center">
+                                    <button type="submit" ng-disabled="callbackForm.$invalid" ng-click="onCallbackSubmitHandler(callbackForm)" class="btn btn-primary">Submit</button>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+      </div>
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100417495-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-100417495-4');
+  </script>
+
+
+
+</body>
+
+</html>

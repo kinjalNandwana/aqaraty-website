@@ -1,0 +1,699 @@
+<div ng-controller="ManagementPageController">
+        <div ng-include="'./pages/contact-us-modal.html'"></div>
+        <div ng-include="'./pages/view-demo-modal.html'"></div>
+      
+        <section class="fdb-block pb-50">
+          <div class="container">
+            <div class="row align-items-center">
+              <!-- removed  ml-auto pt-5 pt-md-0 from class -->
+              <div class="col-12 col-md-6">
+                <h1>Automated Invoicing, Payment Collection And Reconciliation</h1>
+                <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
+                  <img alt="image" class="img-fluid" src="./assets/images/accounts.svg">
+                </div>
+                <p class="lead">
+                  Easy to use, yet sophiticated solution for your accounts and finance teams
+                </p>
+                <p class="mt-4">
+                  <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1" href="/choose-product">START A FREE
+                    TRIAL</a>
+                  <a style="border-color:  !important"
+                    class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1"
+                    data-toggle="modal" data-target="#exampleModal">BOOK A FREE DEMO</a>
+                </p>
+                <p class="primary-color">
+                  <a href="#" data-toggle="modal" data-target="#callbackModal">
+                    Questions? Get an instant callback.
+                  </a>
+                </p>
+              </div>
+              <div class="d-none d-sm-none d-md-block  col-10 col-sm-6 col-md-6 col-lg-6 m-auto m-md-0">
+                <img alt="image" class="img-fluid" src="./assets/images/accounts.svg">
+              </div>
+            </div>
+          </div>
+        </section>
+      
+        <section class="fdb-block grey-background pt-50 pb-50">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-sm-5 col-md">
+                <h3><strong>10Mn+ sqft</strong></h3>
+                <p>Managed via TheHouseMonk solutions</p>
+              </div>
+      
+              <div class="col-12 col-sm-5 col-md">
+                <h3><strong>10K+ properties</strong></h3>
+                <p>Managed using <br> TheHouseMonk</p>
+              </div>
+      
+              <div class="col-12 col-sm-5 col-md pt-3 pt-sm-0">
+                <h3><strong>100+ Buildings</strong></h3>
+                <p>Have been empowered through TheHouseMonk solutions</p>
+              </div>
+      
+              <div class="col-12 col-sm-5 col-md pt-3 pt-md-0">
+                <h3><strong>7+ Countries</strong></h3>
+                <p>Where our solution is live</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      
+        <!-- <section class="fdb-block pt-50 pb-50">
+            <div class="container">
+              <div class="row justify-content-center pb-xl-5">
+                <div class="col-12 col-md-8 text-center">
+                  <h1>Versatile product used by many businesses</h1>
+                  <p class="lead">Our integrated solution has many takers across different geographies</p>
+                </div>
+              </div>
+              <div class="row text-right align-items-center-lg align-items-end">
+                <div class="col-7 col-sm-4 m-auto mb-md-0 mt-md-0 m-lg-auto">
+                  <img alt="image" class="img-fluid" src="./assets/imgs/rental-scroll.png">
+                </div>
+          
+                <div class="col-12 col-md-7 col-lg-6 col-xl-5 m-auto text-left pt-5 pt-md-0">
+                  <h3><strong><a class="" href="/customer-owner-association#main">Owners Associations</a></strong></h3>
+                  <p>Take control of your society affairs with best in class society management software</p>
+          
+                  <h3 class="mt-4 mt-xl-5"><strong><a class="" href="/customer-builder#main">Real Estate Builders</a> </strong></h3>
+                  <p>Manage multiple projects or properties with our integrated solution</p>
+          
+                  <h3 class="mt-4 mt-xl-5"><strong><a class="" href="/customer-facility-management#main">Facility Management Companies</a></strong></h3>
+                  <p>Preventive, reactive and predictive maintenance - All through 1 platform </p>
+      
+                  <h3 class="mt-4 mt-xl-5"><strong><a class="" href="/customer-facility-management#main">Office Managers</a></strong></h3>
+                  <p>Managing visitors, internal tickets and facilities through our suite of products </p>
+                </div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="col-12">
+                <div class="row text-left mt-5">
+                  <div class="col-sm-3 col-md-4"></div>
+                  <button class="col-12 col-sm-6 col-md-3 m-auto btn btn-primary raised m-1" data-toggle="modal" data-target="#callbackModal">Get
+                    in touch</button>
+                  <div class="col-sm-3 col-md-4"></div>
+                </div>
+      
+              </div>        </div>
+          </section> -->
+      
+      
+      
+        <section class="fdb-block pt-50 pb-50" id="features">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-12 col-md-9 text-center">
+                <h1>Automate Every Aspect Of Accounting</h1>
+                <p class="lead">
+                  Feature rich products for your every need
+                </p>
+              </div>
+            </div>
+            <!-- <div class="row justify-content-center">
+              <div class="col-12 col-sm-6 col-md-auto">
+                <div class="label m-3 hover primary-border-onhover grey-1-background" ng-class="{'text-white bg-primary raised':featureScrollSelected==='accounts'}"
+                  ng-click="onFeatureScrollClickHandler('accounts', 'some text', '../assets/images/management-scroll-5-accounts.png')">
+                  <div class="row" style="padding-left:24px;padding-right:24px;">
+                    <div>
+                      <img ng-src="{{featureScrollSelected!=='accounts'?'./assets/imgs/3-management-icon-accounting.png':'./assets/imgs/3-management-icon-accounting-white.png'}}"
+                        alt="image" class="img-fluid" style="height: 34px;">
+                    </div>
+                    <div class="col-auto">
+                      <h3 class="card-title">Accounts & finance</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-auto">
+                <div class="label m-3 hover primary-border-onhover grey-1-background" ng-class="{'text-white bg-primary raised':featureScrollSelected==='tickets'}"
+                  ng-click="onFeatureScrollClickHandler('tickets', 'some text', '../assets/images/management-scroll-5-tickets.png')">
+                  <div class="row" style="padding-left:24px;padding-right:24px;">
+                    <div>
+                      <img ng-src="{{featureScrollSelected!=='tickets'?'./assets/imgs/3-management-icon-maintenance.png':'./assets/imgs/3-management-icon-maintenance-white.png'}}"
+                        alt="image" class="img-fluid" style="height: 34px;">
+                    </div>
+                    <div class="col-auto">
+                      <h3 class="card-title">Maintenance & ticketing</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col-12 col-sm-6 col-md-auto">
+                <div class="label m-3 hover primary-border-onhover grey-1-background" ng-class="{'text-white bg-primary raised':featureScrollSelected==='visitors'}"
+                  ng-click="onFeatureScrollClickHandler('visitors', 'some text', '../assets/images/management-scroll-5-visitors.png')">
+                  <div class="row" style="padding-left:24px;padding-right:24px;">
+                    <div>
+                      <img ng-src="{{featureScrollSelected!=='visitors'?'./assets/imgs/3-management-icon-gate.png':'./assets/imgs/3-management-icon-gate-white.png'}}"
+                        alt="image" class="img-fluid" style="height: 34px;">
+                    </div>
+                    <div class="col-auto">
+                      <h3 class="card-title">Gate management</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col-12 col-sm-6 col-md-auto">
+                <div class="label m-3 hover primary-border-onhover grey-1-background" ng-class="{'text-white bg-primary raised':featureScrollSelected==='assets'}"
+                  ng-click="onFeatureScrollClickHandler('assets', 'some text', '../assets/images/management-scroll-5-assets.png')">
+                  <div class="row" style="padding-left:24px;padding-right:24px;">
+                    <div>
+                      <img ng-src="{{featureScrollSelected!=='assets'?'./assets/imgs/3-management-icon-asset.png':'./assets/imgs/3-management-icon-asset-white.png'}}"
+                        alt="image" class="img-fluid" style="height: 34px;">
+                    </div>
+                    <div class="col-auto">
+                      <h3 class="card-title">Asset management</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-auto">
+                <div class="label m-3 hover primary-border-onhover grey-1-background" ng-class="{'text-white bg-primary raised':featureScrollSelected==='noticeboard'}"
+                  ng-click="onFeatureScrollClickHandler('noticeboard', 'some text', '../assets/images/management-scroll-5-noticeboard.png')">
+                  <div class="row" style="padding-left:24px;padding-right:24px;">
+                    <div>
+                      <img ng-src="{{featureScrollSelected!=='noticeboard'?'./assets/imgs/3-management-icon-notice.png':'./assets/imgs/3-management-icon-notice-white.png'}}"
+                        alt="image" class="img-fluid" style="height: 34px;">
+                    </div>
+                    <div class="col-auto">
+                      <h3 class="card-title">Notice board</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-md-8 col-xs-12 equal">
+                <div class="row">
+                  <div class="col-md-12">
+                    <img ng-src="{{featureScrollImage}}" alt="features" class="img-fluid">
+                  </div>
+                </div>
+      
+              </div>
+            </div>
+            <div class="row justify-content-center pt-5">
+              <button class="col-10 col-sm-6 col-md-4 col-lg-4 btn btn-primary raised" data-toggle="modal" data-target="#exampleModal">
+                View our live example dashboard
+              </button>
+            </div> -->
+          </div>
+        </section>
+      
+        <section class="fdb-block pt-0">
+          <div class="container">
+            <div class="row align-items-center">
+            </div>
+            <div class="row align-items-center">
+      
+              <div class="col-12 col-md-6">
+                <h2>Invoicing</h2>
+                <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
+                  <img alt="image" class="img-fluid" src="../assets/images/account1.png">
+                </div>
+                <p class="lead">
+                  Automatic invoicing for your entire portfolio with alerts to customer through SMS, Email and Push Notifications
+                </p>
+              </div>
+              <div class="col-md-1 col-lg-1"></div>
+              <div class="d-none d-sm-none d-md-block col-10 col-sm-6 col-md-5 col-lg-5 m-auto m-md-0">
+                <img alt="image" class="img-fluid" src="../assets/images/account1.png">
+              </div>
+      
+            </div>
+          </div>
+        </section>
+      
+      
+      
+        <section class="fdb-block pt-0">
+          <div class="container">
+            <div class="row align-items-center">
+            </div>
+            <div class="row align-items-center">
+              <div class="d-none d-sm-none d-md-block col-10 col-sm-6 col-md-5 col-lg-5 m-auto m-md-0">
+                <img alt="image" class="img-fluid" src="../assets/images/account2.png">
+              </div>
+              <div class="col-md-1 col-lg-1"></div>
+              <div class="col-12 col-md-6">
+                <h2>Collection Through Payment Gateway</h2>
+                <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
+                  <img alt="image" class="img-fluid" src="../assets/images/account2.png">
+                </div>
+                <p class="lead">
+                  Your customers can make all payments through the mobile app using any mode of their convenience
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      
+      
+        <section class="fdb-block pt-0">
+          <div class="container">
+            <div class="row align-items-center">
+            </div>
+            <div class="row align-items-center">
+              <!-- removed  ml-auto pt-5 pt-md-0 from class -->
+              <div class="col-12 col-md-6">
+                <h2>Automatic Reconciliation</h2>
+                <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
+                  <img alt="image" class="img-fluid" src="../assets/images/account3.png">
+                </div>
+                <p class="lead">
+                  TheHouseMonk will capture and reconcile all payments made through the platform and issue recipts to customers 
+                </p>
+              </div>
+              <div class="col-md-1 col-lg-1"></div>
+              <div class="d-none d-sm-none d-md-block col-10 col-sm-6 col-md-5 col-lg-5 m-auto m-md-0">
+                <img alt="image" class="img-fluid" src="../assets/images/account3.png">
+              </div>
+            </div>
+          </div>
+        </section>
+      
+        <section class="fdb-block pt-0" id="explore">
+          <div class="container">
+            <div class="row align-items-center">
+            </div>
+            <div class="row align-items-center">
+              <!-- removed  ml-auto pt-5 pt-md-0 from class -->
+              <div class="d-none d-sm-none d-md-block col-10 col-sm-6 col-md-5 col-lg-5 m-auto m-md-0">
+                <img alt="image" class="img-fluid" src="../assets/images/account4.png">
+              </div>
+              <div class="col-md-1 col-lg-1"></div>
+              <div class="col-12 col-md-6">
+                <h2>Reminders And Fines</h2>
+                <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
+                  <img alt="image" class="img-fluid" src="../assets/images/account4.png">
+                </div>
+                <p class="lead">
+                  Automatic reminders to customers who haven't paid and auto-lavy of fines for late payers
+                </p>
+              </div>
+      
+      
+            </div>
+                </div>
+        </section>
+
+        <section class="fdb-block pt-0" >
+            <div class="container">
+              <div class="row align-items-center">
+              </div>
+              <div class="row align-items-center">
+                <!-- removed  ml-auto pt-5 pt-md-0 from class -->
+                <div class="col-12 col-md-6">
+                  <h2>Expense Management</h2>
+                  <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
+                    <img alt="image" class="img-fluid" src="../assets/images/account5.png">
+                  </div>
+                  <p class="lead">
+                    Issue purchase order, record cash expenditure, settle supplier payments and much more
+                  </p>
+                </div>
+                <div class="col-md-1 col-lg-1"></div>
+                <div class="d-none d-sm-none d-md-block col-10 col-sm-6 col-md-5 col-lg-5 m-auto m-md-0">
+                  <img alt="image" class="img-fluid" src="../assets/images/account5.png">
+                </div>
+              </div>
+            </div>
+          </section>
+        <section class="fdb-block grey-background pt-0" style="padding: 50px">
+          <div class="container">
+            <div class="col-md-12">
+              <br><br>
+              <div class="text-center">
+                <h2>Explore Our Solutions</h2>
+              </div>
+            </div>
+            <div class="offset-md-3 col-md-7 center">
+              <p class="mt-4">
+                <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1" href="/choose-product">START A FREE
+                  TRIAL</a>
+                <a style="color: gray !important"
+                  class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1"
+                  data-toggle="modal" data-target="#exampleModal">BOOK A FREE DEMO</a>
+              </p>
+            </div>
+          </div>
+        </section>
+      
+      
+        <!-- <section class="fdb-block grey-background pt-0">
+            <div class="container">
+                <div class="row align-items-center">
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6">
+                        <h2>Communication </h2>
+                        <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
+                            <img alt="image" class="img-fluid" src="../assets/images/Communication.png">
+                        </div>
+                        <p class="lead">
+                            Have structured and meaningful conversations with neighbours and your community
+                        </p>
+                        <div class="row">
+                            <div class="col-12 col-sm-6">
+                                <i class="fas fa-check primary-color"></i> Notice board
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <i class="fas fa-check primary-color"></i> Discussion
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-6">
+                                <i class="fas fa-check primary-color"></i> Voting/Polling
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <i class="fas fa-check primary-color"></i> Classified ads
+                            </div>
+                        </div>
+                        <p class="mt-4">
+                            <buttom class="col-12 col-sm-12 col-md-5 col-lg-5 btn btn-primary raised" data-toggle="modal"
+                                data-target="#callbackModal">Sign
+                                up now</buttom>
+                        </p>
+                    </div>
+                    <div class="col-md-1 col-lg-1"></div>
+                    <div class="d-none d-sm-none d-md-block col-10 col-sm-6 col-md-5 col-lg-5 m-auto m-md-0">
+                        <img alt="image" class="img-fluid" src="../assets/images/Communication.png">
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- <section class="fdb-block pt-50 pb-50">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-8 text-center">
+                  <h2>Residents, staff members and management team – All on 1 platform.</h2>
+                </div>
+                <div class="d-block d-sm-block d-md-block d-lg-none col-12 col-sm-12 col-md-10 mb-3">
+                  <iframe style="width:100%;height:300px;" src="https://www.youtube.com/embed/244vH2YFdxM" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+              </div>
+              <div class="row align-items-center ml-5 mr-5">
+                <div class="col-12 col-sm-6 col-lg-3 text-center">
+                  <div>
+                    <img alt="image" class="img-fluid" style="height:100px;" src="./assets/imgs/blob-icon-feature.png">
+                    <p>Feature rich <br> tool</p>
+                  </div>
+                  <div>
+                    <img alt="image" class="img-fluid" style="height:100px;" src="./assets/imgs/blob-icon-mobile.png">
+                    <p>Mobile first <br> solution</p>
+                  </div>
+                </div>
+        
+                <div class="col-12 col-sm-6 col-lg-3 order-lg-12 text-center">
+                  <div>
+                    <img alt="image" class="img-fluid" style="height:100px;" src="./assets/imgs/blob-icon-security.png">
+                    <p>Enhanced data <br> security</p>
+                  </div>
+                  <div>
+                    <img alt="image" class="img-fluid" style="height:100px;" src="./assets/imgs/blob-icon-trust.png">
+                    <p>Globally trusted <br> product</p>
+                  </div>
+                </div>
+        
+                <div class="d-none d-sm-none d-md-none d-lg-block col-12 col-sm-12 col-lg-6">
+                  <iframe style="width:100%;height:350px;" src="https://www.youtube.com/embed/244vH2YFdxM" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+          </section> -->
+          <section  class="fdb-block">
+              <div class="container">
+                  <div class="row text-center">
+                    <div class="col-12">
+                      <h1>3 Simple Reasons To Sign Up With Us</h1>
+                    </div>
+                  </div>
+              
+                  <div class="row text-center justify-content-center mt-5">
+                    <div class="col-12 col-sm-4 col-xl-3 m-md-auto">
+                      <img alt="image" style="height: 100px" src="./img/assets/logo.svg">
+                      <h3><strong>Increase Brand Awareness</strong></h3>
+                      <p>Launch our white labelled apps under your brand name to your customers</p>
+                    </div>
+                    <div class="col-12 col-sm-4 col-xl-3 m-auto pt-4 pt-sm-0">
+                        <img alt="image" style="height: 100px" src="./img/assets/integrate.svg">
+                        <h3><strong>All In 1</strong></h3>
+                        <p>Bring all your company functions on 1 platform and integrate operations for a smooth experience </p>
+                      </div>
+                    <div class="col-12 col-sm-4 col-xl-3 m-auto pt-4 pt-sm-0">
+                      <img alt="image" style="height: 100px" src="./img/assets/money.svg">
+                      <h3><strong>Save Money</strong></h3>
+                      <p>With no setup fee, and a pricing plan that scales with your organization, it's easy to get started</p>
+                    </div>
+              
+                    
+                  </div>
+                </div>
+              </section>
+      
+              <section class="fdb-block grey-background">
+                <div class="container">
+                  <div class="row">
+                    <div class="col">
+                      <div class="fdb-box fdb-touch" style="border-top: solid 5px #FFBC00 !important">
+                        <div class="row text-center justify-content-center">
+                          <div class="col-12 col-md-9 col-lg-7">
+
+                            <h1>Contact Us</h1>
+                            <p> Get an instant call back from our team to answer any queries you may have </p>
+                          </div>
+                        </div>
+              
+                        <div class="row justify-content-center pt-4">
+                          <div class="col-12 col-md-8">
+                            <form name="callbackForm" novalidate>
+                              <div class="row">
+                                <div class="col-12 col-md">
+                                    <label>Name: </label>
+                                  <input type="text" name="name" ng-disabled="progressBarLoading" class="form-control"
+                                    placeholder="Enter your name" ng-model="callbackModalForm.name" required>
+                                  <p ng-show="callbackForm.name.$invalid && callbackForm.name.$touched" class="help-block pt-1">name is
+                                    required</p>
+                                </div>
+                                <div class="col-12 col-md mt-4 mt-md-0">
+                                    <label>Country Code: </label>
+                                    <select name="countryCode" ng-model="callbackModalForm.countryCode" ng-init="callbackModalForm.countryCode = '+91'" class="form-control" >
+                                      <option ng-repeat="cityObj in citiCodes" value="{{cityObj.code}}">{{cityObj.code}}</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-md mt-4 mt-md-0">
+                                  <label>Phone Number: </label>
+                                <input type="number" name="phoneNumber" ng-disabled="progressBarLoading" class="form-control"
+                                  placeholder="Enter your phone  number" ng-model="callbackModalForm.phoneNumber" ng-minlength="4" required>
+                                <p ng-show="callbackForm.phoneNumber.$invalid && callbackForm.phoneNumber.$touched" class="help-block pt-1">
+                                  phone number is
+                                  required and must be length 4</p>
+                              </div>
+                              </div>
+              
+                              <div class="row mt-4">
+                                <div class="col">
+                                  <label>Message: </label>
+                                  <textarea class="form-control" placeholder="Leave your message here" ng-model="callbackModalForm.message" rows="3"></textarea>
+                                </div>
+                              </div>
+                              <div class="row mt-4">
+                                <div class="col text-center">
+                                  <button type="submit" ng-disabled="callbackForm.$invalid" ng-click="onCallbackSubmitHandler(ev)" class="btn btn-primary">Submit</button>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+        <!-- <section class="fdb-block pt-50 pb-50" id="features" style="">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-12 col-md-9 text-center">
+                <h1>There is something for everyone</h1>
+                <p class="lead">
+                  A wide range of organizations use TheHouseMonk for their needs
+                </p>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-12 col-sm-6 col-md-auto">
+                <div class="label m-3 hover primary-border-onhover grey-background" ng-class="{'text-white bg-primary raised':verticalScrollSelected==='builders'}"
+                  ng-click="onVerticalScrollClickHandler('builders')">
+                  <div class="row" style="padding-left:24px;padding-right:24px;">
+                    <div>
+                      <img ng-src="{{verticalScrollSelected!=='builders'?'./assets/imgs/3-management-icon-builder.png':'./assets/imgs/3-management-icon-builder-white.png'}}"
+                        alt="image" class="img-fluid" style="height: 34px;">
+                    </div>
+                    <div class="col-auto">
+                      <h3 class="card-title">Builders</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-auto">
+                <div class="label m-3 hover primary-border-onhover grey-background" ng-class="{'text-white bg-primary raised':verticalScrollSelected==='owner-associations'}"
+                  ng-click="onVerticalScrollClickHandler('owner-associations')">
+                  <div class="row" style="padding-left:24px;padding-right:24px;">
+                    <div>
+                      <img ng-src="{{verticalScrollSelected!=='owner-associations'?'./assets/imgs/3-management-icon-association.png':'./assets/imgs/3-management-icon-association-white.png'}}"
+                        alt="image" class="img-fluid" style="height: 34px;">
+                    </div>
+                    <div class="col-auto">
+                      <h3 class="card-title">Owner Associations</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col-12 col-sm-6 col-md-auto">
+                <div class="label m-3 hover primary-border-onhover grey-background" ng-class="{'text-white bg-primary raised':verticalScrollSelected==='facility-management'}"
+                  ng-click="onVerticalScrollClickHandler('facility-management')">
+                  <div class="row" style="padding-left:24px;padding-right:24px;">
+                    <div>
+                      <img ng-src="{{verticalScrollSelected!=='facility-management'?'./assets/imgs/3-management-icon-facility.png':'./assets/imgs/3-management-icon-facility-white.png'}}"
+                        alt="image" class="img-fluid" style="height: 34px;">
+                    </div>
+                    <div class="col-auto">
+                      <h3 class="card-title">Facility Management</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-md-4 equal">
+                <div class="card m-3 raised" ng-repeat="content in verticalScrollContent track by $index">
+                  <div class="p-2">
+                    <h3 class="card-title font-weight-bold">
+                      <img ng-src="{{content.image}}" alt="" height="40">
+                      {{content.title}}
+                    </h3>
+                    <p class="lead thm-content-body grey-text">{{content.description}}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-8">
+                <div class="row align-items-center" style="height: 100%;">
+                  <div class="col-12">
+                    <img src="../assets/images/management-scoll-6.png" alt="verticals" class="img-fluid rounded mx-auto d-block img-centered"
+                      style="width:70%;">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+      
+        <!-- <section class="fdb-block pt-50 pb-50 grey-background" id="testimonials">
+          <div class="container">
+            <div class="row text-center justify-content-center">
+              <div class="col-md-10 col-lg-7">
+                <h2>Our customer love us!</h2>
+              </div>
+            </div>
+      
+            <div class="row mt-5 justify-content-center">
+      
+              <div class="col-md-10 col-lg-4 p-3 text-center">
+                <div class="card raised" style="width: 100%;">
+                  <div class="card-img-top p-3 pb-5 grey-background" style="min-height:280px;">
+                    <div style="font-size: 18px;">
+                      <i class="fas fa-quote-left primary-color"></i>
+                      TheHouseMonk is great to manage our society accounts. We have stopped cash and cheque collection for
+                      maintenance - it's done only through the app. Fantastic!</div>
+                  </div>
+                  <p style="margin-top:-70px;"><img alt="image" height="140" class="rounded-circle raised" src="./assets/images/ananthakrishnan.jpg"></p>
+                  <div class="card-body" style="height:120px;">
+                    <p class="lead text-muted">
+                      <strong class="font-weight-bold ">Ananthakrishnan</strong>
+                    </p>
+                    <p class="text-muted" style="margin-top:-16px;">Secretary, Indian Bank Staff Colony</p>
+                  </div>
+                </div>
+              </div>
+      
+      
+              <div class="col-md-10 col-lg-4 p-3 text-center">
+                <div class="card raised" style="width: 100%;">
+                  <div class="card-img-top p-3 pb-5 grey-background" style="min-height:280px;background: #FEB94D;">
+                    <div style="font-size: 18px;">
+                      <i class="fas fa-quote-left primary-color"></i>
+                      TheHouseMonk is a transformational software. We’re able to track and manage over 100 technicians,
+                      engineers, and other staff members through the same.</div>
+                  </div>
+                  <p style="margin-top:-70px;"><img alt="image" height="140" class="rounded-circle raised" src="./assets/images/abid.jpg"></p>
+                  <div class="card-body" style="height:120px;">
+                    <p class="lead text-muted">
+                      <strong class="font-weight-bold ">Abid Junaid</strong>
+                    </p>
+                    <p class="text-muted" style="margin-top:-16px;">Chairman, Radiant Star Group, UAE</p>
+                  </div>
+                </div>
+              </div>
+      
+      
+              <div class="col-md-10 col-lg-4 p-3 text-center">
+                <div class="card raised" style="width: 100%;">
+                  <div class="card-img-top p-3 pb-5 grey-background" style="min-height:280px;">
+                    <div style="font-size: 18px;">
+                      <i class="fas fa-quote-left primary-color"></i>
+                      We have more than 35 staff members working at the site including security guards, technicians,
+                      housekeepers, etc. TheHouseMonk app helps us track each and every activity done by them.</div>
+                  </div>
+                  <p style="margin-top:-70px;"><img alt="image" height="140" class="rounded-circle raised" src="./assets/images/ruthish.jpg"></p>
+                  <div class="card-body" style="height:120px;">
+                    <p class="lead text-muted">
+                      <strong class="font-weight-bold ">Ruthish</strong>
+                    </p>
+                    <p class="text-muted" style="margin-top:-16px;">Facility Manager, Carlton Towers</p>
+                  </div>
+                </div>
+              </div>
+      
+      
+            </div>
+          </div>
+        </section> -->
+      
+      
+        <!-- <section class="fdb-block pt-50 pb-50" style="background:#424242;" id="contact-us">
+          <div class="container">
+            <div class="row justify-content-center align-items-center">
+              <div class="col-12 col-lg-3">
+                <h2 class="light-grey-text">Get a call back</h2>
+              </div>
+              <div class="col-12 col-lg-9">
+                <div class="row">
+                  <div class="col-12 col-md-4 mb-1">
+                    <input class="form-control" type="text" ng-model="callbackForm.name" placeholder="Name">
+                  </div>
+                  <div class="col-12 col-md-3 mb-1">
+                    <input class="form-control" type="text" ng-model="callbackForm.phoneNumber" placeholder="Phone">
+                  </div>
+                  <div class="col-12 col-md-3 mb-2">
+                    <select class="form-control" ng-model="callbackForm.product">
+                      <option value="Building Management">Building Management</option>
+                      <option value="Rental Management">Rental Management</option>
+                    </select>
+                  </div>
+                  <div class="col-12 col-md-2 mb-1">
+                    <button type="submit" class="col-12 btn btn-dark raised" ng-click="onCallbackSubmitHandler()">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+      
+      </div>

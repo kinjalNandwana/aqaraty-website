@@ -1,0 +1,78 @@
+<div class="modal fade" id="exampleModal" mg-model tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Almost there!</h5>
+                <button type="button" class="close" ng-click="dismiss()" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="progress" ng-show="progressBarLoading">
+                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100"
+                        aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                        <span>Please wait<span class="dotdotdot"></span></span>
+                    </div>
+                </div>
+                <div class="row p-3">Please fill the following form to use the demo!</div>
+                <form name="demoForm" novalidate>
+                    <div class="row">
+                        <div class="col">
+                            <label>Name:</label>
+                            <input class="form-control" name="name" type="text" ng-disabled="progressBarLoading"
+                                required placeholder="Enter your name" ng-model="demoSignupForm.name">
+                            <p ng-show="demoSignupForm.name.$invalid && demoSignupForm.name.$touched" class="help-block pt-1">
+                                name is
+                                required</p>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-4 col-md-4">
+                            <label class="d-none d-sm-block">Country Code:</label>
+                            <label class="d-block d-sm-none">Co. Code</label>
+                            <select name="countryCode" ng-model="demoSignupForm.countryCode"
+                                ng-init="demoSignupForm.countryCode = '+91'" class="form-control">
+                                <option ng-repeat="cityObj in citiCodes" value="{{cityObj.code}}">{{cityObj.code}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-8 col-md-8">
+                            <label>Phone Number:</label>
+                            <input type="number" name="phoneNumber" ng-disabled="progressBarLoading"
+                                class="form-control" placeholder="Enter your phone  number"
+                                ng-model="demoSignupForm.phoneNumber" ng-minlength="4" required>
+                        </div>
+                        <p ng-show="demoSignupForm.phoneNumber.$invalid && demoSignupForm.phoneNumber.$touched"
+                            class="help-block pt-1">
+                            phone number is
+                            required and must be length 4
+                        </p>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col">
+                            <label>Email:</label>
+                            <input class="form-control" name="email" type="email" ng-disabled="progressBarLoading"
+                                placeholder="Enter your email address" ng-model="demoSignupForm.email">
+
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                        <label>Your Company Name: </label>
+                        <input class="form-control" name="organization" type="text" ng-disabled="progressBarLoading"
+                            placeholder="Which organization do you represent?" ng-model="demoSignupForm.organization">
+                            </div>
+                    </div>
+                </form>
+                </div>
+                <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary"
+                            ng-disabled="progressBarLoading || demoForm.$invalid"
+                            ng-click="onDemoSignupSubmitHandler(demoForm)">Proceed</button>
+                    </div>
+            </div>
+        </div>
+    </div>
