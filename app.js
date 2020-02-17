@@ -187,7 +187,7 @@
         .otherwise({
           redirectTo: '/'
         });
-  
+
       $locationProvider.html5Mode({
           enabled: true,
           requireBase: false
@@ -195,7 +195,7 @@
   
     }
   
-    function CoreController($scope, $http, $document, $window, $location, toaster, $httpParamSerializerJQLike) {
+    function CoreController($scope, $http, $document, $window, $location, toaster) {
       $scope.progressBarLoading = false;
       $scope.callbackForm = {};
       $scope.onCallbackSubmitHandler = function (form) {
@@ -361,8 +361,8 @@
       };
   
   
-      $scope.isProductActive = function () {
-        return "/data-management" === $location.path() || "/accounts-finance" === $location.path() || "/operations-management" === $location.path() || "/community-builder" === $location.path() || "/visitor-management" === $location.path() ;
+      $scope.isAboutActive = function () {
+        return "/vision" === $location.path() || "/our-team" === $location.path();
       };
   
       $scope.isServiceActive = function () {
@@ -372,6 +372,8 @@
       $scope.isCustomerActive = function () {
         return "/customer-rental-property-management" === $location.path() || "/customer-co-living" === $location.path() || "/customer-co-working" === $location.path() || "/customer-owner-association" === $location.path() || "/customer-builder" === $location.path() || "/customer-facility-management" === $location.path() || "/customer-rental-owners" === $location.path();
       }
+
+
     }
   
     function CustomerOwnerAssociationPageController($scope, $controller, $window) {
