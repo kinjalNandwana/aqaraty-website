@@ -91,7 +91,7 @@
     function RouteConfig($routeProvider, $locationProvider) {
       'use strict';
       $routeProvider
-        .when('/aqaraty-website', {
+        .when('/', {
           templateUrl: 'home.html',
           controller: 'HomePageController'
         })
