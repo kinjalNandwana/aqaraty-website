@@ -27,14 +27,7 @@
       .controller('CustomerRentalOwnersPageController', CustomerRentalOwnersPageController)
       .controller('ChooseProductPageController', ChooseProductPageController)
       .controller('RentalPropertyManagementPageController', RentalPropertyManagementPageController)
-      .controller('CustomerCoLivingPageController', CustomerCoLivingPageController)
-      .controller('CustomerCoWorkingPageController', CustomerCoWorkingPageController)
       .controller('CustomerRentalPropertyManagementPageController', CustomerRentalPropertyManagementPageController)
-      .controller('DataManagementPageController', DataManagementPageController)
-      .controller('AccountFinancePageController', AccountFinancePageController)
-      .controller('OperationManagementPageController', OperationManagementPageController)
-      .controller('CommunityBuilderPageController', CommunityBuilderPageController)
-      .controller('VisitorManagementPageController', VisitorManagementPageController)
       .component('bottomFooter', {
         bindings: {},
         templateUrl: 'pages/footer.html',
@@ -98,7 +91,7 @@
     function RouteConfig($routeProvider, $locationProvider) {
       'use strict';
       $routeProvider
-        .when('/', {
+        .when('/aqaraty-website/', {
           templateUrl: 'home.html',
           controller: 'HomePageController'
         })

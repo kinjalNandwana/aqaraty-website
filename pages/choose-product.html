@@ -12,21 +12,6 @@
                 </div>
             </div>
             <div class="row d-block d-sm-block d-md-none justify-content-center">
-                <a ng-click="toggleKey('selected')" href="#building" class="col-12 no-a">
-                    <div class="label ml-3 mr-3 hover primary-border-onhover grey-1-background text-white bg-primary raised"
-                        ng-class="{'text-white bg-primary raised':!selected}" ng-click="toggleButton()">
-                        <div class="row" style="padding-left:24px;">
-                            <div>
-                                <img ng-src="./assets/imgs/3-management-icon-asset.png" alt="image" class="img-fluid"
-                                    style="height: 34px;" src="./assets/imgs/3-management-icon-asset.png">
-                            </div>
-                            <div class="col-auto">
-                                <h3 class="card-title">Building Management</h3>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
                 <a ng-click="toggleKey('selected')" href="#rentals" class="col-12 col-sm-6 col-md-auto no-a">
                     <div class="label ml-3 mr-3 hover primary-border-onhover grey-1-background"
                         ng-class="{'text-white bg-primary raised':selected}">
@@ -49,33 +34,10 @@
                     <img alt="image" class="img-fluid" src="./assets/images/choose-product.svg">
                 </div>
                 
-                <div class="offset-1 offset-sm-1 offset-md-0 col-10 col-md-4 pb-4 pt-4 raised mb-3 product" id="building">
-                    <a ng-click="routeToSignupPage()">
-                    <h2 style="text-align:center">Building Management</h2>
-                    <!-- <p class="lead" style="text-align:center">
-                        Managing residential and commercial buildings
-                        got a whole lot easier
-
-                    </p> -->
-                    <p class="lead" style="text-align:center">
-                        For OAs, Builders, Facility Managers, Strata/Estate Managers, and Others 
-
-                    </p>
-                    <ul>
-                        <li class="lead">Accounts & finance</li>
-                        <li class="lead">Maintenance & ticketing</li>
-                        <li class="lead">Gate management</li>
-                        <li class="lead">Asset management</li>
-                        <li class="lead">Notice board</li>
-                    </ul>
-                  
-                    <button class="col-12 col-sm-12 col-md-12 pt-2 mt-2 btn btn-primary raised" ng-click="routeToSignupPage()">Select and Proceed</button>
-                    </a>
-                </div>
                 <div class="d-none d-sm-none d-md-block col-10 col-sm-6 col-md-4 col-lg-4">
                     <img alt="image" class="img-fluid" src="./assets/images/choose-product.svg">
                 </div>
-                <div class="offset-1 offset-sm-1 offset-md-0 col-10 col-md-4 pt-4 raised pb-4 mb-3 product" id="rentals">
+                <div class="offset-3 offset-sm-1 offset-md-3 col-10 col-md-4 pt-4 raised pb-4 mb-3 product" id="rentals">
                     <a  ng-click="routeToRentalsSignupPage()"> 
                     <h2 style="text-align:center">Rental Management</h2>
                     <!-- <p class="lead" style="text-align:center">
