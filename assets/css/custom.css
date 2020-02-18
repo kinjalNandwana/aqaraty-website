@@ -1,7 +1,21 @@
+@font-face {
+  font-family: 'MyWebFont';
+  src: url('../fonts/Ciutadella\ Medium.ttf'); /* IE9 Compat Modes */
+}
+
+@font-face {
+  font-family: 'PlainFont';
+  src: url('../fonts/Boxed\ Book.otf');
+}
+
 @media only screen and (min-width: 768px) {
   .rental-main-image {
     background-image: url(../imgs/1-rental-header.png);
   }
+}
+
+body {
+  font-family: 'MyWebFont', Fallback, sans-serif;
 }
 
 .product:hover {
@@ -30,7 +44,7 @@
   text-align: center;
 }
 .mkd-pricing-slider .mkd-pricing-slider-title {
-  font-family: Georgia,serif;
+  font-family: 'MyWebFont', Fallback, sans-serif;
   font-style: italic;
   color: #707070;
   font-size: 150%;
@@ -57,7 +71,7 @@
 .mkd-pricing-slider .mkd-pricing-slider-drag {
   position: absolute;
   display: inline-block;
-  font-family: Montserrat,sans-serif;
+  font-family: 'MyWebFont', Fallback, sans-serif;
   font-size: 16px;
   color: #fff;
   text-align: center;
@@ -71,7 +85,7 @@
   border-radius: 50px;
 }
 .mkd-pricing-slider .mkd-pricing-slider-priceList {
-  font-family: Georgia,serif;
+  font-family: 'MyWebFont', Fallback, sans-serif;
   font-style: italic;
   color: #707070;
   display: inline-block;
@@ -116,6 +130,10 @@ hr.horizontal-line {
   color:#F5F0E0;
 }
 
+p {
+  font-family: 'MyWebFont', Fallback, sans-serif;
+}
+
 
 @keyframes dotdotdot {
   0% {
@@ -138,10 +156,18 @@ hr.horizontal-line {
 
 h1 {
   /* font-family: 'Raleway', sans-serif; */
-  font-family: 'Lato', sans-serif;
+  font-family: 'MyWebFont', Fallback, sans-serif;
   font-weight: 900;
   color: black;
   font-size: 34px !important;
+}
+
+h3 {
+  font-family: 'MyWebFont', Fallback, sans-serif;
+}
+
+a {
+  font-family: 'MyWebFont', Fallback, sans-serif;
 }
 
 .nav-thm-active {
@@ -150,7 +176,7 @@ h1 {
   border-bottom: 2px solid #E4003A !important;
   margin-top: -4px;
   display: inline-block !important;
-  line-height: 2 !important;
+  line-height: 1.5 !important;
 }
 
 .nav-active {
@@ -204,9 +230,17 @@ h1 {
   margin-top: 0px;
 }
 
+.nav-link {
+  font-size:20px;
+}
+
 /* overriding on hover text color on nav bar */
 .nav-link:hover {
   color: #263272 !important;
+}
+
+.lead {
+  font-family: 'PlainFont', Fallback, sans-serif;
 }
 
 
