@@ -7,13 +7,13 @@
             <div class="mkd-pricing-slider-pricing">
                 <h1>
                     <span class="mkd-price-label">Monthly subcription fee: </span>
-                    <span class="mkd-value" ng-class="{'change-price-color': price>200}">$</span><span class="mkd-price" ng-class="{'change-price-color': price>200}">{{price}}</span> until {{regionUnit}} units
+                    <span class="mkd-value" ng-class="{'change-price-color': price>200}"></span><span class="mkd-price" ng-class="{'change-price-color': price>200}">{{price}} KWD</span> until {{regionUnit}} units
                 </h1>
             </div>
             <h3 class="mkd-pricing-slider-title" ng-if="price>200">Billed at: ${{billedAt}} per unit/month</h3>
             <div class="mkd-pricing-slider-priceList col-md-2">
                 <label>Select your region</label>
-                <select name="priceByCountry" ng-model="countryPrice" ng-init="countryPrice = 'India'" ng-change="updatePrice(unit.value)" class="form-control" autofocus>
+                <select name="priceByCountry" ng-model="countryPrice" ng-init="countryPrice = 'Kuwait'" ng-change="updatePrice(unit.value)" class="form-control" autofocus>
                     <option ng-repeat="price in priceList" value="{{price.name}}">{{price.name}}</option>
                 </select>
             </div>

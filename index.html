@@ -8,7 +8,7 @@
   <meta name="description" content="Helping new age real estate companies give a great experience to their customers. Coliving, coworking, hostels and student housing, real estate developers and others can avail this one stop solution">
   <meta name="author" content="">
   <title>Real Estate Customer Experience Management Platform | Property Management Solutions</title>
-  <base href="/aqaraty-website/">
+  <base href="/">
 
   <!-- Chrome, Firefox OS and Opera -->
   <meta name="theme-color" content="black">
@@ -105,6 +105,10 @@
             <li class="nav-item">
               <a class="nav-link" href="partners"><span
                   ng-class="{'nav-thm-active': isActive('/partners')}">Partners</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact-us"><span
+                ng-class="{'nav-thm-active': isActive('/contact-us')">Contact us</span></a>
             </li>
             
             <li class="nav-item ">
@@ -251,19 +255,19 @@
 
     <div ng-controller="HomePageController">
         <div ng-include="'pages/contact-us-modal.html'"></div>
-        <section class="fdb-block pb-50" id="main">
-          <div class="container">
+        <section class="fdb-block banner" id="main">
+          <div class="container pt-50 pb-50">
             <div class="row align-items-center">
               <div class="col-12 col-md-6 col-lg-5">
                 <h1>Give a world class customer experience</h1>
-                <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
+                <!-- <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
                   <img alt="image" class="img-fluid" src="assets/imgs/1-home-header.png">
-                </div>
-                <p class="lead" style="font-size: 1.15rem">
+                </div> -->
+                <p class="lead" style="font-size: 1.15rem;color:#F5F0E0;font-weight:400;">
                   Unlock the benefits of connecting your team, customers and real estate through the same platform.
                 </p>
                 <br>
-                <p class="lead text-center">
+                <p class="lead text-center" style="color:#F5F0E0;font-weight:400;">
                     Explore our solutions.
                 </p>
                 <p class="mt-4">
@@ -272,21 +276,21 @@
                   data-target="#exampleModal">BOOK A FREE DEMO</a>
                 </p>
               </div>
-              <div class="d-none d-sm-none d-md-block col-10 col-sm-6 col-md-6 col-lg-7 m-auto m-md-0">
+              <!-- <div class="d-none d-sm-none d-md-block col-10 col-sm-6 col-md-6 col-lg-7 m-auto m-md-0">
                 <img alt="image" class="img-fluid" src="assets/imgs/1-home-header.png">
-              </div>
+              </div> -->
             </div>
           </div>
         </section>
       
-        <section class="fdb-block grey-background pt-50 pb-50" id="stats">
+        <section class="fdb-block light-blue-background pt-50 pb-50" id="stats">
           <div class="container">
             <div class="row">
               <div class="col-12 col-sm-5 col-md">
                 <h3><strong>10Mn+ sqft</strong></h3>
                 <p>Managed via Aqaraty solutions</p>
               </div>
-              <div class="offset-sm-1 offset-md-1 col-12 col-sm-5 col-md pt-3 pt-sm-0">
+              <div class="offset-sm-1 offset-md-1 col-12 col-sm-5 col-md pt-3 pt-sm-0 ">
                 <h3><strong>10k+ users</strong></h3>
                 <p>Use our solutions daily</p>
               </div>
@@ -303,6 +307,31 @@
             </div>
           </div>
         </section>
+
+        <!-- <section class="fdb-block light-blue-background pt-50 pb-50" id="stats">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-sm-5 col-md">
+                <h3><strong>10Mn+ sqft</strong></h3>
+                <p>Managed via Aqaraty solutions</p>
+              </div>
+              <div class="col-12 col-sm-5 col-md pt-3 pt-sm-0 ">
+                <h3><strong>10k+ users</strong></h3>
+                <p>Use our solutions daily</p>
+              </div>
+      
+              <div class=" col-12 col-sm-5 col-md pt-3 pt-md-0">
+                <h3><strong>10+ cities</strong></h3>
+                <p>Where Aqaraty has been deployed</p>
+              </div>
+      
+              <div class="col-12 col-sm-5 col-md pt-3 pt-md-0">
+                <h3><strong>100+ service providers</strong></h3>
+                <p>Work with us</p>
+              </div>
+            </div>
+          </div>
+        </section> -->
         <!-- <section class="fdb-block">
             <div class="container">
               <div class="row text-center">
@@ -509,9 +538,9 @@
                   <div class="col-12">
                     <i class="fas fa-check primary-color"></i> Raise Complaints
                   </div>
-                  <div class="col-12">
+                  <!-- <div class="col-12">
                     <i class="fas fa-check primary-color"></i> Invite Guests
-                  </div>
+                  </div> -->
                   <div class="col-12">
                       <i class="fas fa-check primary-color"></i> Book Facilities
                   </div>
@@ -550,9 +579,9 @@
                   <div class="col-12 black-text">
                     <i class="fas fa-check primary-color"></i> Facility and Asset Management
                   </div>
-                  <div class="col-12 black-text">
+                  <!-- <div class="col-12 black-text">
                       <i class="fas fa-check primary-color"></i> Visitor Management
-                  </div>
+                  </div> -->
                   <div class="col-12 black-text">
                       <i class="fas fa-check primary-color"></i> Digital Noticeboard
                     </div>
@@ -758,8 +787,8 @@
             </div>
           </div>
         </section> -->
-        <section class="fdb-block mt-4" style="background-color: #E4003A; padding: 0px">
-          <div class="container">
+        <section class="fdb-block mt-4" style="background-color: #E4003A; padding: 0px;color:#F5F0E0">
+          <div class="container pt-50 pb-50">
             <div class="row">
               <div class="col-lg-12 text-center">
                 <br>
@@ -785,7 +814,8 @@
               <div class="col-12 col-sm-4 col-xl-3 m-md-auto">
                 <img alt="image" style="height: 100px" src="img/assets/logo.svg">
                 <h3><strong>Increase Brand Awareness</strong></h3>
-                <p>Launch our white labelled apps under your brand name to your customers</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores aut.</p>
+                <!-- <p>Launch our white labelled apps under your brand name to your customers</p> -->
               </div>
               <div class="col-12 col-sm-4 col-xl-3 m-auto pt-4 pt-sm-0">
                   <img alt="image" style="height: 100px" src="img/assets/integrate.svg">
@@ -803,7 +833,7 @@
           </div>
         </section>
 
-          <section class="fdb-block grey-background">
+          <section class="fdb-block light-blue-background">
               <div class="container">
                 <div class="row justify-content-center">
                   <div class="col-12 text-center">
@@ -818,21 +848,21 @@
                   <div class="col-12 col-sm-8 col-md-4 col-lg-4 m-sm-auto mr-md-auto ml-md-0">
                     <a  href="/customer-co-living#main">
                     <img alt="image" class="img-fluid rounded" src="img/assets/coliving.jpg">
-                    <h3 style="color: #444444"><strong>Co-Living</strong></h3>
+                    <h3 style="color: #F5F0E0"><strong>Co-Living</strong></h3>
                     </a>
                   </div>
             
                   <div class="col-12 col-sm-8 col-md-4 col-lg-4 m-sm-auto pt-5 pt-md-0">
                     <a  href="/customer-co-working#main">
                     <img alt="image" class="img-fluid rounded" src="img/assets/coworking.jpg">
-                    <h3 style="color: #444444"><strong>Co-Working</strong></h3>
+                    <h3 style="color: #F5F0E0"><strong>Co-Working</strong></h3>
                     </a>
                   </div>
             
                   <div class="col-12 col-sm-8 col-md-4 col-lg-4 m-sm-auto ml-md-auto mr-md-0 pt-5 pt-md-0">
                     <a  href="/customer-builder#main">
                     <img alt="image" class="img-fluid rounded" src="img/assets/builders.jpg">
-                    <h3 style="color: #444444"><strong>Real Estate Developers</strong></h3>
+                    <h3 style="color: #F5F0E0"><strong>Real Estate Developers</strong></h3>
                     </a>
                   </div>
                   <div class="col-lg-12">
@@ -842,21 +872,21 @@
                   <div class="col-12 col-sm-8 col-md-4 col-lg-4 m-sm-auto mr-md-auto ml-md-0">
                     <a  href="/customer-owner-association#main">
                       <img alt="image" class="img-fluid rounded" src="img/assets/HOA.jpg">
-                      <h3 style="color: #444444"><strong>Home Owner Associations</strong></h3>
+                      <h3 style="color: #F5F0E0"><strong>Home Owner Associations</strong></h3>
                     </a>
                     </div>
               
                     <div class="col-12 col-sm-8 col-md-4 col-lg-4 m-sm-auto pt-5 pt-md-0">
                       <a  href="/customer-facility-management#main">
                       <img alt="image" class="img-fluid rounded" src="img/assets/Facility2.jpg">
-                      <h3 style="color: #444444"><strong>Facility Management</strong></h3>
+                      <h3 style="color: #F5F0E0"><strong>Facility Management</strong></h3>
                       </a>
                     </div>
               
                     <div class="col-12 col-sm-8 col-md-4 col-lg-4 m-sm-auto pt-5 pt-md-0">
                       <a  href="/customer-rental-property-management#main">
                         <img alt="image" class="img-fluid rounded" src="img/assets/rebntalBuild6.jpg">
-                        <h3 style="color: #444444"><strong>Rental & Property Management</strong></h3>
+                        <h3 style="color: #F5F0E0"><strong>Rental & Property Management</strong></h3>
                       </a>
                     </div>
                     <div class="offset-md-3 col-md-6 center">
@@ -946,7 +976,7 @@
                                   </div>
                                   <div class="col-12 col-md mt-4 mt-md-0">
                                       <label>Country Code: </label>
-                                      <select name="countryCode" ng-model="callbackModalForm.countryCode" ng-init="callbackModalForm.countryCode = '+91'" class="form-control" >
+                                      <select name="countryCode" ng-model="callbackModalForm.countryCode" ng-init="callbackModalForm.countryCode = '+965'" class="form-control" >
                                         <option ng-repeat="cityObj in citiCodes" value="{{cityObj.code}}">{{cityObj.code}}</option>
                                       </select>
                                   </div>

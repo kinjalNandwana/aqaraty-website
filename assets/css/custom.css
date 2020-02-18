@@ -13,6 +13,16 @@
 .fdb-block .fdb-touch {
   border-top: solid 5px #E4003A !important
 }
+
+.banner {
+  background-image:url('../images/output.png');
+  background-size: cover;
+  /* background-position-x: 80%; */
+}
+
+.banner h1 {
+  color: #F5F0E0;
+}
 .btn {
   font-size: 0.8rem;
 }
@@ -97,6 +107,16 @@ hr.horizontal-line {
   animation: dotdotdot 1.5s linear infinite;
 }
 
+.blue-background {
+  background-color: #263272;
+}
+
+.light-blue-background {
+  background-color: #3C4491;
+  color:#F5F0E0;
+}
+
+
 @keyframes dotdotdot {
   0% {
     content: '...';
@@ -127,7 +147,7 @@ h1 {
 .nav-thm-active {
   color: #263272 !important;
   font-weight: bold !important;
-  border-bottom: 1px solid !important;
+  border-bottom: 2px solid #E4003A !important;
   margin-top: -4px;
   display: inline-block !important;
   line-height: 2 !important;

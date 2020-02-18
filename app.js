@@ -28,6 +28,7 @@
       .controller('ChooseProductPageController', ChooseProductPageController)
       .controller('RentalPropertyManagementPageController', RentalPropertyManagementPageController)
       .controller('CustomerRentalPropertyManagementPageController', CustomerRentalPropertyManagementPageController)
+      .controller('ContactUsPageController', ContactUsPageController)
       .component('bottomFooter', {
         bindings: {},
         templateUrl: 'pages/footer.html',
@@ -104,6 +105,12 @@
         .when('/refund-terms', {
           templateUrl: 'pages/refund-terms.html'
         })
+        .when('/vision', {
+          templateUrl: 'pages/vision.html',
+        })
+        .when('/our-team', {
+          templateUrl: 'pages/our-team.html'
+        })
         .when('/partners', {
           templateUrl: 'pages/partners.html',
           controller: 'PartnerPageController'
@@ -132,6 +139,10 @@
         .when('/rental-management', {
           templateUrl: 'pages/customer-rental-property-management.html',
           controller: 'CustomerRentalPropertyManagementPageController'
+        })
+        .when('/contact-us', {
+          templateUrl: 'pages/contact-us.html',
+          controller: 'ContactUsPageController'
         })
         .otherwise({
           redirectTo: '/'
@@ -310,12 +321,8 @@
         return "/vision" === $location.path() || "/our-team" === $location.path();
       };
   
-      $scope.isServiceActive = function () {
-        return "/rental-property-management" === $location.path();
-      };
-  
       $scope.isCustomerActive = function () {
-        return "/customer-rental-property-management" === $location.path() || "/customer-co-living" === $location.path() || "/customer-co-working" === $location.path() || "/customer-owner-association" === $location.path() || "/customer-builder" === $location.path() || "/customer-facility-management" === $location.path() || "/customer-rental-owners" === $location.path();
+        return "/rental-management" === $location.path() || "/customer-co-living" === $location.path() || "/customer-co-working" === $location.path() || "/customer-owner-association" === $location.path() || "/customer-builder" === $location.path() || "/customer-facility-management" === $location.path() || "/customer-rental-owners" === $location.path();
       }
 
 
@@ -677,7 +684,7 @@
           value: 2,
           baseUnit: 63
         }, {
-          name: 'India',
+          name: 'Kuwait',
           value: 1,
           baseUnit: 175
         }, {
@@ -782,10 +789,46 @@
         product: 'Building Management'
       };
   
-      $scope.callbackModalForm = {
-        product: 'Building Management'
+     
+    }
+
+    function ContactUsPageController($scope, $controller, $window) {
+
+      $controller('CoreController', {
+        $scope: $scope
+      });
+
+      $window.scroll(0,0);
+      $window.document.title = 'Real Estate Customer Experience Management Platform | Property Management Solutions';
+      $scope.onContactUsSubmitHandler = function () {
+        $scope.callbackModalOverlayActive = true;
+        $scope.progressBarLoading = true;
+        $http({
+          method: 'POST',
+          url: '/shared-resource/webhook/support/contact-us/send-email',
+          data: {
+              'name': $scope.callbackModalForm.name,
+              'phoneNumber': $scope.callbackModalForm.countryCode + $scope.callbackModalForm.phoneNumber,
+              'page': $location.path(),
+              'email': $scope.callbackModalForm.email,
+              'message': $scope.callbackModalForm.message,
+          }
+        }).then(function (response) {
+          $scope.callbackModalForm = {};
+          $scope.showSuccessToast();
+        }, function (response) {
+          $scope.showErrorToast();
+        }).finally(function () {
+          $scope.callbackModalForm = {
+            product:$scope.callbackModalForm.product
+          };
+          $scope.progressBarLoading = false;
+          $scope.callbackModalOverlayActive = false;
+        });
+      }
+      $scope.callbackForm = {
+        product: 'Rental Management'
       };
-    
     }
   
   
