@@ -128,6 +128,10 @@
           controller: 'CustomerFacilityManagementPageController'
         })
         // .when('/customer-security', { templateUrl: 'pages/customer-security.html', controller: 'CustomerSecurityPageController' })
+        .when('/customer-builder', {
+          templateUrl: 'pages/customer-builder.html',
+          controller: 'CustomerBuilderPageController'
+        })
         .when('/customer-rental-owners', {
           templateUrl: 'pages/customer-rental-owners.html',
           controller: 'CustomerRentalOwnersPageController'
