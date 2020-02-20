@@ -10,7 +10,7 @@
                     <span class="mkd-value" ng-class="{'change-price-color': price>200}"></span><span class="mkd-price" ng-class="{'change-price-color': price>200}">{{price}} KWD</span> until {{regionUnit}} units
                 </h1>
             </div>
-            <h3 class="mkd-pricing-slider-title" ng-if="price>200">Billed at: ${{billedAt}} per unit/month</h3>
+            <h3 class="mkd-pricing-slider-title" ng-if="price>200">Billed at: {{billedAt}} KWD per unit/month</h3>
             <div class="mkd-pricing-slider-priceList col-md-2">
                 <label>Select your region</label>
                 <select name="priceByCountry" ng-model="countryPrice" ng-init="countryPrice = 'Kuwait'" ng-change="updatePrice(unit.value)" class="form-control" autofocus>
@@ -38,7 +38,7 @@
                 </div>
             </div> -->
             <div class="mkd-pricing-slider-description">
-                <p>Move the slider to indicate how many units you want to manage through TheHouseMonk. <br>A 'Unit' can be a bed, a seat or an apartment depending on your business</p>
+                <p>Move the slider to indicate how many units you want to manage through Aqaraty. <br>A 'Unit' can be a bed, a seat or an apartment depending on your business</p>
             </div>
         </div>
     </div></div>
