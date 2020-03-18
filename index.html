@@ -5,10 +5,11 @@
   <meta charset="utf-8">
   <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-  <meta name="description" content="Helping new age real estate companies give a great experience to their customers. Coliving, coworking, hostels and student housing, real estate developers and others can avail this one stop solution">
+  <meta name="description"
+    content="Helping new age real estate companies give a great experience to their customers. Coliving, coworking, hostels and student housing, real estate developers and others can avail this one stop solution">
   <meta name="author" content="">
   <title>Real Estate Customer Experience Management Platform | Property Management Solutions</title>
-  <base href="/aqaraty-website/">
+  <base href="/">
 
   <!-- Chrome, Firefox OS and Opera -->
   <meta name="theme-color" content="black">
@@ -37,17 +38,19 @@
 
 
   <!-- lib -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
-  crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/froala-design-blocks/1.0.2/css/froala_blocks.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/3.0.0/toaster.min.css" rel="stylesheet" />
-<link rel="stylesheet" href="assets/css/theme.css" type="text/css">
-<link rel="stylesheet" href="assets/css/custom.css" type="text/css">
-<link rel="stylesheet" href="assets/css/rzslider.css" type="text/css">
- 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-design-blocks/1.0.2/css/froala_blocks.min.css"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/3.0.0/toaster.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/theme.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/custom.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/rzslider.css" type="text/css">
+
 </head>
 
 <body ng-cloak ng-controller="MainController">
@@ -65,62 +68,64 @@
         </div>
         <div class="col-sm-1  d-block d-md-block d-lg-none d-xl-none text-left" style="width:100px;">
           <a class="navbar-brand" href="/aqaraty-website/">
-            <img src="assets/images/aqaraty-logo.jpg" height="40"  style="width:100px;" alt="image">
+            <img src="assets/images/aqaraty-logo.jpg" height="40" style="width:100px;" alt="image">
           </a>
         </div>
-        <button class="navbar-toggler offset-md-10 topnav-right" type="button" data-toggle="collapse" data-target="#navbarNav3"
-          aria-controls="navbarNav3" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler offset-md-10 topnav-right" type="button" data-toggle="collapse"
+          data-target="#navbarNav3" aria-controls="navbarNav3" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse justify-content-center offset-md-2 offset-lg-0 col-lg-8 col-md-7 navbar-collapse-1" id="navbarNav3">
+        <div
+          class="collapse navbar-collapse justify-content-center offset-md-2 offset-lg-0 col-lg-8 col-md-7 navbar-collapse-1"
+          id="navbarNav3">
           <ul class="navbar-nav justify-content-center col-12">
             <li class="nav-item">
-              <a class="nav-link" href="/aqaraty-website/"><span ng-class="{'nav-thm-active': isActive('/')}">Home</span></a>
+              <a class="nav-link" href="/aqaraty-website/"><span
+                  ng-class="{'nav-thm-active': isActive('/')}">{{"Home"|translate}}</span></a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" ng-class="{'nav-active':isAboutActive()}" href="#"
-              id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span ng-class="{'nav-thm-active': isAboutActive()}">About Us</span>
+              <a class="nav-link dropdown-toggle" ng-class="{'nav-active':isAboutActive()}" href="#" id="navbarDropdown"
+                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span ng-class="{'nav-thm-active': isAboutActive()}">{{"About Us"|translate}}</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="vision">Vision</a>
-                <a class="dropdown-item" href="our-team">Our Team</a>
+                <a class="dropdown-item" href="vision">{{"Vision"|translate}}</a>
+                <a class="dropdown-item" href="our-team">{{"Our Team"|translate}}</a>
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" ng-class="{'nav-active': isCustomerActive()}"
-                href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                <span ng-class="{'nav-thm-active': isCustomerActive()}">Solutions</span>
+              <a class="nav-link dropdown-toggle" ng-class="{'nav-active': isCustomerActive()}" href="#"
+                id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span ng-class="{'nav-thm-active': isCustomerActive()}">{{"Solutions"|translate}}</span>
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">                
-                <a class="dropdown-item" href="rental-management">Rental Management</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="rental-management">{{"Rental Management"|translate}}</a>
               </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="pricing"><span
-                  ng-class="{'nav-thm-active': isActive('/pricing')}">Pricing</span></a>
+                  ng-class="{'nav-thm-active': isActive('/pricing')}">{{"Pricing"|translate}}</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="partners"><span
-                  ng-class="{'nav-thm-active': isActive('/partners')}">Partners</span></a>
+                  ng-class="{'nav-thm-active': isActive('/partners')}">{{"Partners"|translate}}</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact-us"><span
-                ng-class="{'nav-thm-active': isActive('/contact-us')}">Contact us</span></a>
+                  ng-class="{'nav-thm-active': isActive('/contact-us')}">{{"Contact us"|translate}}</span></a>
             </li>
-            
+
             <li class="nav-item ">
               <a class="nav-link" href="privacy-policy">
-                <span ng-class="{'nav-thm-active': isActive('/privacy-policy')}">Privacy Policy</span>
+                <span ng-class="{'nav-thm-active': isActive('/privacy-policy')}">{{"Privacy Policy"|translate}}</span>
               </a>
             </li>
-            
-            
+
+
             <li class="nav-item d-sm-block  d-lg-none d-xl-none">
               <button class="btn btn-primary btn-sm border mt-2" role="button"
-                 ng-click="routeToRenatlLoginPage()">Login</button>
+                ng-click="routeToRenatlLoginPage()">{{"Login"|translate}}</button>
               <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="margin-top:13px">
                 <a class="dropdown-item" href="#" ng-click="routeToRenatlLoginPage()">Rental management</a>
               </div> -->
@@ -129,23 +134,25 @@
         </div>
 
         <ul class="navbar-nav col-2 justify-content-end offset-md-2 offset-lg-0 d-none d-md-none d-lg-flex">
-            <li class="nav-item">
-                <a class="btn btn-white ml-md-3 btn-sm border border-primary" style="margin-left: 10px" ng-click="routeToRenatlLoginPage()" role="button">Login</a>
-                <!-- <a class="btn btn-white ml-md-3 btn-sm raised nav-link" href="#" id="navbarDropdown"
+          <li class="nav-item">
+            <a class="btn btn-white ml-md-3 btn-sm border border-primary" style="margin-left: 10px"
+              ng-click="routeToRenatlLoginPage()" role="button">{{"Login"|translate}}</a>
+            <!-- <a class="btn btn-white ml-md-3 btn-sm raised nav-link" href="#" id="navbarDropdown"
                 role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                Login
               </a> -->
-              <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="margin-top:16px">
+            <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="margin-top:16px">
                   <a class="dropdown-item" href="#" ng-click="routeToRenatlLoginPage()">Rental management</a>
                 </div> -->
-            </li>
-            <li class="nav-item" style="margin-right: 28px">
-              <a class="btn btn-primary ml-md-3 btn-sm" href="choose-product">Sign Up <sup>Free</sup></a>
-            </li>
-            <!-- <li class="nav-item d-none d-md-none d-lg-block d-xl-block" style="margin-right: 28px">
-              <a class="btn btn-primary ml-md-3 btn-sm" href="/choose-product">Sign Up <sup>Free</sup></a>
+          </li>
+          <li class="nav-item" style="margin-right: 28px">
+            <a class="btn btn-primary ml-md-3 btn-sm"
+              href="choose-product">{{"Sign up"|translate}}<sup>{{"Free"|translate}}</sup></a>
+          </li>
+          <!-- <li class="nav-item d-none d-md-none d-lg-block d-xl-block" style="margin-right: 28px">
+              <a class="btn btn-primary ml-md-3 btn-sm" href="/choose-product">{{"Sign Up"|translate}} <sup>Free</sup></a>
             </li> -->
-          </ul>
+        </ul>
         <div class="col-0 col-md-1 col-lg-1 "></div>
       </nav>
     </div>
@@ -221,36 +228,40 @@
   <!-- Footer -->
   <bottom-footer></bottom-footer>
 
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"
-    ></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"></script>
 
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-route.min.js"
-    ></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-route.min.js"></script>
 
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"
-    ></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.11.2/ui-bootstrap-tpls.js"
-    ></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-animate.min.js"
-    ></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/3.0.0/toaster.min.js"
-    ></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-slider/7.0.0/rzslider.min.js"
-    ></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.11.2/ui-bootstrap-tpls.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-animate.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/3.0.0/toaster.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-slider/7.0.0/rzslider.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.7.9/angular-locale_ar.min.js"></script>
+  <script type="text/javascript" src="node_modules/angular-translate/dist/angular-translate.min.js"></script>
+  <script type="text/javascript"
+    src="node_modules/angular-translate/dist/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"
-    ></script>
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"
-    ></script>
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"
-    ></script>
-    
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 
-  <script type="text/javascript" src="app.js" ></script>
-<script src="services/country.service.js" ></script>
+
+  <script type="text/javascript" src="app.js"></script>
+  <script src="services/country.service.js"></script>
   <script type="text/ng-template" id="home.html">
 
     <div ng-controller="HomePageController">
@@ -259,17 +270,17 @@
           <div class="container pt-50 pb-50">
             <div class="row align-items-center">
               <div class="col-12 col-md-6 col-lg-5">
-                <h1>Give a world class customer experience</h1>
+                <h1>{{"Give a world class customer experience"|translate}}</h1>
                 <!-- <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
                   <img alt="image" class="img-fluid" src="assets/imgs/1-home-header.png">
                 </div> -->
                 <p class="lead" style="font-size: 1.15rem;color:#F5F0E0;font-weight:400;">
-                  Unlock the benefits of connecting your team, customers and real estate through the same platform.
+                  {{"Unlock the benefits of connecting your team, customers and real estate through the same platform."|translate}}
                 </p>
                 <p class="mt-4">
-                  <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1 overflow-hidden" style=" white-space: normal" href="choose-product">START A FREE TRIAL</a>
+                  <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1 overflow-hidden" style=" white-space: normal" href="choose-product">{{"START A FREE TRIAL"|translate}}</a>
                   <a class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1"  data-toggle="modal"
-                  data-target="#exampleModal">BOOK A FREE DEMO</a>
+                  data-target="#exampleModal">{{"BOOK A FREE DEMO"|translate}}</a>
                 </p>
               </div>
               <!-- <div class="d-none d-sm-none d-md-block col-10 col-sm-6 col-md-6 col-lg-7 m-auto m-md-0">
@@ -283,22 +294,22 @@
           <div class="container">
             <div class="row">
               <div class="col-12 col-sm-5 col-md">
-                <h3><strong>10Mn+ sqft</strong></h3>
-                <p>Managed via Aqaraty solutions</p>
+                <h3><strong>{{"500 Thousand + sqmt"|translate}}</strong></h3>
+                <p>{{"Managed via Aqaraty solutions"|translate}}</p>
               </div>
               <div class="offset-sm-1 offset-md-1 col-12 col-sm-5 col-md pt-3 pt-sm-0 ">
-                <h3><strong>10k+ users</strong></h3>
-                <p>Use our solutions daily</p>
+                <h3><strong>{{"300+ users"|translate}}</strong></h3>
+                <p>{{"Use our solutions daily"|translate}}</p>
               </div>
       
               <div class="offset-md-1 col-12 col-sm-5 col-md pt-3 pt-md-0">
-                <h3><strong>10+ cities</strong></h3>
-                <p>Where Aqaraty has been deployed</p>
+                <h3><strong>{{"10+ cities"|translate}}</strong></h3>
+                <p>{{"Where Aqaraty has been deployed"|translate}}</p>
               </div>
       
               <div class="offset-sm-1 offset-md-1 col-12 col-sm-5 col-md pt-3 pt-md-0">
-                <h3><strong>100+ service providers</strong></h3>
-                <p>Work with us</p>
+                <h3><strong>{{"100+ service providers"|translate}}</strong></h3>
+                <p>{{"Work with us"|translate}}</p>
               </div>
             </div>
           </div>
@@ -508,7 +519,7 @@
         <section class="fdb-block pt-50 pb-50" id="for-property-managers">
           <div class="container">
               <div>
-                <h1>A complete technology solution for your customers and your team</h1>
+                <h1>{{"A complete technology solution for your customers and your team"|translate}}</h1>
               </div>
             <div class="row align-items-center">
             </div>
@@ -517,34 +528,34 @@
                 <img alt="image" class="img-fluid" style="margin-left: 60px;height: 300px" src="assets/images/app-1-portrait.png">
               </div>
               <div class="col-12 col-md-6">
-                <h2 class="thm-scroll-heading">For Your Customers</h2>
+                <h2 class="thm-scroll-heading">{{"For Your Customers"|translate}}</h2>
                 <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
                   <img alt="image" class="img-fluid" style="margin-left: 60px;height: 300px" src="assets/images/app-1-portrait.png">
                 </div>
                 <p class="lead thm-content-body grey-text">
-                  White labelled mobile apps to boost their experience
+                  {{"White labelled mobile apps to boost their experience"|translate}}
                 </p>
                 <div class="row">
                   <div class="col-12">
-                    <i class="fas fa-check primary-color"></i> Make Rent and Other Payments
+                    <i class="fas fa-check primary-color"></i> {{"Make Rent and Other Payments"|translate}}
                   </div>
                   <div class="col-12">
-                    <i class="fas fa-check primary-color"></i> Interact with their neighbours
+                    <i class="fas fa-check primary-color"></i> {{"Interact with their neighbours"|translate}}
                   </div>
                   <div class="col-12">
-                    <i class="fas fa-check primary-color"></i> Raise Complaints
+                    <i class="fas fa-check primary-color"></i> {{"Raise Complaints"|translate}}
                   </div>
                   <!-- <div class="col-12">
                     <i class="fas fa-check primary-color"></i> Invite Guests
                   </div> -->
                   <div class="col-12">
-                      <i class="fas fa-check primary-color"></i> Book Facilities
+                      <i class="fas fa-check primary-color"></i> {{"Book Facilities"|translate}}
                   </div>
                 </div>
                 <p class="mt-4">
-                    <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1" href="choose-product">START A FREE TRIAL</a>
+                    <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1" href="choose-product">{{"START A FREE TRIAL"|translate}}</a>
                     <a  style="border-color:  !important" class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1" data-toggle="modal"
-                    data-target="#exampleModal">BOOK A FREE DEMO</a>
+                    data-target="#exampleModal">{{"BOOK A FREE DEMO"|translate}}</a>
                 </p>
               </div>
             </div>
@@ -555,37 +566,37 @@
             <div class="row align-items-center">
               <!-- removed  ml-auto pt-5 pt-md-0 from class -->
               <div class="col-12 col-md-6">
-                <h2 class="thm-scroll-heading">For Your Team</h2>
+                <h2 class="thm-scroll-heading">{{"For Your Team"|translate}}</h2>
                 <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
                   <img alt="image" class="img-fluid" src="assets/images/forBusinesses.png">
                 </div>
                 <p class="lead thm-content-body grey-text">
-                  State of the art Web + Mobile ERP system to give a great customer experience
+                  {{"State of the art Web + Mobile ERP system to give a great customer experience"|translate}}
                 </p>
                 <div class="row">
                   <div class="col-12 black-text">
-                    <i class="fas fa-check primary-color"></i> Inventory Management
+                    <i class="fas fa-check primary-color"></i> {{"Inventory Management"|translate}}
                   </div>
                   <div class="col-12 black-text">
-                    <i class="fas fa-check primary-color"></i> Helpdesk and Ticketing
+                    <i class="fas fa-check primary-color"></i> {{"Helpdesk and Ticketing"|translate}}
                   </div>
                   <div class="col-12 black-text">
-                    <i class="fas fa-check primary-color"></i> Payment Collections and Reconciliation
+                    <i class="fas fa-check primary-color"></i> {{"Payment Collections and Reconciliation"|translate}}
                   </div>
                   <div class="col-12 black-text">
-                    <i class="fas fa-check primary-color"></i> Facility and Asset Management
+                    <i class="fas fa-check primary-color"></i> {{"Facility and Asset Management"|translate}}
                   </div>
                   <!-- <div class="col-12 black-text">
-                      <i class="fas fa-check primary-color"></i> Visitor Management
+                      <i class="fas fa-check primary-color"></i> {{"Visitor Management"|translate}}
                   </div> -->
                   <div class="col-12 black-text">
-                      <i class="fas fa-check primary-color"></i> Digital Noticeboard
+                      <i class="fas fa-check primary-color"></i> {{"Digital Noticeboard"|translate}}
                     </div>
                 </div>
                 <p class="mt-4">
-                    <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1" href="choose-product">START A FREE TRIAL</a>
+                    <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1" href="choose-product">{{"START A FREE TRIAL"|translate}}</a>
                     <a  style="border-color:  !important" class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1" data-toggle="modal"
-                    data-target="#exampleModal">BOOK A FREE DEMO</a>
+                    data-target="#exampleModal">{{"BOOK A FREE DEMO"|translate}}</a>
                 </p>
               </div>
               <div class="d-none d-sm-none d-md-block col-10 col-sm-6 col-md-6 col-lg-6 m-auto m-md-0">
@@ -788,9 +799,8 @@
             <div class="row">
               <div class="col-lg-12 text-center">
                 <br>
-                <h1>Testimonial</h1>
-                <h3 >"Aqaraty helped us map each business process back onto a customer pain point. We are definitely giving a better experience
-                  to our tenants because of them."
+                <h1>{{"Testimonial"|translate}}</h1>
+                <h3 >{{"Aqaraty helped us map each business process back onto a customer pain point. We are definitely giving a better experience to our tenants because of them."|translate}}
                 </h3>
                 <h3><b>P. Evan, Co-Founder & COO</b></h3>
               </div>
@@ -802,31 +812,31 @@
           <div class="container">
               <div class="row text-center">
                 <div class="col-12">
-                  <h1>4 Simple Reasons To Sign Up With Us</h1>
+                  <h1>{{"4 Simple Reasons To Sign Up With Us"|translate}}</h1>
                 </div>
               </div>
           
               <div class="row text-center justify-content-center mt-5">
                 <div class="col-12 col-md-6 col-sm-6 col-xl-3 m-md-auto">
                   <img alt="image" style="height: 150px" src="img/assets/pay-rent-icon.png">
-                  <h3><strong>Pay Rent</strong></h3>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores aut.</p>
+                  <h3><strong>{{"Pay Rent"|translate}}</strong></h3>
+                  <p>{{"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores aut."|translate}}</p>
                 </div>
                 
                 <div class="col-12 col-md-6 col-sm-6 col-xl-3 m-auto pt-4 pt-sm-0">
                     <img alt="image" style="height: 150px" src="img/assets/allin1-icon.png">
-                    <h3><strong>All In 1</strong></h3>
-                    <p>Bring all your company functions on 1 platform and integrate operations for a smooth experience </p>
+                    <h3><strong>{{"All In 1"|translate}}</strong></h3>
+                    <p>{{"Bring all your company functions on 1 platform and integrate operations for a smooth experience"|translate}} </p>
                   </div>
                   <div class="col-12 col-md-6 col-sm-6 col-xl-3 m-md-auto">
                     <img alt="image" style="height: 150px" src="img/assets/maintenance-icon.png">
-                    <h3><strong>Request Maintenance</strong></h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores aut.</p>
+                    <h3><strong>{{"Request Maintenance"|translate}}</strong></h3>
+                    <p>{{"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores aut."|translate}}</p>
                   </div>
                 <div class="col-12 col-md-6 col-sm-6 col-xl-3 m-auto pt-4 pt-sm-0">
                   <img alt="image" style="height: 150px" src="img/assets/save-money-icon.png">
-                  <h3><strong>Save Money</strong></h3>
-                  <p>With no setup fee, and a pricing plan that scales with your organization, it's easy to get started</p>
+                  <h3><strong>{{"Save Money"|translate}}</strong></h3>
+                  <p>{{"With no setup fee, and a pricing plan that scales with your organization, it's easy to get started"|translate}}</p>
                 </div>
                 
           
@@ -839,9 +849,9 @@
               <div class="container">
                 <div class="row justify-content-center">
                   <div class="col-12 text-center">
-                    <h1>For Every Type Of Real Estate Business</h1>
+                    <h1>{{"For Every Type Of Real Estate Business"|translate}}</h1>
                     <p class="lead">
-                      A wide range of companies use Aqaraty to give a A+ customer experience
+                      {{"A wide range of companies use Aqaraty to give a A+ customer experience"|translate}}
                     </p>
                   </div>
                 </div>
@@ -850,7 +860,7 @@
                   <div class="col-12 col-sm-8 col-md-4 col-lg-6 m-sm-auto ml-md-auto mr-md-0 pt-5 pt-md-0">
                     <a  href="customer-builder">
                     <img alt="image" class="img-fluid rounded" src="img/assets/builders.jpg">
-                    <h3 style="color: #F5F0E0"><strong>Real Estate Developers</strong></h3>
+                    <h3 style="color: #F5F0E0"><strong>{{"Real Estate Developers"|translate}}</strong></h3>
                     </a>
                   </div>
                                  
@@ -858,7 +868,7 @@
                   <div class="col-12 col-sm-8 col-md-4 col-lg-6 m-sm-auto mr-md-auto ml-md-0">
                     <a  href="customer-owner-association">
                       <img alt="image" class="img-fluid rounded" src="img/assets/HOA.jpg">
-                      <h3 style="color: #F5F0E0"><strong>Home Owner Associations</strong></h3>
+                      <h3 style="color: #F5F0E0"><strong>{{"Home Owner Associations"|translate}}</strong></h3>
                     </a>
                     </div>
 
@@ -869,21 +879,21 @@
                     <div class="col-12 col-sm-8 col-md-4 col-lg-6 m-sm-auto pt-5 pt-md-0">
                       <a  href="customer-facility-management">
                       <img alt="image" class="img-fluid rounded" src="img/assets/Facility2.jpg">
-                      <h3 style="color: #F5F0E0"><strong>Facility Management</strong></h3>
+                      <h3 style="color: #F5F0E0"><strong>{{"Facility Management"|translate}}</strong></h3>
                       </a>
                     </div>
               
                     <div class="col-12 col-sm-8 col-md-4 col-lg-6 m-sm-auto pt-5 pt-md-0">
                       <a  href="rental-management">
                         <img alt="image" class="img-fluid rounded" src="img/assets/rebntalBuild6.jpg">
-                        <h3 style="color: #F5F0E0"><strong>Rental & Property Management</strong></h3>
+                        <h3 style="color: #F5F0E0"><strong>{{"Rental & Property Management"|translate}}</strong></h3>
                       </a>
                     </div>
                     <div class="offset-md-3 col-md-6 center">
                         <p class="mt-4">
-                            <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1" href="choose-product">START A FREE TRIAL</a>
+                            <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1" href="choose-product">{{"START A FREE TRIAL"|translate}}</a>
                             <a  style="color: gray !important" class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1" data-toggle="modal"
-                            data-target="#exampleModal">BOOK A FREE DEMO</a>
+                            data-target="#exampleModal">{{"BOOK A FREE DEMO"|translate}}</a>
                           </p>
                         </div>
                 </div>
@@ -893,7 +903,7 @@
                 <div class="container">
                   <div class="row">
                     <div class="col text-center">
-                      <h1>Join 100's of Real Estate Business Who Are Already On Aqaraty</h1>
+                      <h1>{{"Join 100's of Real Estate Business Who Are Already On Aqaraty"|translate}}</h1>
                     </div>
                   </div>
               
@@ -957,47 +967,45 @@
                           <div class="row text-center justify-content-center">
                             <div class="col-12 col-md-9 col-lg-7">
 
-                              <h1>Contact Us</h1>
-                              <p> Get an instant call back from our team to answer any queries you may have </p>
+                              <h1>{{"Contact Us"|translate}}</h1>
+                              <p> {{"Get an instant call back from our team to answer any queries you may have"|translate}} </p>
                             </div>
                           </div>
                 
                           <div class="row justify-content-center pt-4">
-                            <div class="col-12 col-md-8">
-                              <form name="callbackForm" novalidate>
-                                <div class="row">
-                                  <div class="col-12 col-md">
-                                      <label>Name: </label>
+                            <div  class="col-12 col-md-8">
+                              <form  name="callbackForm" novalidate>
+                                <div  class="row">
+                                  <div dir="rtl" class="col-12 col-md">
+                                      <label class="float-right">{{"Name:"|translate}} </label>
                                     <input type="text" name="name" ng-disabled="progressBarLoading" class="form-control"
-                                      placeholder="Enter your name" ng-model="callbackModalForm.name" required>
-                                    <p ng-show="callbackForm.name.$invalid && callbackForm.name.$touched" class="help-block pt-1">name is
-                                      required</p>
+                                      placeholder="{{'Enter your name'|translate}}" ng-model="callbackModalForm.name" required>
+                                    <p ng-show="callbackForm.name.$invalid && callbackForm.name.$touched" class="help-block pt-1">name is required</p>
                                   </div>
-                                  <div class="col-12 col-md mt-4 mt-md-0">
-                                      <label>Country Code: </label>
+                                  <div  class="col-12 col-md mt-4 mt-md-0">
+                                      <label class="float-right">{{"Country Code:"|translate}} </label>
                                       <select name="countryCode" ng-model="callbackModalForm.countryCode" ng-init="callbackModalForm.countryCode = '+965'" class="form-control" >
                                         <option ng-repeat="cityObj in citiCodes" value="{{cityObj.code}}">{{cityObj.code}}</option>
                                       </select>
                                   </div>
                                   <div class="col-12 col-md mt-4 mt-md-0">
-                                    <label>Phone Number: </label>
+                                    <label class="float-right">{{"Phone Number:"|translate}} </label>
                                   <input type="number" name="phoneNumber" ng-disabled="progressBarLoading" class="form-control"
-                                    placeholder="Enter your phone  number" ng-model="callbackModalForm.phoneNumber" ng-minlength="4" required>
+                                    placeholder="{{'Enter your phone'|translate}}" ng-model="callbackModalForm.phoneNumber" ng-minlength="4" required>
                                   <p ng-show="callbackForm.phoneNumber.$invalid && callbackForm.phoneNumber.$touched" class="help-block pt-1">
-                                    phone number is
-                                    required and must be length 4</p>
+                                    {{"phone number is required and must be length 4"|translate}}</p>
                                 </div>
                                 </div>
                 
                                 <div class="row mt-4">
-                                  <div class="col">
-                                    <label>Message: </label>
-                                    <textarea class="form-control" placeholder="Leave your message here" ng-model="callbackModalForm.message" rows="3"></textarea>
+                                  <div dir="rtl"class="col">
+                                    <label  class="float-right">{{"Message:"|translate}} </label>
+                                    <textarea class="form-control" placeholder="{{'Leave your message here'|translate}}" ng-model="callbackModalForm.message" rows="3"></textarea>
                                   </div>
                                 </div>
                                 <div class="row mt-4">
                                   <div class="col text-center">
-                                    <button type="submit" ng-disabled="callbackForm.$invalid" ng-click="onCallbackSubmitHandler(callbackForm)" class="btn btn-primary">Submit</button>
+                                    <button type="submit" ng-disabled="callbackForm.$invalid" ng-click="onCallbackSubmitHandler(callbackForm)" class="btn btn-primary">{{"Submit"|translate}}</button>
                                   </div>
                                 </div>
                               </form>

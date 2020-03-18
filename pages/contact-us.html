@@ -3,7 +3,7 @@
         <div class="container">
           <div class="row text-center justify-content-center">
             <div class="col-12 col-md-8 col-lg-7">
-              <h1>Contact Us</h1>
+              <h1>{{"Contact Us"|translate}}</h1>
               <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt odit qui ex magnam debitis aut quisquam? Illum unde consequatur dolorem veritatis atque.</p>
             </div>
           </div>
@@ -17,21 +17,21 @@
             <div class="col-12 col-md-6 pt-5 pt-md-0">
               <form>
                 <div class="row">
-                  <div class="col">
-                      <label>Name</label>
-                    <input type="text" ng-model="contactUsForm.name" class="form-control" placeholder="Enter Name">
+                  <div dir="rtl" class="col">
+                      <label class="float-right">{{"Name"|translate}}</label>
+                    <input type="text" ng-model="contactUsForm.name" class="form-control" placeholder="{{'Enter Name'|translate}}">
                   </div>
                 </div>
 
                 <div class="row mt-4">
                     <div class="col">
-                        <label>Country Code: </label>
+                        <label class="float-right">{{"Country Code:"|translate}} </label>
                         <select name="countryCode" ng-model="contactUsForm.countryCode" ng-init="contactUsForm.countryCode = '+965'" class="form-control" >
                         <option ng-repeat="cityObj in citiCodes" value="{{cityObj.code}}">{{cityObj.code}}</option>
                         </select>
                     </div>
                     <div class="col">
-                        <label>Phone Number: </label>
+                        <label class="float-right">{{"Phone Number:"|translate}} </label>
                         <input type="number" name="phoneNumber" ng-disabled="progressBarLoading" class="form-control"
                         placeholder="Enter your phone  number" ng-model="contactUsForm.phoneNumber" ng-minlength="4" required>
                         <!-- <p ng-show="callbackForm.phoneNumber.$invalid && callbackForm.phoneNumber.$touched" class="help-block pt-1">
@@ -41,18 +41,18 @@
                 </div>
       
                 <div class="row mt-4">
-                  <div class="col">
-                    <input type="email" ng-model="contactUsForm.email" class="form-control" placeholder="Email">
+                  <div dir="rtl" class="col">
+                    <input type="email" ng-model="contactUsForm.email" class="form-control" placeholder="{{'Email'|translate}}">
+                  </div>
+                </div>
+                <div class="row mt-4">
+                  <div dir="rtl" class="col">
+                    <textarea class="form-control" name="message" rows="3" placeholder="{{'How can we help?'|translate}}"></textarea>
                   </div>
                 </div>
                 <div class="row mt-4">
                   <div class="col">
-                    <textarea class="form-control" name="message" rows="3" placeholder="How can we help?"></textarea>
-                  </div>
-                </div>
-                <div class="row mt-4">
-                  <div class="col">
-                    <button type="submit" ng-click="onContactUsSubmitHandler()" class="btn btn-primary">Submit</button>
+                    <button type="submit" ng-click="onContactUsSubmitHandler()" class="btn btn-primary float-right">{{"Submit"|translate}}</button>
                   </div>
                 </div>
               </form>
