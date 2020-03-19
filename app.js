@@ -23,7 +23,7 @@
 
 
 
-      $translateProvider.preferredLanguage('');
+      $translateProvider.preferredLanguage('ar');
     }])
     .controller('MainController', MainController)
     .controller('CoreController', CoreController)
