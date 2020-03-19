@@ -3,7 +3,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="callbackModalLabel">Get a call back</h5>
+        <h5 class="modal-title" id="callbackModalLabel">{{"Get a call back"|translate}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -12,45 +12,44 @@
         <div class="progress" ng-show="progressBarLoading">
           <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0"
             aria-valuemax="100" style="width: 100%">
-            <span>Please wait<span class="dotdotdot"></span></span>
+            <span>{{"Please wait"|translate}}<span class="dotdotdot"></span></span>
           </div>
         </div>
 
         <form name="callbackForm" novalidate>
           <div class="row">
-            <div class="col">
-              <label>Name:</label>
+            <div class="col text-align-start direction">
+              <label class="float-right">{{"Name:"|translate}}</label>
               <input type="text" name="name" ng-disabled="progressBarLoading" class="form-control"
                 placeholder="Enter your name" ng-model="callbackModalForm.name" required>
-              <p ng-show="callbackForm.name.$invalid && callbackForm.name.$touched" class="help-block pt-1">name is
-                required</p>
+              <p ng-show="callbackForm.name.$invalid && callbackForm.name.$touched" class="help-block pt-1">
+                {{"name is required"|translate}}</p>
             </div>
           </div>
 
           <div class="row mt-4">
             <div class="col-4 col-md-4">
-              <label class="d-none d-sm-block">Country Code:</label>
-              <label class="d-block d-sm-none">Co. Code</label>
+              <label  class="d-none d-sm-block text-align-start direction ">{{"Country Code:"|translate}}</label>
+              <label class="d-block d-sm-none">{{"Co. Code"|translate}}</label>
               <select name="countryCode" ng-model="callbackModalForm.countryCode"
                 ng-init="callbackModalForm.countryCode = '+965'" class="form-control">
                 <option ng-repeat="cityObj in citiCodes" value="{{cityObj.code}}">{{cityObj.code}}</option>
               </select>
             </div>
-            <div class="col-8 col-md-8">
-              <label>Phone Number:</label>
+            <div  class="col-8 col-md-8 direction text-align-start">
+              <label  class="float-right"> {{"Phone Number:"|translate}}</label>
               <input type="number" name="phoneNumber" ng-disabled="progressBarLoading" class="form-control"
                 placeholder="Enter your phone  number" ng-model="callbackModalForm.phoneNumber" ng-minlength="4"
                 required>
             </div>
             <p ng-show="callbackForm.phoneNumber.$invalid && callbackForm.phoneNumber.$touched" class="help-block pt-1">
-              phone number is
-              required and must be length 4
+              {{"phone number is required and must be length 4"|translate}}
             </p>
           </div>
 
           <div class="row mt-4">
             <div class="col">
-              <label>Email:</label>
+              <label>{{"Email:"|translate}}</label>
               <input type="email" name="email" ng-disabled="progressBarLoading" class="form-control"
                 placeholder="Enter your email address" ng-model="callbackModalForm.email" required>
 
@@ -58,19 +57,20 @@
           </div>
           <div class="row mt-4">
             <div class="col">
-              <label>Message: </label>
+              <label>{{"Message:"|translate}} </label>
               <textarea class="form-control" placeholder="Leave your message here" ng-model="callbackModalForm.message"
                 rows="3"></textarea>
             </div>
           </div>
           <div class="modal-footer">
-            <button type="submit"data-dismiss="modal" id="submitFormButton" class="btn btn-primary" ng-disabled="progressBarLoading || callbackForm.$invalid"
-              ng-click="onCallbackSubmitHandler(callbackForm)">Submit</button>
+            <button type="submit" data-dismiss="modal" id="submitFormButton" class="btn btn-primary"
+              ng-disabled="progressBarLoading || callbackForm.$invalid"
+              ng-click="onCallbackSubmitHandler(callbackForm)">{{"Submit"|translate}}</button>
           </div>
         </form>
 
       </div>
-     
+
     </div>
   </div>
 </div>

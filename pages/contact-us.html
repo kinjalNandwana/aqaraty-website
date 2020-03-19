@@ -1,63 +1,71 @@
 <div ng-controller="ContactUsPageController">
-    <section class="fdb-block">
-        <div class="container">
-          <div class="row text-center justify-content-center">
-            <div class="col-12 col-md-8 col-lg-7">
-              <h1>{{"Contact Us"|translate}}</h1>
-              <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt odit qui ex magnam debitis aut quisquam? Illum unde consequatur dolorem veritatis atque.</p>
-            </div>
-          </div>
-      
-          <div class="row pt-4">
-            <div class="col-12 col-md-6">
-              <iframe class="map" src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;coord=29.363979,47.9596318&amp;q=14%20Hamad%20Al%20Saqer%20St%2C%20Kuwait%20City%2C%20Kuwait+(Fidelity%20General%20Trading%20and%20Contracting)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" width="100%" height="400" style="border:0" allowfullscreen=""></iframe>
-              
-            </div>
-      
-            <div class="col-12 col-md-6 pt-5 pt-md-0">
-              <form>
-                <div class="row">
-                  <div dir="rtl" class="col">
-                      <label class="float-right">{{"Name"|translate}}</label>
-                    <input type="text" ng-model="contactUsForm.name" class="form-control" placeholder="{{'Enter Name'|translate}}">
-                  </div>
-                </div>
+  <section class="fdb-block">
+    <div class="container">
+      <div class="row text-center justify-content-center">
+        <div class="col-12 col-md-8 col-lg-7">
+          <h1>{{"Contact Us"|translate}}</h1>
+          <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt odit qui ex magnam debitis
+            aut quisquam? Illum unde consequatur dolorem veritatis atque.</p>
+        </div>
+      </div>
 
-                <div class="row mt-4">
-                    <div class="col">
-                        <label class="float-right">{{"Country Code:"|translate}} </label>
-                        <select name="countryCode" ng-model="contactUsForm.countryCode" ng-init="contactUsForm.countryCode = '+965'" class="form-control" >
-                        <option ng-repeat="cityObj in citiCodes" value="{{cityObj.code}}">{{cityObj.code}}</option>
-                        </select>
-                    </div>
-                    <div class="col">
-                        <label class="float-right">{{"Phone Number:"|translate}} </label>
-                        <input type="number" name="phoneNumber" ng-disabled="progressBarLoading" class="form-control"
-                        placeholder="Enter your phone  number" ng-model="contactUsForm.phoneNumber" ng-minlength="4" required>
-                        <!-- <p ng-show="callbackForm.phoneNumber.$invalid && callbackForm.phoneNumber.$touched" class="help-block pt-1">
+      <div class="row pt-4">
+        <div class="col-12 col-md-6">
+          <iframe class="map"
+            src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;coord=29.363979,47.9596318&amp;q=14%20Hamad%20Al%20Saqer%20St%2C%20Kuwait%20City%2C%20Kuwait+(Fidelity%20General%20Trading%20and%20Contracting)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
+            frameborder="0" width="100%" height="400" style="border:0" allowfullscreen=""></iframe>
+
+        </div>
+
+        <div class="col-12 col-md-6 pt-5 pt-md-0 text-align-start direction">
+          <form>
+            <div class="row">
+              <div class="col">
+                <label>{{"Name"|translate}}</label>
+                <input type="text" ng-model="contactUsForm.name" class="form-control"
+                  placeholder="{{'Enter Name'|translate}}">
+              </div>
+            </div>
+
+            <div class="row mt-4">
+              <div class="col">
+                <label>{{"Country Code:"|translate}} </label>
+                <select name="countryCode" ng-model="contactUsForm.countryCode"
+                  ng-init="contactUsForm.countryCode = '+965'" class="form-control">
+                  <option ng-repeat="cityObj in citiCodes" value="{{cityObj.code}}">{{cityObj.code}}</option>
+                </select>
+              </div>
+              <div class="col">
+                <label>{{"Phone Number:"|translate}} </label>
+                <input type="number" name="phoneNumber" ng-disabled="progressBarLoading" class="form-control"
+                  placeholder="Enter your phone  number" ng-model="contactUsForm.phoneNumber" ng-minlength="4" required>
+                <!-- <p ng-show="callbackForm.phoneNumber.$invalid && callbackForm.phoneNumber.$touched" class="help-block pt-1">
                         phone number is
                         required and must be length 4</p> -->
-                    </div>
-                </div>
-      
-                <div class="row mt-4">
-                  <div dir="rtl" class="col">
-                    <input type="email" ng-model="contactUsForm.email" class="form-control" placeholder="{{'Email'|translate}}">
-                  </div>
-                </div>
-                <div class="row mt-4">
-                  <div dir="rtl" class="col">
-                    <textarea class="form-control" name="message" rows="3" placeholder="{{'How can we help?'|translate}}"></textarea>
-                  </div>
-                </div>
-                <div class="row mt-4">
-                  <div class="col">
-                    <button type="submit" ng-click="onContactUsSubmitHandler()" class="btn btn-primary float-right">{{"Submit"|translate}}</button>
-                  </div>
-                </div>
-              </form>
+              </div>
             </div>
-          </div>
+
+            <div class="row mt-4">
+              <div class="col">
+                <input type="email" ng-model="contactUsForm.email" class="form-control"
+                  placeholder="{{'Email'|translate}}">
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col">
+                <textarea class="form-control" name="message" rows="3"
+                  placeholder="{{'How can we help?'|translate}}"></textarea>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col">
+                <button type="submit" ng-click="onContactUsSubmitHandler()"
+                  class="btn btn-primary float-right">{{"Submit"|translate}}</button>
+              </div>
+            </div>
+          </form>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 </div>

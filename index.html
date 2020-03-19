@@ -269,7 +269,7 @@
         <section class="fdb-block banner" id="main">
           <div class="container pt-50 pb-50">
             <div class="row align-items-center">
-              <div class="col-12 col-md-6 col-lg-5">
+              <div class="col-12 col-md-6 col-lg-5 text-align-start direction"  >
                 <h1>{{"Give a world class customer experience"|translate}}</h1>
                 <!-- <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
                   <img alt="image" class="img-fluid" src="assets/imgs/1-home-header.png">
@@ -290,7 +290,7 @@
           </div>
         </section>
       
-        <section class="fdb-block light-blue-background pt-50 pb-50" id="stats">
+        <section class="fdb-block light-blue-background pt-50 pb-50 text-align-start direction" id="stats">
           <div class="container">
             <div class="row">
               <div class="col-12 col-sm-5 col-md">
@@ -565,7 +565,7 @@
           <div class="container">
             <div class="row align-items-center">
               <!-- removed  ml-auto pt-5 pt-md-0 from class -->
-              <div class="col-12 col-md-6">
+              <div class="col-12 col-md-6 text-align-start direction"  >
                 <h2 class="thm-scroll-heading">{{"For Your Team"|translate}}</h2>
                 <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
                   <img alt="image" class="img-fluid" src="assets/images/forBusinesses.png">
@@ -972,24 +972,24 @@
                             </div>
                           </div>
                 
-                          <div class="row justify-content-center pt-4">
+                          <div class="row justify-content-center pt-4 text-align-start direction">
                             <div  class="col-12 col-md-8">
                               <form  name="callbackForm" novalidate>
                                 <div  class="row">
-                                  <div dir="rtl" class="col-12 col-md">
-                                      <label class="float-right">{{"Name:"|translate}} </label>
+                                  <div  class="col-12 col-md">
+                                      <label >{{"Name:"|translate}} </label>
                                     <input type="text" name="name" ng-disabled="progressBarLoading" class="form-control"
                                       placeholder="{{'Enter your name'|translate}}" ng-model="callbackModalForm.name" required>
                                     <p ng-show="callbackForm.name.$invalid && callbackForm.name.$touched" class="help-block pt-1">name is required</p>
                                   </div>
                                   <div  class="col-12 col-md mt-4 mt-md-0">
-                                      <label class="float-right">{{"Country Code:"|translate}} </label>
+                                      <label >{{"Country Code:"|translate}} </label>
                                       <select name="countryCode" ng-model="callbackModalForm.countryCode" ng-init="callbackModalForm.countryCode = '+965'" class="form-control" >
                                         <option ng-repeat="cityObj in citiCodes" value="{{cityObj.code}}">{{cityObj.code}}</option>
                                       </select>
                                   </div>
                                   <div class="col-12 col-md mt-4 mt-md-0">
-                                    <label class="float-right">{{"Phone Number:"|translate}} </label>
+                                    <label >{{"Phone Number:"|translate}} </label>
                                   <input type="number" name="phoneNumber" ng-disabled="progressBarLoading" class="form-control"
                                     placeholder="{{'Enter your phone'|translate}}" ng-model="callbackModalForm.phoneNumber" ng-minlength="4" required>
                                   <p ng-show="callbackForm.phoneNumber.$invalid && callbackForm.phoneNumber.$touched" class="help-block pt-1">
@@ -998,7 +998,7 @@
                                 </div>
                 
                                 <div class="row mt-4">
-                                  <div dir="rtl"class="col">
+                                  <div class="col">
                                     <label  class="float-right">{{"Message:"|translate}} </label>
                                     <textarea class="form-control" placeholder="{{'Leave your message here'|translate}}" ng-model="callbackModalForm.message" rows="3"></textarea>
                                   </div>
