@@ -272,8 +272,8 @@
                                                 <p ng-show="callbackForm.name.$invalid && callbackForm.name.$touched"
                                                     class="help-block pt-1">{{"name is required"|translate}}</p>
                                             </div>
-                                            <div class="col-12 col-md mt-4 mt-md-0 ">
-                                                <label class="float-right">{{"Country Code:"|translate}} </label>
+                                            <div class="col-12 col-md mt-4 mt-md-0  text-align-start">
+                                                <label>{{"Country Code:"|translate}} </label>
                                                 <select name="countryCode" ng-model="callbackModalForm.countryCode"
                                                     ng-init="callbackModalForm.countryCode = '+91'"
                                                     class="form-control">
@@ -281,8 +281,8 @@
                                                         {{cityObj.code}}</option>
                                                 </select>
                                             </div>
-                                            <div class="col-12 col-md mt-4 mt-md-0 ">
-                                                <label class="float-right">{{"Phone Number:"|translate}} </label>
+                                            <div class="col-12 col-md mt-4 mt-md-0  text-align-start">
+                                                <label>{{"Phone Number:"|translate}} </label>
                                                 <input type="number" name="phoneNumber" ng-disabled="progressBarLoading"
                                                     class="form-control"
                                                     placeholder="{{'Enter your phone  number'|translate}}"
@@ -294,8 +294,8 @@
                                         </div>
 
                                         <div class="row mt-4">
-                                            <div class="col">
-                                                <label class="float-right">{{"Message:"|translate}} </label>
+                                            <div class="col text-align-start">
+                                                <label>{{"Message:"|translate}} </label>
                                                 <textarea class="form-control" placeholder="Leave your message here"
                                                     ng-model="callbackModalForm.message" rows="3"></textarea>
                                             </div>

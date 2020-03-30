@@ -1,5 +1,5 @@
 (function () {
-  angular.module('app', ['toaster', 'rzSlider', 'ngAnimate', 'ngRoute', 'pascalprecht.translate'])
+  angular.module('app', ['toaster', 'rzSlider', 'ngAnimate', 'ngMaterial', 'ngRoute', 'pascalprecht.translate'])
 
   angular.module('app')
     .config(['$routeProvider', '$locationProvider', RouteConfig])
@@ -14,17 +14,19 @@
     //     } 
     //  })    
     .config(['$translateProvider', function ($translateProvider) {
-
-
       $translateProvider.useStaticFilesLoader({
         prefix: 'assets/i18n/locale-',
         suffix: '.json'
       });
 
+      // $translateProvider.preferredLanguage('en');
+      $translateProvider.use('ar')
+
+      // document.documentElement.style.setProperty('--dir', $translateProvider.use() == 'ar' ? 'rtl' : 'ltr')
 
 
-      $translateProvider.preferredLanguage('ar');
     }])
+    .service('translateService', ['$translate', translateService])
     .controller('MainController', MainController)
     .controller('CoreController', CoreController)
     .controller('HomePageController', HomePageController)
@@ -302,13 +304,30 @@
 
   }
 
-  function MainController($scope, $location, $controller, countryCodeService) {
+  function MainController($scope, $location, $controller, countryCodeService, $translate, translateService) {
 
     $controller('CoreController', {
       $scope: $scope
     });
     var fetchCodes = [];
     var finalCodeArray = [];
+    $scope.languages = [
+      {
+        language: "en",
+        name: "English",
+        dir: 'ltr'
+      },
+      {
+        language: "ar",
+        name: "Arabic",
+        dir: 'rtl'
+      }
+    ];
+
+    $scope.selectLanguage = translateService.getCurrentLanguage()
+    $scope.ChangeLanguage = function (langObject) {
+      translateService.setCurrentLanguage(langObject.language)
+    }
 
     for (var i = 0; i < countryCodeService.countryCodeList.length; i++) {
       if (!fetchCodes.includes(countryCodeService.countryCodeList[i].code)) {
@@ -342,6 +361,26 @@
     }
 
 
+  }
+
+
+  function translateService($translate) {
+    var translateService = {};
+    var language = $translate.use()
+    translateService.getCurrentLanguage = function () {
+      return language
+    }
+
+    translateService.setCurrentLanguage = function (lang) {
+      $translate.use(lang)
+    }
+
+    translateService.setDirection = function (dir) {
+      document.documentElement.style.setProperty("--dir", $translate.use() == 'ar' ? 'rtl' : 'ltr')
+    }
+
+
+    return translateService
   }
 
   function CustomerOwnerAssociationPageController($scope, $controller, $window) {
@@ -683,6 +722,7 @@
     $controller('CoreController', {
       $scope: $scope
     });
+
 
     $window.document.title = 'Real Estate Customer Experience Management Platform | Property Management Solutions';
 
