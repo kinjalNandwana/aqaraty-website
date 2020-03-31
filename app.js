@@ -47,10 +47,7 @@
     .controller('PrivacyPolicyController', PrivacyPolicyController)
     .controller('VisionController', VisionController)
     .controller('OutTeamController', OutTeamController)
-    .controller('ModalController', function ($scope, translateService) {
-      $scope.translateService = translateService
-
-    })
+    .controller('ModalController', ModalController)
     .component('bottomFooter', {
       bindings: {},
       templateUrl: 'pages/footer.html',
@@ -183,7 +180,7 @@
 
   }
 
-  function CoreController($scope, $http, $document, $window, $location, toaster) {
+  function CoreController($scope, $http, $document, $window, $location, toaster,$filter) {
     $scope.progressBarLoading = false;
     $scope.callbackForm = {};
     $scope.onCallbackSubmitHandler = function (form) {
@@ -191,7 +188,7 @@
       $scope.progressBarLoading = true;
       $http({
         method: 'POST',
-        url: '/shared-resource/webhook/support/contact-us/send-email',
+        url: 'http://52.220.118.81:3020/shared-resource/webhook/capture-website-contact',
         data: {
           'name': $scope.callbackModalForm.name,
           'phoneNumber': $scope.callbackModalForm.countryCode + $scope.callbackModalForm.phoneNumber,
@@ -202,19 +199,19 @@
       }).then(function (response) {
 
         $('#callbackModal').modal('hide');
-        var capterra_vkey = '9deeec374e1dfff5b5dbb3a168be56e3',
-          capterra_vid = '2130197',
-          capterra_prefix = (('https:' == $window.location.protocol)
-            ? 'https://ct.capterra.com' : 'http://ct.capterra.com');
+        // var capterra_vkey = '9deeec374e1dfff5b5dbb3a168be56e3',
+        //   capterra_vid = '2130197',
+        //   capterra_prefix = (('https:' == $window.location.protocol)
+        //     ? 'https://ct.capterra.com' : 'http://ct.capterra.com');
 
-        var ct = $document[0].createElement('script');
-        ct.type = 'text/javascript';
-        ct.async = true;
-        ct.src = capterra_prefix + '/capterra_tracker.js?vid='
-          + capterra_vid + '&vkey=' + capterra_vkey;
+        // var ct = $document[0].createElement('script');
+        // ct.type = 'text/javascript';
+        // ct.async = true;
+        // ct.src = capterra_prefix + '/capterra_tracker.js?vid='
+        //   + capterra_vid + '&vkey=' + capterra_vkey;
 
-        var s = $document[0].getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ct, s);
+        // var s = $document[0].getElementsByTagName('script')[0];
+        // s.parentNode.insertBefore(ct, s);
 
         $scope.callbackModalForm = {
           countryCode: '+91'
@@ -239,7 +236,8 @@
       $scope.progressBarLoading = true;
       $http({
         method: 'POST',
-        url: '/shared-resource/webhook/support/contact-us/send-email',
+        // url: '/shared-resource/webhook/support/contact-us/send-email',
+        url: 'http://52.220.118.81:3020/shared-resource/webhook/capture-website-contact',
         data: {
           'name': $scope.callbackModalForm.name,
           'phoneNumber': $scope.callbackModalForm.countryCode + $scope.callbackModalForm.phoneNumber,
@@ -262,57 +260,58 @@
     }
 
     $scope.demoSignupForm = {};
-    $scope.onDemoSignupSubmitHandler = function (form) {
-      $scope.progressBarLoading = true;
-      $scope.demoSignupOverlayActive = true;
-      $http({
-        method: 'POST',
-        url: '/api/support/demo-registration',
-        data: {
-          'name': $scope.demoSignupForm.name,
-          'phoneNumber': $scope.demoSignupForm.countryCode + $scope.demoSignupForm.phoneNumber,
-          'email': $scope.demoSignupForm.email,
-          'organisation': $scope.demoSignupForm.organization,
-        }
-      }).then(function (response) {
-        var capterra_vkey = '9deeec374e1dfff5b5dbb3a168be56e3',
-          capterra_vid = '2130197',
-          capterra_prefix = (('https:' == $window.location.protocol)
-            ? 'https://ct.capterra.com' : 'http://ct.capterra.com');
+    // $scope.onDemoSignupSubmitHandler = function (form) {
+    //   $scope.progressBarLoading = true;
+    //   $scope.demoSignupOverlayActive = true;
+    //   $http({
+    //     method: 'POST',
+    //     url: '/api/support/demo-registration',
+    //     data: {
+    //       'name': $scope.demoSignupForm.name,
+    //       'phoneNumber': $scope.demoSignupForm.countryCode + $scope.demoSignupForm.phoneNumber,
+    //       'email': $scope.demoSignupForm.email,
+    //       'organisation': $scope.demoSignupForm.organization,
+    //     }
+    //   }).then(function (response) {
+    //     var capterra_vkey = '9deeec374e1dfff5b5dbb3a168be56e3',
+    //       capterra_vid = '2130197',
+    //       capterra_prefix = (('https:' == $window.location.protocol)
+    //         ? 'https://ct.capterra.com' : 'http://ct.capterra.com');
 
-        var ct = $document[0].createElement('script');
-        ct.type = 'text/javascript';
-        ct.async = true;
-        ct.src = capterra_prefix + '/capterra_tracker.js?vid='
-          + capterra_vid + '&vkey=' + capterra_vkey;
+    //     var ct = $document[0].createElement('script');
+    //     ct.type = 'text/javascript';
+    //     ct.async = true;
+    //     ct.src = capterra_prefix + '/capterra_tracker.js?vid='
+    //       + capterra_vid + '&vkey=' + capterra_vkey;
 
-        var s = $document[0].getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ct, s);
-        form.$setPristine();
-        form.$setUntouched();
-        $('#exampleModal').modal('hide')
-        $scope.showSuccessToast();
-      }, function (response) {
-        $scope.showErrorToast();
-      }).finally(function () {
-        $scope.demoSignupForm = {
-          countryCode: '+91'
-        };
-        $scope.progressBarLoading = false;
-        setTimeout((() => {
-          window.location.href = 'api/demo-login?src=demopage';
-          $scope.demoSignupOverlayActive = false;
-        }), 1500);
+    //     var s = $document[0].getElementsByTagName('script')[0];
+    //     s.parentNode.insertBefore(ct, s);
+    //     form.$setPristine();
+    //     form.$setUntouched();
+    //     $('#exampleModal').modal('hide')
+    //     $scope.showSuccessToast();
+    //   }, function (response) {
+    //     $scope.showErrorToast();
+    //   }).finally(function () {
+    //     $scope.demoSignupForm = {
+    //       countryCode: '+91'
+    //     };
+    //     $scope.progressBarLoading = false;
+    //     setTimeout((() => {
+    //       window.location.href = 'api/demo-login?src=demopage';
+    //       $scope.demoSignupOverlayActive = false;
+    //     }), 1500);
 
-      });
-    }
+    //   });
+    // }
 
+    
     $scope.showSuccessToast = function () {
-      toaster.pop('success', "Success", "Your form has been submitted. We will get back to you.");
+      toaster.pop('success', $filter('translate')("Success"), $filter('translate')("Your form has been submitted. We will get back to you."));
     }
 
     $scope.showErrorToast = function () {
-      toaster.pop('error', "Error", "Something went wrong. Please try again");
+      toaster.pop('error', $filter('translate')("Error"), $filter('translate')("Something went wrong. Please try again"));
     }
 
 
@@ -1013,6 +1012,55 @@
 
   function OutTeamController($scope, translateService) {
     $scope.translateService = translateService
+  }
+
+  function ModalController($scope, translateService) {
+    $scope.translateService = translateService
+    $scope.onDemoSignupSubmitHandler = function (form) {
+      $scope.progressBarLoading = true;
+      $scope.demoSignupOverlayActive = true;
+      $http({
+        method: 'POST',
+        url: 'http://52.220.118.81:3020/shared-resource/webhook/demo-registration',
+        data: {
+          'name': $scope.demoSignupForm.name,
+          'phoneNumber': $scope.demoSignupForm.countryCode + $scope.demoSignupForm.phoneNumber,
+          'email': $scope.demoSignupForm.email,
+          'organisation': $scope.demoSignupForm.organization,
+          'fromExternalWebsite': true
+        }
+      }).then(function (response) {
+        // var capterra_vkey = '9deeec374e1dfff5b5dbb3a168be56e3',
+        //   capterra_vid = '2130197',
+        //   capterra_prefix = (('https:' == $window.location.protocol)
+        //     ? 'https://ct.capterra.com' : 'http://ct.capterra.com');
+
+        // var ct = $document[0].createElement('script');
+        // ct.type = 'text/javascript';
+        // ct.async = true;
+        // ct.src = capterra_prefix + '/capterra_tracker.js?vid='
+        //   + capterra_vid + '&vkey=' + capterra_vkey;
+
+        // var s = $document[0].getElementsByTagName('script')[0];
+        // s.parentNode.insertBefore(ct, s);
+        form.$setPristine();
+        form.$setUntouched();
+        $('#exampleModal').modal('hide')
+        $scope.showSuccessToast();
+      }, function (response) {
+        $scope.showErrorToast();
+      }).finally(function () {
+        $scope.demoSignupForm = {
+          countryCode: '+91'
+        };
+        $scope.progressBarLoading = false;
+        setTimeout((() => {
+          window.location.href = 'api/demo-login?src=demopage';
+          $scope.demoSignupOverlayActive = false;
+        }), 1500);
+
+      });
+    }
   }
 
 })();

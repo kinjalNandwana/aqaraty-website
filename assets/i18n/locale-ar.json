@@ -254,5 +254,9 @@
 	"Contract renewals": "تجديد العقد",
 	"Move-in/Move-Out": "نقل / تحريك للخارج",
 	"Communication with tenants": "التواصل مع المستأجرين",
-	"KWD per unit/month":"دينار كويتي لكل وحدة / شهر"
+	"KWD per unit/month": "دينار كويتي لكل وحدة / شهر",
+	"Success": "نجاح",
+	"Your form has been submitted. We will get back to you.": "وقد قدم النموذج الخاص بك. سوف نعود اليك.",
+	"Error": "خطأ",
+	"Something went wrong. Please try again": "هناك خطأ ما. حاول مرة اخرى"
 }
