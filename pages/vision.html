@@ -1,7 +1,7 @@
-<section class="fdb-block">
+<section class="fdb-block" ng-controller="VisionController">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-12 col-md-6 col-lg-5 text-align-start" dir="rtl">
+        <div class="col-12 col-md-6 col-lg-5 text-align-start {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}}">
           <h1>{{"Our Vision"|translate}}</h1>
           <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus sed reprehenderit nemo maiores earum ducimus nulla omnis fugit dolores aliquam asperiores consequatur ullam consequuntur veritatis impedit temporibus alias, autem harum!.</p>
           <br>

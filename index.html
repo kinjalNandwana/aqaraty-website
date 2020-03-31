@@ -149,28 +149,29 @@
                 </div> -->
           </li>
           <li class="nav-item" style="margin-right: 28px">
-            <a class="btn btn-primary ml-md-3 btn-sm"
-              href="choose-product">{{"Sign up"|translate}}<sup>{{"Free"|translate}}</sup></a>
+            <div class="col-0 col-md-1 col-lg-1 ">
+              <md-input-container class="margin-0">
+                <md-select ng-model="selectLanguage" md-on-close="clearSearchTerm()"
+                  data-md-container-class="selectdemoSelectHeader">
+                  <!-- <md-select-header class="demo-select-header">
+                    <input ng-model="searchTerm" type="search" class="demo-header-searchbox md-text">
+                  </md-select-header> -->
+                  <md-optgroup label="languages">
+                    <md-option ng-value="lang.language" ng-repeat="lang in languages" ng-click="ChangeLanguage(lang)">
+                      {{lang.name}} <img src="{{lang.imagePath}}" class="image-square-15" > </md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
+            </div>
+            <!-- <a class="btn btn-primary ml-md-3 btn-sm"
+              href="choose-product">{{"Sign up"|translate}}<sup>{{"Free"|translate}}</sup></a> -->
           </li>
 
           <!-- <li class="nav-item d-none d-md-none d-lg-block d-xl-block" style="margin-right: 28px">
               <a class="btn btn-primary ml-md-3 btn-sm" href="/choose-product">{{"Sign Up"|translate}} <sup>Free</sup></a>
             </li> -->
         </ul>
-        <div class="col-0 col-md-1 col-lg-1 ">
-          <md-input-container class="margin-0">
-            <md-select ng-model="selectLanguage" md-on-close="clearSearchTerm()"
-              data-md-container-class="selectdemoSelectHeader">
-              <!-- <md-select-header class="demo-select-header">
-                <input ng-model="searchTerm" type="search" class="demo-header-searchbox md-text">
-              </md-select-header> -->
-              <md-optgroup label="languages">
-                <md-option ng-value="lang.language" ng-repeat="lang in languages" ng-click="ChangeLanguage(lang)">
-                  {{lang.name}}</md-option>
-              </md-optgroup>
-            </md-select>
-          </md-input-container>
-        </div>
+       
       </nav>
     </div>
   </header>
@@ -299,8 +300,8 @@
                   {{"Unlock the benefits of connecting your team, customers and real estate through the same platform."|translate}}
                 </p>
                 <p class="mt-4">
-                  <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1 overflow-hidden" style=" white-space: normal" href="choose-product">{{"START A FREE TRIAL"|translate}}</a>
-                  <a class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1"  data-toggle="modal"
+                  <!-- <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1 overflow-hidden" style=" white-space: normal" href="choose-product">{{"START A FREE TRIAL"|translate}}</a> -->
+                  <a class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1 "  data-toggle="modal"
                   data-target="#exampleModal">{{"BOOK A FREE DEMO"|translate}}</a>
                 </p>
               </div>
@@ -574,7 +575,7 @@
                   </div>
                 </div>
                 <p class="mt-4">
-                    <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1" href="choose-product">{{"START A FREE TRIAL"|translate}}</a>
+                    <!-- <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1" href="choose-product">{{"START A FREE TRIAL"|translate}}</a> -->
                     <a  style="border-color:  !important" class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1" data-toggle="modal"
                     data-target="#exampleModal">{{"BOOK A FREE DEMO"|translate}}</a>
                 </p>
@@ -615,7 +616,7 @@
                     </div>
                 </div>
                 <p class="mt-4">
-                    <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1" href="choose-product">{{"START A FREE TRIAL"|translate}}</a>
+                    <!-- <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1" href="choose-product">{{"START A FREE TRIAL"|translate}}</a> -->
                     <a  style="border-color:  !important" class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1" data-toggle="modal"
                     data-target="#exampleModal">{{"BOOK A FREE DEMO"|translate}}</a>
                 </p>
@@ -912,7 +913,7 @@
                     </div>
                     <div class="offset-md-3 col-md-6 center">
                         <p class="mt-4">
-                            <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1" href="choose-product">{{"START A FREE TRIAL"|translate}}</a>
+                            <!-- <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1" href="choose-product">{{"START A FREE TRIAL"|translate}}</a> -->
                             <a  style="color: gray !important" class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1" data-toggle="modal"
                             data-target="#exampleModal">{{"BOOK A FREE DEMO"|translate}}</a>
                           </p>

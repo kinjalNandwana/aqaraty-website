@@ -1,10 +1,11 @@
-<div class="modal fade direction" id="exampleModal" mg-model tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+<div class="modal fade {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}}" id="exampleModal" ng-controller="ModalController" mg-model tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">{{"Almost there!"|translate}}</h5>
-                <button type="button" class="close modal-close-button" ng-click="dismiss()" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close modal-close-button" ng-click="dismiss()" data-dismiss="modal"
+                    aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>

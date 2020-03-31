@@ -4,11 +4,14 @@
         <div class="container">
             <div class="row justify-content-center pb-3">
                 <div class="col-12 col-md-9 text-center">
-                    <h1>Choose Solution</h1>
+                    <h1>{{"Choose Solution"|translate}}</h1>
                     <p class="lead" style="text-align:center">
-                        Start your <strong>30-day free trial</strong> by selecting a solution that best suits your requirement
+                        {{"Start your"|translate}} <strong>{{"30-day free trial"|translate}}</strong>
+                        {{"by selecting a solution that best suits your requirement"|translate}}
                     </p>
-                    <p><small>By signing up you agree to our <a href="https://thehousemonk.com/terms-of-use#terms-top">Terms and Conditions.</a></small></p>
+                    <p><small>{{"By signing up you agree to our"|translate}} <a
+                                href="https://thehousemonk.com/terms-of-use#terms-top">{{"Terms and Conditions."|translate}}</a></small>
+                    </p>
                 </div>
             </div>
             <div class="row d-block d-sm-block d-md-none justify-content-center">
@@ -21,7 +24,7 @@
                                     style="height: 34px;" src="./assets/imgs/3-management-icon-asset.png">
                             </div>
                             <div class="col-auto">
-                                <h3 class="card-title">Rental Management</h3>
+                                <h3 class="card-title">{{"Rental Management"|translate}}</h3>
                             </div>
                         </div>
                     </div>
@@ -33,33 +36,35 @@
                 <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
                     <img alt="image" class="img-fluid" src="./assets/images/choose-product.svg">
                 </div>
-                
+
                 <div class="d-none d-sm-none d-md-block col-10 col-sm-6 col-md-4 col-lg-4">
                     <img alt="image" class="img-fluid" src="./assets/images/choose-product.svg">
                 </div>
-                <div class="offset-3 offset-sm-1 offset-md-3 col-10 col-md-4 pt-4 raised pb-4 mb-3 product" id="rentals">
-                    <a  ng-click="routeToRentalsSignupPage()"> 
-                    <h2 style="text-align:center">Rental Management</h2>
-                    <!-- <p class="lead" style="text-align:center">
+                <div class="offset-3 offset-sm-1 offset-md-3 col-10 col-md-4 pt-4 raised pb-4 mb-3 product"
+                    id="rentals">
+                    <a ng-click="routeToRentalsSignupPage()">
+                        <h2 style="text-align:center">{{"Rental Management"|translate}}</h2>
+                        <!-- <p class="lead" style="text-align:center">
                         Streamline complete management of your rental portfolio
                     </p> -->
-                    <p class="lead" style="text-align:center">
-                        For Co-working, Co-living, Builders, Landlords, Hostels, and Others 
-                    </p>
-                    <ul>
-                        <li class="lead"> Rental invoicing & collection</li>
-                        <li class="lead"> Helpdesk & ticketing</li>
-                        <li class="lead"> Contract renewals </li>
-                        <li class="lead"> Move-in/Move-Out </li>
-                        <li class="lead"> Communication with tenants </li>
-                    </ul>
-                   
-                    <button class="col-12 col-sm-12 col-md-12 pt-2 mt-2 btn btn-primary raised" ng-click="routeToRentalsSignupPage()">Select and Proceed</button>
+                        <p class="lead" style="text-align:center">
+                            {{" For Co-working, Co-living, Builders, Landlords, Hostels, and Others"|translate}}
+                        </p>
+                        <ul class="{{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}}">
+                            <li class="lead text-align-start"> {{"Rental invoicing & collection"|translate}}</li>
+                            <li class="lead text-align-start"> {{"Helpdesk & ticketing"|translate}}</li>
+                            <li class="lead text-align-start"> {{"Contract renewals"|translate}}</li>
+                            <li class="lead text-align-start"> {{"Move-in/Move-Out"|translate}}</li>
+                            <li class="lead text-align-start"> {{"Communication with tenants"|translate}}</li>
+                        </ul>
+
+                        <button class="col-12 col-sm-12 col-md-12 pt-2 mt-2 btn btn-primary raised"
+                            ng-click="routeToRentalsSignupPage()">Select and Proceed</button>
                     </a>
                 </div>
             </div>
 
-            
+
         </div>
     </section>
 </div>

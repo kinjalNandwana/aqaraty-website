@@ -114,8 +114,7 @@ hr.horizontal-line {
   margin-left: 0px !important;
 }
 
-
-.modal-close-button{
+.modal-close-button {
   padding: 15px !important;
   margin: -15px -15px -15px -15px !important;
 }
@@ -498,4 +497,13 @@ in the LICENSE file at http://material.angularjs.org/HEAD/license.
 
 .margin-0 {
   margin: 0px !important;
+}
+
+.justify-content-flex-end {
+  justify-content: flex-end !important;
+}
+
+.image-square-15 {
+  height: 15px !important;
+  width: 15px !important;
 }

@@ -43,9 +43,18 @@
     .controller('RentalPropertyManagementPageController', RentalPropertyManagementPageController)
     .controller('CustomerRentalPropertyManagementPageController', CustomerRentalPropertyManagementPageController)
     .controller('ContactUsPageController', ContactUsPageController)
+    .controller('FooterController', FooterController)
+    .controller('PrivacyPolicyController', PrivacyPolicyController)
+    .controller('VisionController', VisionController)
+    .controller('OutTeamController', OutTeamController)
+    .controller('ModalController', function ($scope, translateService) {
+      $scope.translateService = translateService
+
+    })
     .component('bottomFooter', {
       bindings: {},
       templateUrl: 'pages/footer.html',
+      controller: 'FooterController'
     })
     .directive('changeClassOnScroll', function ($window) {
       return {
@@ -109,6 +118,8 @@
       .when('/', {
         templateUrl: 'home.html',
         controller: 'HomePageController'
+        // templateUrl: 'pages/our-team.html',
+        // controller: 'OutTeamController'
       })
       .when('/terms-of-use', {
         templateUrl: 'pages/terms-of-use.html'
@@ -117,13 +128,16 @@
         templateUrl: 'pages/privacy-policy.html'
       })
       .when('/refund-terms', {
-        templateUrl: 'pages/refund-terms.html'
+        templateUrl: 'pages/refund-terms.html',
+        controller: 'PrivacyPolicyController'
       })
       .when('/vision', {
         templateUrl: 'pages/vision.html',
+        controller: 'VisionController'
       })
       .when('/our-team', {
-        templateUrl: 'pages/our-team.html'
+        templateUrl: 'pages/our-team.html',
+        controller: 'OutTeamController'
       })
       .when('/partners', {
         templateUrl: 'pages/partners.html',
@@ -315,12 +329,15 @@
       {
         language: "en",
         name: "English",
-        dir: 'ltr'
+        dir: 'ltr',
+        imagePath: "/assets/icons/USA.png"
       },
       {
         language: "ar",
         name: "Arabic",
-        dir: 'rtl'
+        dir: 'rtl',
+        imagePath: "/assets/icons/kuwait.png"
+
       }
     ];
 
@@ -366,9 +383,9 @@
 
   function translateService($translate) {
     var translateService = {};
-    var language = $translate.use()
+    // this.language = translateService.getCurrentLanguage()
     translateService.getCurrentLanguage = function () {
-      return language
+      return $translate.use()
     }
 
     translateService.setCurrentLanguage = function (lang) {
@@ -376,19 +393,20 @@
     }
 
     translateService.setDirection = function (dir) {
-      document.documentElement.style.setProperty("--dir", $translate.use() == 'ar' ? 'rtl' : 'ltr')
+      // document.documentElement.style.setProperty("--dir", $translate.use() == 'ar' ? 'rtl' : 'ltr')
     }
 
 
     return translateService
   }
 
-  function CustomerOwnerAssociationPageController($scope, $controller, $window) {
+  function CustomerOwnerAssociationPageController($scope, $controller, $window, translateService) {
     // Extend CoreController controller functionalities
     $controller('CoreController', {
       $scope: $scope
     });
 
+    $scope.translateService = translateService
     $window.scroll(0, 0);
     $window.document.title = 'Real Estate Customer Experience Management Platform | Property Management Solutions';
 
@@ -402,13 +420,13 @@
     };
   }
 
-  function CustomerBuilderPageController($scope, $controller, $window) {
+  function CustomerBuilderPageController($scope, $controller, $window, translateService) {
     // Extend CoreController controller functionalities
     $controller('CoreController', {
       $scope: $scope
     });
     $window.document.title = 'Real Estate Customer Experience Management Platform | Property Management Solutions';
-
+    $scope.translateService = translateService
     $scope.callbackForm = {
       product: 'Building Management'
     };
@@ -421,11 +439,12 @@
 
   }
 
-  function CustomerFacilityManagementPageController($scope, $controller, $window) {
+  function CustomerFacilityManagementPageController($scope, $controller, $window, translateService) {
     // Extend CoreController controller functionalities
     $controller('CoreController', {
       $scope: $scope
     });
+    $scope.translateService = translateService
     $window.document.title = 'Real Estate Customer Experience Management Platform | Property Management Solutions';
 
     $window.scroll(0, 0);
@@ -537,11 +556,12 @@
     };
   }
 
-  function CustomerRentalPropertyManagementPageController($scope, $controller, $window) {
+  function CustomerRentalPropertyManagementPageController($scope, $controller, $window, translateService) {
     // Extend CoreController controller functionalities
     $controller('CoreController', {
       $scope: $scope
     });
+    $scope.translateService = translateService
     $window.document.title = 'Real Estate Customer Experience Management Platform | Property Management Solutions';
 
     $window.scroll(0, 0);
@@ -557,7 +577,7 @@
     };
   }
 
-  function ChooseProductPageController($scope, $controller, $window) {
+  function ChooseProductPageController($scope, $controller, $window, translateService) {
     // Extend CoreController controller functionalities
     $controller('CoreController', {
       $scope: $scope
@@ -565,7 +585,7 @@
     $scope.toggleKey = (key) => {
       $scope[key] = !$scope[key];
     };
-
+    $scope.translateService = translateService
     $window.scroll(0, 0);
     $window.document.title = 'Real Estate Customer Experience Management Platform | Property Management Solutions';
 
@@ -578,12 +598,12 @@
     }
   }
 
-  function HomePageController($scope, $controller, $location, $window) {
+  function HomePageController($scope, $controller, $location, $window, translateService) {
 
     $controller('CoreController', {
       $scope: $scope
     });
-
+    $scope.currentLanguage = translateService.getCurrentLanguage()
     $window.scroll(0, 0);
     $window.document.title = 'Real Estate Customer Experience Management Platform | Property Management Solutions';
     $scope.callbackForm = {
@@ -833,13 +853,13 @@
     };
   }
 
-  function PartnerPageController($scope, $controller, $window) {
+  function PartnerPageController($scope, $controller, $window, translateService) {
 
     $controller('CoreController', {
       $scope: $scope
     });
 
-
+    $scope.translateService = translateService
     $window.scroll(0, 0);
     $window.document.title = 'Real Estate Customer Experience Management Platform | Property Management Solutions';
     $scope.callbackForm = {
@@ -849,13 +869,14 @@
 
   }
 
-  function ContactUsPageController($scope, $controller, $window, $filter) {
+  function ContactUsPageController($scope, $controller, $window, $filter, translateService) {
 
     $controller('CoreController', {
       $scope: $scope
     });
 
 
+    $scope.translateService = translateService
     $window.scroll(0, 0);
     $window.document.title = 'Real Estate Customer Experience Management Platform | Property Management Solutions';
     $scope.onContactUsSubmitHandler = function () {
@@ -974,6 +995,24 @@
         }
       }
     };
+  }
+
+  function FooterController($scope, translateService) {
+    $scope.translateService = translateService;
+    $scope.currentLanguage = translateService.getCurrentLanguage()
+
+  }
+
+  function PrivacyPolicyController($scope, translateService) {
+    $scope.translateService = translateService
+  }
+
+  function VisionController($scope, translateService) {
+    $scope.translateService = translateService
+  }
+
+  function OutTeamController($scope, translateService) {
+    $scope.translateService = translateService
   }
 
 })();
