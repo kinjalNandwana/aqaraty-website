@@ -869,7 +869,7 @@
 
   }
 
-  function ContactUsPageController($scope, $controller, $window, $filter, translateService) {
+  function ContactUsPageController($scope, $controller, $window, $filter, translateService, $http) {
 
     $controller('CoreController', {
       $scope: $scope
@@ -1015,7 +1015,7 @@
     $scope.translateService = translateService
   }
 
-  function ModalController($scope, translateService) {
+  function ModalController($scope, translateService, $http) {
     $scope.translateService = translateService
     $scope.onDemoSignupSubmitHandler = function (form) {
       $scope.progressBarLoading = true;
