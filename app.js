@@ -18,6 +18,7 @@
         prefix: 'assets/i18n/locale-',
         suffix: '.json'
       });
+      $translateProvider.useSanitizeValueStrategy(null);
 
       // $translateProvider.preferredLanguage('en');
       $translateProvider.use('ar')
