@@ -238,7 +238,7 @@
       $http({
         method: 'POST',
         // url: '/shared-resource/webhook/support/contact-us/send-email',
-        url: 'http://52.220.118.81:3020/shared-resource/webhook/capture-website-contact',
+        url: 'http://52.220.118.81:3020/shared-resource/webhook/capture-website-contact?organization=5e1ad3b4d0ffee5fb4fc0410',
         data: {
           'name': $scope.callbackModalForm.name,
           'phoneNumber': $scope.callbackModalForm.countryCode + $scope.callbackModalForm.phoneNumber,
@@ -884,7 +884,7 @@
       $scope.progressBarLoading = true;
       $http({
         method: 'POST',
-        url: '/shared-resource/webhook/support/contact-us/send-email',
+        url: 'http://52.220.118.81:3020/shared-resource/webhook/capture-website-contact?organization=5e1ad3b4d0ffee5fb4fc0410',
         data: {
           'name': $scope.callbackModalForm.name,
           'phoneNumber': $scope.callbackModalForm.countryCode + $scope.callbackModalForm.phoneNumber,
@@ -1028,23 +1028,12 @@
           'phoneNumber': $scope.demoSignupForm.countryCode + $scope.demoSignupForm.phoneNumber,
           'email': $scope.demoSignupForm.email,
           'organisation': $scope.demoSignupForm.organization,
-          'fromExternalWebsite': true,
 
         }
       }).then(function (response) {
-        // var capterra_vkey = '9deeec374e1dfff5b5dbb3a168be56e3',
-        //   capterra_vid = '2130197',
-        //   capterra_prefix = (('https:' == $window.location.protocol)
-        //     ? 'https://ct.capterra.com' : 'http://ct.capterra.com');
-
-        // var ct = $document[0].createElement('script');
-        // ct.type = 'text/javascript';
-        // ct.async = true;
-        // ct.src = capterra_prefix + '/capterra_tracker.js?vid='
-        //   + capterra_vid + '&vkey=' + capterra_vkey;
-
-        // var s = $document[0].getElementsByTagName('script')[0];
-        // s.parentNode.insertBefore(ct, s);
+        $scope.demoSignupForm = {
+          countryCode: '+91'
+        };
         form.$setPristine();
         form.$setUntouched();
         $('#exampleModal').modal('hide')
@@ -1057,7 +1046,6 @@
         };
         $scope.progressBarLoading = false;
         setTimeout((() => {
-          window.location.href = 'api/demo-login?src=demopage';
           $scope.demoSignupOverlayActive = false;
         }), 1500);
 
