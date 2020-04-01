@@ -1,5 +1,5 @@
 (function () {
-  angular.module('app', ['toaster', 'rzSlider', 'ngAnimate', 'ngRoute', 'pascalprecht.translate'])
+  angular.module('app', ['toaster', 'rzSlider', 'ngAnimate', 'ngMaterial', 'ngRoute', 'pascalprecht.translate'])
 
   angular.module('app')
     .config(['$routeProvider', '$locationProvider', RouteConfig])
@@ -14,17 +14,20 @@
     //     } 
     //  })    
     .config(['$translateProvider', function ($translateProvider) {
-
-
       $translateProvider.useStaticFilesLoader({
         prefix: 'assets/i18n/locale-',
         suffix: '.json'
       });
+      $translateProvider.useSanitizeValueStrategy(null);
+
+      // $translateProvider.preferredLanguage('en');
+      $translateProvider.use('ar')
+
+      // document.documentElement.style.setProperty('--dir', $translateProvider.use() == 'ar' ? 'rtl' : 'ltr')
 
 
-
-      $translateProvider.preferredLanguage('ar');
     }])
+    .service('translateService', ['$translate', translateService])
     .controller('MainController', MainController)
     .controller('CoreController', CoreController)
     .controller('HomePageController', HomePageController)
@@ -41,9 +44,15 @@
     .controller('RentalPropertyManagementPageController', RentalPropertyManagementPageController)
     .controller('CustomerRentalPropertyManagementPageController', CustomerRentalPropertyManagementPageController)
     .controller('ContactUsPageController', ContactUsPageController)
+    .controller('FooterController', FooterController)
+    .controller('PrivacyPolicyController', PrivacyPolicyController)
+    .controller('VisionController', VisionController)
+    .controller('OutTeamController', OutTeamController)
+    .controller('ModalController', ModalController)
     .component('bottomFooter', {
       bindings: {},
       templateUrl: 'pages/footer.html',
+      controller: 'FooterController'
     })
     .directive('changeClassOnScroll', function ($window) {
       return {
@@ -107,6 +116,8 @@
       .when('/', {
         templateUrl: 'home.html',
         controller: 'HomePageController'
+        // templateUrl: 'pages/our-team.html',
+        // controller: 'OutTeamController'
       })
       .when('/terms-of-use', {
         templateUrl: 'pages/terms-of-use.html'
@@ -115,13 +126,16 @@
         templateUrl: 'pages/privacy-policy.html'
       })
       .when('/refund-terms', {
-        templateUrl: 'pages/refund-terms.html'
+        templateUrl: 'pages/refund-terms.html',
+        controller: 'PrivacyPolicyController'
       })
       .when('/vision', {
         templateUrl: 'pages/vision.html',
+        controller: 'VisionController'
       })
       .when('/our-team', {
-        templateUrl: 'pages/our-team.html'
+        templateUrl: 'pages/our-team.html',
+        controller: 'OutTeamController'
       })
       .when('/partners', {
         templateUrl: 'pages/partners.html',
@@ -167,7 +181,7 @@
 
   }
 
-  function CoreController($scope, $http, $document, $window, $location, toaster) {
+  function CoreController($scope, $http, $document, $window, $location, toaster,$filter) {
     $scope.progressBarLoading = false;
     $scope.callbackForm = {};
     $scope.onCallbackSubmitHandler = function (form) {
@@ -175,7 +189,7 @@
       $scope.progressBarLoading = true;
       $http({
         method: 'POST',
-        url: '/shared-resource/webhook/support/contact-us/send-email',
+        url: 'http://52.220.118.81:3020/shared-resource/webhook/capture-website-contact',
         data: {
           'name': $scope.callbackModalForm.name,
           'phoneNumber': $scope.callbackModalForm.countryCode + $scope.callbackModalForm.phoneNumber,
@@ -186,19 +200,19 @@
       }).then(function (response) {
 
         $('#callbackModal').modal('hide');
-        var capterra_vkey = '9deeec374e1dfff5b5dbb3a168be56e3',
-          capterra_vid = '2130197',
-          capterra_prefix = (('https:' == $window.location.protocol)
-            ? 'https://ct.capterra.com' : 'http://ct.capterra.com');
+        // var capterra_vkey = '9deeec374e1dfff5b5dbb3a168be56e3',
+        //   capterra_vid = '2130197',
+        //   capterra_prefix = (('https:' == $window.location.protocol)
+        //     ? 'https://ct.capterra.com' : 'http://ct.capterra.com');
 
-        var ct = $document[0].createElement('script');
-        ct.type = 'text/javascript';
-        ct.async = true;
-        ct.src = capterra_prefix + '/capterra_tracker.js?vid='
-          + capterra_vid + '&vkey=' + capterra_vkey;
+        // var ct = $document[0].createElement('script');
+        // ct.type = 'text/javascript';
+        // ct.async = true;
+        // ct.src = capterra_prefix + '/capterra_tracker.js?vid='
+        //   + capterra_vid + '&vkey=' + capterra_vkey;
 
-        var s = $document[0].getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ct, s);
+        // var s = $document[0].getElementsByTagName('script')[0];
+        // s.parentNode.insertBefore(ct, s);
 
         $scope.callbackModalForm = {
           countryCode: '+91'
@@ -223,7 +237,8 @@
       $scope.progressBarLoading = true;
       $http({
         method: 'POST',
-        url: '/shared-resource/webhook/support/contact-us/send-email',
+        // url: '/shared-resource/webhook/support/contact-us/send-email',
+        url: 'http://52.220.118.81:3020/shared-resource/webhook/capture-website-contact',
         data: {
           'name': $scope.callbackModalForm.name,
           'phoneNumber': $scope.callbackModalForm.countryCode + $scope.callbackModalForm.phoneNumber,
@@ -246,69 +261,90 @@
     }
 
     $scope.demoSignupForm = {};
-    $scope.onDemoSignupSubmitHandler = function (form) {
-      $scope.progressBarLoading = true;
-      $scope.demoSignupOverlayActive = true;
-      $http({
-        method: 'POST',
-        url: '/api/support/demo-registration',
-        data: {
-          'name': $scope.demoSignupForm.name,
-          'phoneNumber': $scope.demoSignupForm.countryCode + $scope.demoSignupForm.phoneNumber,
-          'email': $scope.demoSignupForm.email,
-          'organisation': $scope.demoSignupForm.organization,
-        }
-      }).then(function (response) {
-        var capterra_vkey = '9deeec374e1dfff5b5dbb3a168be56e3',
-          capterra_vid = '2130197',
-          capterra_prefix = (('https:' == $window.location.protocol)
-            ? 'https://ct.capterra.com' : 'http://ct.capterra.com');
+    // $scope.onDemoSignupSubmitHandler = function (form) {
+    //   $scope.progressBarLoading = true;
+    //   $scope.demoSignupOverlayActive = true;
+    //   $http({
+    //     method: 'POST',
+    //     url: '/api/support/demo-registration',
+    //     data: {
+    //       'name': $scope.demoSignupForm.name,
+    //       'phoneNumber': $scope.demoSignupForm.countryCode + $scope.demoSignupForm.phoneNumber,
+    //       'email': $scope.demoSignupForm.email,
+    //       'organisation': $scope.demoSignupForm.organization,
+    //     }
+    //   }).then(function (response) {
+    //     var capterra_vkey = '9deeec374e1dfff5b5dbb3a168be56e3',
+    //       capterra_vid = '2130197',
+    //       capterra_prefix = (('https:' == $window.location.protocol)
+    //         ? 'https://ct.capterra.com' : 'http://ct.capterra.com');
 
-        var ct = $document[0].createElement('script');
-        ct.type = 'text/javascript';
-        ct.async = true;
-        ct.src = capterra_prefix + '/capterra_tracker.js?vid='
-          + capterra_vid + '&vkey=' + capterra_vkey;
+    //     var ct = $document[0].createElement('script');
+    //     ct.type = 'text/javascript';
+    //     ct.async = true;
+    //     ct.src = capterra_prefix + '/capterra_tracker.js?vid='
+    //       + capterra_vid + '&vkey=' + capterra_vkey;
 
-        var s = $document[0].getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ct, s);
-        form.$setPristine();
-        form.$setUntouched();
-        $('#exampleModal').modal('hide')
-        $scope.showSuccessToast();
-      }, function (response) {
-        $scope.showErrorToast();
-      }).finally(function () {
-        $scope.demoSignupForm = {
-          countryCode: '+91'
-        };
-        $scope.progressBarLoading = false;
-        setTimeout((() => {
-          window.location.href = 'api/demo-login?src=demopage';
-          $scope.demoSignupOverlayActive = false;
-        }), 1500);
+    //     var s = $document[0].getElementsByTagName('script')[0];
+    //     s.parentNode.insertBefore(ct, s);
+    //     form.$setPristine();
+    //     form.$setUntouched();
+    //     $('#exampleModal').modal('hide')
+    //     $scope.showSuccessToast();
+    //   }, function (response) {
+    //     $scope.showErrorToast();
+    //   }).finally(function () {
+    //     $scope.demoSignupForm = {
+    //       countryCode: '+91'
+    //     };
+    //     $scope.progressBarLoading = false;
+    //     setTimeout((() => {
+    //       window.location.href = 'api/demo-login?src=demopage';
+    //       $scope.demoSignupOverlayActive = false;
+    //     }), 1500);
 
-      });
-    }
+    //   });
+    // }
 
+    
     $scope.showSuccessToast = function () {
-      toaster.pop('success', "Success", "Your form has been submitted. We will get back to you.");
+      toaster.pop('success', $filter('translate')("Success"), $filter('translate')("Your form has been submitted. We will get back to you."));
     }
 
     $scope.showErrorToast = function () {
-      toaster.pop('error', "Error", "Something went wrong. Please try again");
+      toaster.pop('error', $filter('translate')("Error"), $filter('translate')("Something went wrong. Please try again"));
     }
 
 
   }
 
-  function MainController($scope, $location, $controller, countryCodeService) {
+  function MainController($scope, $location, $controller, countryCodeService, $translate, translateService) {
 
     $controller('CoreController', {
       $scope: $scope
     });
     var fetchCodes = [];
     var finalCodeArray = [];
+    $scope.languages = [
+      {
+        language: "en",
+        name: "English",
+        dir: 'ltr',
+        imagePath: "/assets/icons/USA.png"
+      },
+      {
+        language: "ar",
+        name: "Arabic",
+        dir: 'rtl',
+        imagePath: "/assets/icons/kuwait.png"
+
+      }
+    ];
+
+    $scope.selectLanguage = translateService.getCurrentLanguage()
+    $scope.ChangeLanguage = function (langObject) {
+      translateService.setCurrentLanguage(langObject.language)
+    }
 
     for (var i = 0; i < countryCodeService.countryCodeList.length; i++) {
       if (!fetchCodes.includes(countryCodeService.countryCodeList[i].code)) {
@@ -344,12 +380,33 @@
 
   }
 
-  function CustomerOwnerAssociationPageController($scope, $controller, $window) {
+
+  function translateService($translate) {
+    var translateService = {};
+    // this.language = translateService.getCurrentLanguage()
+    translateService.getCurrentLanguage = function () {
+      return $translate.use()
+    }
+
+    translateService.setCurrentLanguage = function (lang) {
+      $translate.use(lang)
+    }
+
+    translateService.setDirection = function (dir) {
+      // document.documentElement.style.setProperty("--dir", $translate.use() == 'ar' ? 'rtl' : 'ltr')
+    }
+
+
+    return translateService
+  }
+
+  function CustomerOwnerAssociationPageController($scope, $controller, $window, translateService) {
     // Extend CoreController controller functionalities
     $controller('CoreController', {
       $scope: $scope
     });
 
+    $scope.translateService = translateService
     $window.scroll(0, 0);
     $window.document.title = 'Real Estate Customer Experience Management Platform | Property Management Solutions';
 
@@ -363,13 +420,13 @@
     };
   }
 
-  function CustomerBuilderPageController($scope, $controller, $window) {
+  function CustomerBuilderPageController($scope, $controller, $window, translateService) {
     // Extend CoreController controller functionalities
     $controller('CoreController', {
       $scope: $scope
     });
     $window.document.title = 'Real Estate Customer Experience Management Platform | Property Management Solutions';
-
+    $scope.translateService = translateService
     $scope.callbackForm = {
       product: 'Building Management'
     };
@@ -382,11 +439,12 @@
 
   }
 
-  function CustomerFacilityManagementPageController($scope, $controller, $window) {
+  function CustomerFacilityManagementPageController($scope, $controller, $window, translateService) {
     // Extend CoreController controller functionalities
     $controller('CoreController', {
       $scope: $scope
     });
+    $scope.translateService = translateService
     $window.document.title = 'Real Estate Customer Experience Management Platform | Property Management Solutions';
 
     $window.scroll(0, 0);
@@ -498,11 +556,12 @@
     };
   }
 
-  function CustomerRentalPropertyManagementPageController($scope, $controller, $window) {
+  function CustomerRentalPropertyManagementPageController($scope, $controller, $window, translateService) {
     // Extend CoreController controller functionalities
     $controller('CoreController', {
       $scope: $scope
     });
+    $scope.translateService = translateService
     $window.document.title = 'Real Estate Customer Experience Management Platform | Property Management Solutions';
 
     $window.scroll(0, 0);
@@ -518,7 +577,7 @@
     };
   }
 
-  function ChooseProductPageController($scope, $controller, $window) {
+  function ChooseProductPageController($scope, $controller, $window, translateService) {
     // Extend CoreController controller functionalities
     $controller('CoreController', {
       $scope: $scope
@@ -526,7 +585,7 @@
     $scope.toggleKey = (key) => {
       $scope[key] = !$scope[key];
     };
-
+    $scope.translateService = translateService
     $window.scroll(0, 0);
     $window.document.title = 'Real Estate Customer Experience Management Platform | Property Management Solutions';
 
@@ -539,12 +598,12 @@
     }
   }
 
-  function HomePageController($scope, $controller, $location, $window) {
+  function HomePageController($scope, $controller, $location, $window, translateService) {
 
     $controller('CoreController', {
       $scope: $scope
     });
-
+    $scope.currentLanguage = translateService.getCurrentLanguage()
     $window.scroll(0, 0);
     $window.document.title = 'Real Estate Customer Experience Management Platform | Property Management Solutions';
     $scope.callbackForm = {
@@ -684,6 +743,7 @@
       $scope: $scope
     });
 
+
     $window.document.title = 'Real Estate Customer Experience Management Platform | Property Management Solutions';
 
     $scope.priceList = [
@@ -793,13 +853,13 @@
     };
   }
 
-  function PartnerPageController($scope, $controller, $window) {
+  function PartnerPageController($scope, $controller, $window, translateService) {
 
     $controller('CoreController', {
       $scope: $scope
     });
 
-
+    $scope.translateService = translateService
     $window.scroll(0, 0);
     $window.document.title = 'Real Estate Customer Experience Management Platform | Property Management Solutions';
     $scope.callbackForm = {
@@ -809,13 +869,14 @@
 
   }
 
-  function ContactUsPageController($scope, $controller, $window, $filter) {
+  function ContactUsPageController($scope, $controller, $window, $filter, translateService) {
 
     $controller('CoreController', {
       $scope: $scope
     });
 
 
+    $scope.translateService = translateService
     $window.scroll(0, 0);
     $window.document.title = 'Real Estate Customer Experience Management Platform | Property Management Solutions';
     $scope.onContactUsSubmitHandler = function () {
@@ -934,6 +995,73 @@
         }
       }
     };
+  }
+
+  function FooterController($scope, translateService) {
+    $scope.translateService = translateService;
+    $scope.currentLanguage = translateService.getCurrentLanguage()
+
+  }
+
+  function PrivacyPolicyController($scope, translateService) {
+    $scope.translateService = translateService
+  }
+
+  function VisionController($scope, translateService) {
+    $scope.translateService = translateService
+  }
+
+  function OutTeamController($scope, translateService) {
+    $scope.translateService = translateService
+  }
+
+  function ModalController($scope, translateService) {
+    $scope.translateService = translateService
+    $scope.onDemoSignupSubmitHandler = function (form) {
+      $scope.progressBarLoading = true;
+      $scope.demoSignupOverlayActive = true;
+      $http({
+        method: 'POST',
+        url: 'http://52.220.118.81:3020/shared-resource/webhook/demo-registration',
+        data: {
+          'name': $scope.demoSignupForm.name,
+          'phoneNumber': $scope.demoSignupForm.countryCode + $scope.demoSignupForm.phoneNumber,
+          'email': $scope.demoSignupForm.email,
+          'organisation': $scope.demoSignupForm.organization,
+          'fromExternalWebsite': true
+        }
+      }).then(function (response) {
+        // var capterra_vkey = '9deeec374e1dfff5b5dbb3a168be56e3',
+        //   capterra_vid = '2130197',
+        //   capterra_prefix = (('https:' == $window.location.protocol)
+        //     ? 'https://ct.capterra.com' : 'http://ct.capterra.com');
+
+        // var ct = $document[0].createElement('script');
+        // ct.type = 'text/javascript';
+        // ct.async = true;
+        // ct.src = capterra_prefix + '/capterra_tracker.js?vid='
+        //   + capterra_vid + '&vkey=' + capterra_vkey;
+
+        // var s = $document[0].getElementsByTagName('script')[0];
+        // s.parentNode.insertBefore(ct, s);
+        form.$setPristine();
+        form.$setUntouched();
+        $('#exampleModal').modal('hide')
+        $scope.showSuccessToast();
+      }, function (response) {
+        $scope.showErrorToast();
+      }).finally(function () {
+        $scope.demoSignupForm = {
+          countryCode: '+91'
+        };
+        $scope.progressBarLoading = false;
+        setTimeout((() => {
+          window.location.href = 'api/demo-login?src=demopage';
+          $scope.demoSignupOverlayActive = false;
+        }), 1500);
+
+      });
+    }
   }
 
 })();

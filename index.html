@@ -17,7 +17,6 @@
   <meta name="msapplication-navbutton-color" content="black">
   <!-- iOS Safari -->
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
   <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-icon-72x72.png">
@@ -42,6 +41,7 @@
     integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.21/angular-material.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-design-blocks/1.0.2/css/froala_blocks.min.css"
@@ -77,7 +77,7 @@
         </button>
 
         <div
-          class="collapse navbar-collapse justify-content-center offset-md-2 offset-lg-0 col-lg-8 col-md-7 navbar-collapse-1"
+          class="collapse navbar-collapse justify-content-center offset-md-2 offset-lg-0 col-lg-7 col-md-7 navbar-collapse-1"
           id="navbarNav3">
           <ul class="navbar-nav justify-content-center col-12">
             <li class="nav-item">
@@ -122,6 +122,9 @@
               </a>
             </li>
 
+            <!-- <li class="nav-item">
+            </li> -->
+
 
             <li class="nav-item d-sm-block  d-lg-none d-xl-none">
               <button class="btn btn-primary btn-sm border mt-2" role="button"
@@ -146,14 +149,29 @@
                 </div> -->
           </li>
           <li class="nav-item" style="margin-right: 28px">
-            <a class="btn btn-primary ml-md-3 btn-sm"
-              href="choose-product">{{"Sign up"|translate}}<sup>{{"Free"|translate}}</sup></a>
+            <div class="col-0 col-md-1 col-lg-1 ">
+              <md-input-container class="margin-0">
+                <md-select ng-model="selectLanguage" md-on-close="clearSearchTerm()"
+                  data-md-container-class="selectdemoSelectHeader">
+                  <!-- <md-select-header class="demo-select-header">
+                    <input ng-model="searchTerm" type="search" class="demo-header-searchbox md-text">
+                  </md-select-header> -->
+                  <md-optgroup label="languages">
+                    <md-option ng-value="lang.language" ng-repeat="lang in languages" ng-click="ChangeLanguage(lang)">
+                      {{lang.name}} <img src="{{lang.imagePath}}" class="image-square-15" > </md-option>
+                  </md-optgroup>
+                </md-select>
+              </md-input-container>
+            </div>
+            <!-- <a class="btn btn-primary ml-md-3 btn-sm"
+              href="choose-product">{{"Sign up"|translate}}<sup>{{"Free"|translate}}</sup></a> -->
           </li>
+
           <!-- <li class="nav-item d-none d-md-none d-lg-block d-xl-block" style="margin-right: 28px">
               <a class="btn btn-primary ml-md-3 btn-sm" href="/choose-product">{{"Sign Up"|translate}} <sup>Free</sup></a>
             </li> -->
         </ul>
-        <div class="col-0 col-md-1 col-lg-1 "></div>
+       
       </nav>
     </div>
   </header>
@@ -239,15 +257,15 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.11.2/ui-bootstrap-tpls.js"></script>
   <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-animate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-aria.min.js"></script>
   <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/3.0.0/toaster.min.js"></script>
   <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-slider/7.0.0/rzslider.min.js"></script>
   <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.7.9/angular-locale_ar.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.18.2/angular-translate.min.js"></script>
-  <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.18.2/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.18.2/angular-translate.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.18.2/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -259,6 +277,9 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
 
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.21/angular-material.min.js "></script>
+
 
   <script type="text/javascript" src="app.js"></script>
   <script src="services/country.service.js"></script>
@@ -269,7 +290,7 @@
         <section class="fdb-block banner" id="main">
           <div class="container pt-50 pb-50">
             <div class="row align-items-center">
-              <div class="col-12 col-md-6 col-lg-5 text-align-start direction"  >
+              <div class="col-12 col-md-6 col-lg-5 text-align-start {{selectLanguage=='ar'?'direction-rtl':'direction-ltr'}}"  >
                 <h1>{{"Give a world class customer experience"|translate}}</h1>
                 <!-- <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
                   <img alt="image" class="img-fluid" src="assets/imgs/1-home-header.png">
@@ -278,8 +299,8 @@
                   {{"Unlock the benefits of connecting your team, customers and real estate through the same platform."|translate}}
                 </p>
                 <p class="mt-4">
-                  <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1 overflow-hidden" style=" white-space: normal" href="choose-product">{{"START A FREE TRIAL"|translate}}</a>
-                  <a class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1"  data-toggle="modal"
+                  <!-- <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1 overflow-hidden" style=" white-space: normal" href="choose-product">{{"START A FREE TRIAL"|translate}}</a> -->
+                  <a class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1 "  data-toggle="modal"
                   data-target="#exampleModal">{{"BOOK A FREE DEMO"|translate}}</a>
                 </p>
               </div>
@@ -290,7 +311,7 @@
           </div>
         </section>
       
-        <section class="fdb-block light-blue-background pt-50 pb-50 text-align-start direction" id="stats">
+        <section class="fdb-block light-blue-background pt-50 pb-50 text-align-start {{selectLanguage=='ar'?'direction-rtl':'direction-ltr'}}" id="stats">
           <div class="container">
             <div class="row">
               <div class="col-12 col-sm-5 col-md">
@@ -527,7 +548,7 @@
               <div class="d-none d-sm-none d-md-block col-10 col-sm-6 col-md-6 col-lg-5 m-auto m-md-0 offset-lg-1">
                 <img alt="image" class="img-fluid" style="margin-left: 60px;height: 300px" src="assets/images/app-1-portrait.png">
               </div>
-              <div class="col-12 col-md-6">
+              <div class="col-12 col-md-6 {{selectLanguage=='ar'?'direction-rtl':'direction-ltr'}} text-align-start">
                 <h2 class="thm-scroll-heading">{{"For Your Customers"|translate}}</h2>
                 <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
                   <img alt="image" class="img-fluid" style="margin-left: 60px;height: 300px" src="assets/images/app-1-portrait.png">
@@ -553,7 +574,7 @@
                   </div>
                 </div>
                 <p class="mt-4">
-                    <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1" href="choose-product">{{"START A FREE TRIAL"|translate}}</a>
+                    <!-- <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1" href="choose-product">{{"START A FREE TRIAL"|translate}}</a> -->
                     <a  style="border-color:  !important" class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1" data-toggle="modal"
                     data-target="#exampleModal">{{"BOOK A FREE DEMO"|translate}}</a>
                 </p>
@@ -565,7 +586,7 @@
           <div class="container">
             <div class="row align-items-center">
               <!-- removed  ml-auto pt-5 pt-md-0 from class -->
-              <div class="col-12 col-md-6 text-align-start direction"  >
+              <div class="col-12 col-md-6 text-align-start {{selectLanguage=='ar'?'direction-rtl':'direction-ltr'}}"  >
                 <h2 class="thm-scroll-heading">{{"For Your Team"|translate}}</h2>
                 <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
                   <img alt="image" class="img-fluid" src="assets/images/forBusinesses.png">
@@ -594,7 +615,7 @@
                     </div>
                 </div>
                 <p class="mt-4">
-                    <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1" href="choose-product">{{"START A FREE TRIAL"|translate}}</a>
+                    <!-- <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1" href="choose-product">{{"START A FREE TRIAL"|translate}}</a> -->
                     <a  style="border-color:  !important" class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1" data-toggle="modal"
                     data-target="#exampleModal">{{"BOOK A FREE DEMO"|translate}}</a>
                 </p>
@@ -891,7 +912,7 @@
                     </div>
                     <div class="offset-md-3 col-md-6 center">
                         <p class="mt-4">
-                            <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1" href="choose-product">{{"START A FREE TRIAL"|translate}}</a>
+                            <!-- <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1" href="choose-product">{{"START A FREE TRIAL"|translate}}</a> -->
                             <a  style="color: gray !important" class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1" data-toggle="modal"
                             data-target="#exampleModal">{{"BOOK A FREE DEMO"|translate}}</a>
                           </p>
@@ -972,7 +993,7 @@
                             </div>
                           </div>
                 
-                          <div class="row justify-content-center pt-4 text-align-start direction">
+                          <div class="row justify-content-center pt-4 text-align-start {{selectLanguage=='ar'?'direction-rtl':'direction-ltr'}}">
                             <div  class="col-12 col-md-8">
                               <form  name="callbackForm" novalidate>
                                 <div  class="row">
@@ -998,8 +1019,8 @@
                                 </div>
                 
                                 <div class="row mt-4">
-                                  <div class="col">
-                                    <label  class="float-right">{{"Message:"|translate}} </label>
+                                  <div class="col text-align-start">
+                                    <label >{{"Message:"|translate}} </label>
                                     <textarea class="form-control" placeholder="{{'Leave your message here'|translate}}" ng-model="callbackModalForm.message" rows="3"></textarea>
                                   </div>
                                 </div>

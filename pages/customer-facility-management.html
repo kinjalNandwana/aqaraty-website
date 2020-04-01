@@ -6,7 +6,7 @@
       <div class="container">
         <div class="row align-items-center">
           <!-- removed  ml-auto pt-5 pt-md-0 from class -->
-          <div class="col-12 col-md-6 text-align-start direction">
+          <div class="col-12 col-md-6 text-align-start {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}}">
             <p class="primary-color">
               {{"For facility management companies"|translate}}
             </p>
@@ -18,9 +18,9 @@
               {{"Provide a world class experience to your customers by empowering your team with the best software"|translate}}
             </p>
             <p class="mt-4">
-              <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1"
-                href="/choose-product">{{"START A FREE TRIAL"|translate}}</a>
-              <a style="border-color:  !important"
+              <!-- <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1"
+                href="/choose-product">{{"START A FREE TRIAL"|translate}}</a> -->
+              <a 
                 class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1"
                 data-toggle="modal" data-target="#exampleModal">{{"BOOK A FREE DEMO"|translate}}</a>
             </p>
@@ -32,7 +32,7 @@
       </div>
     </section>
 
-    <section class="fdb-block light-blue-background pt-50 pb-50 direction text-align-start">
+    <section class="fdb-block light-blue-background pt-50 pb-50 {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}} text-align-start">
       <div class="container">
         <div class="row">
           <div class="col-12 col-sm-5 col-md">
@@ -69,7 +69,7 @@
               <h1>{{"Make Operational Excellence Your Differentiator"|translate}}</h1>
             </div>
           </div>
-          <div class="col-12 col-md-6 text-align-start direction">
+          <div class="col-12 col-md-6 text-align-start {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}}">
             <h2>{{"Operations and Facility Management"|translate}}</h2>
             <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
               <img alt="image" class="img-fluid raised" src="./assets/images/management-scroll-5-tickets.png">
@@ -104,7 +104,7 @@
             <img alt="image" class="img-fluid raised" src="./assets/images/management-scroll-5-assets.png">
           </div>
           <div class="col-md-1 col-lg-1"></div>
-          <div class="col-12 col-md-6 direction text-align-start">
+          <div class="col-12 col-md-6 {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}} text-align-start">
             <h2>{{"Asset Management"|translate}}</h2>
             <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
               <img alt="image" class="img-fluid raised" src="./assets/images/management-scroll-5-assets.png">
@@ -132,7 +132,7 @@
         </div>
         <div class="row align-items-center">
           <!-- removed  ml-auto pt-5 pt-md-0 from class -->
-          <div class="col-12 col-md-6 text-align-start direction">
+          <div class="col-12 col-md-6 text-align-start {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}}">
             <h2>{{"Staff Attendance and Performance"|translate}}</h2>
             <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
               <img alt="image" class="img-fluid raised" src="./assets/images/management-scroll-5-staff-attendence.png">
@@ -168,7 +168,7 @@
         </div>
         <div class="offset-md-3 col-md-7 center">
           <p class="mt-4">
-            <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1" href="/choose-product">{{"START A FREE TRIAL"|translate}}</a>
+            <!-- <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1" href="/choose-product">{{"START A FREE TRIAL"|translate}}</a> -->
             <a style="color: gray !important"
               class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1"
               data-toggle="modal" data-target="#exampleModal">{{"BOOK A FREE DEMO"|translate}}</a>
@@ -183,7 +183,7 @@
         </div>
         <div class="row align-items-center">
           <!-- removed  ml-auto pt-5 pt-md-0 from class -->
-          <div class="col-12 col-md-6 direction text-align-start">
+          <div class="col-12 col-md-6 {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}} text-align-start">
             <p>{{"CASE STUDY"|translate}}</p>
             <h2>{{"Bright Environment revamped their business operations by signing up with Aqaraty"|translate}}</h2>
             <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
@@ -253,7 +253,7 @@
                 </div>
               </div>
 
-              <div class="row justify-content-center pt-4 text-align-start direction">
+              <div class="row justify-content-center pt-4 text-align-start {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}}">
                 <div class="col-12 col-md-8">
                   <form name="callbackForm" novalidate>
                     <div class="row">

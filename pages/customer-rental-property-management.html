@@ -7,7 +7,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <!-- removed  ml-auto pt-5 pt-md-0 from class -->
-                    <div class="col-12 col-md-6 text-align-start direction">
+                    <div class="col-12 col-md-6 text-align-start {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}}">
                         <p class="primary-color">
                             {{"For Rental Management Companies"|translate}}
                         </p>
@@ -19,8 +19,8 @@
                             {{"Integrated platform for managing every aspect of your business."|translate}}
                         </p>
                         <p class="mt-4">
-                            <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1"
-                                href="choose-product">{{"START A FREE TRIAL"|translate}}</a>
+                            <!-- <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1"
+                                href="choose-product">{{"START A FREE TRIAL"|translate}}</a> -->
                             <a class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1"
                                 data-toggle="modal" data-target="#exampleModal">{{"BOOK A FREE DEMO"|translate}}</a>
                         </p>
@@ -32,7 +32,7 @@
             </div>
         </section>
 
-        <section class="fdb-block light-blue-background pt-50 pb-50 text-align-start direction">
+        <section class="fdb-block light-blue-background pt-50 pb-50 text-align-start {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}}">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-sm-5 col-md ">
@@ -69,7 +69,7 @@
                             <h1>{{"Managing Your Rental Portfolio Just Got Easier"|translate}}</h1>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 text-align-start direction">
+                    <div class="col-12 col-md-6 text-align-start {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}}">
                         <h2> {{"Data Management"|translate}} </h2>
                         <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
                             <img alt="image" class="img-fluid" src="./assets/images/data.svg">
@@ -104,7 +104,7 @@
                         <img alt="image" class="img-fluid" src="./assets/images/technology.svg">
                     </div>
                     <div class="col-md-1 col-lg-1"></div>
-                    <div class="col-12 col-md-6 text-align-start direction">
+                    <div class="col-12 col-md-6 text-align-start {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}}">
                         <h2>{{"Helpdesk and ticketing"|translate}}</h2>
                         <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
                             <img alt="image" class="img-fluid" src="./assets/images/technology.svg">
@@ -133,7 +133,7 @@
                 </div>
                 <div class="row align-items-center">
                     <!-- removed  ml-auto pt-5 pt-md-0 from class -->
-                    <div class="col-12 col-md-6 text-align-start direction">
+                    <div class="col-12 col-md-6 text-align-start {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}}">
                         <h2>{{"Rent Collection Simplified"|translate}}</h2>
                         <div class="d-block d-sm-block d-md-none col-12 col-sm-12 col-md-5 col-lg-5 mb-3">
                             <img alt="image" class="img-fluid" src="./assets/images/rent.svg">
@@ -171,8 +171,8 @@
                 </div>
                 <div class="offset-md-3 col-md-7 center">
                     <p class="mt-4">
-                        <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1"
-                            href="choose-product">{{"START A FREE TRIAL"|translate}}</a>
+                        <!-- <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1"
+                            href="choose-product">{{"START A FREE TRIAL"|translate}}</a> -->
                         <a style="color: gray !important"
                             class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1"
                             data-toggle="modal" data-target="#exampleModal">{{"BOOK A FREE DEMO"|translate}}</a>
@@ -260,7 +260,7 @@
                                 </div>
                             </div>
 
-                            <div class="row justify-content-center pt-4 text-align-start direction">
+                            <div class="row justify-content-center pt-4 text-align-start {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}}">
                                 <div class="col-12 col-md-8">
                                     <form name="callbackForm" novalidate>
                                         <div class="row">
@@ -272,8 +272,8 @@
                                                 <p ng-show="callbackForm.name.$invalid && callbackForm.name.$touched"
                                                     class="help-block pt-1">{{"name is required"|translate}}</p>
                                             </div>
-                                            <div class="col-12 col-md mt-4 mt-md-0 ">
-                                                <label class="float-right">{{"Country Code:"|translate}} </label>
+                                            <div class="col-12 col-md mt-4 mt-md-0  text-align-start">
+                                                <label>{{"Country Code:"|translate}} </label>
                                                 <select name="countryCode" ng-model="callbackModalForm.countryCode"
                                                     ng-init="callbackModalForm.countryCode = '+91'"
                                                     class="form-control">
@@ -281,8 +281,8 @@
                                                         {{cityObj.code}}</option>
                                                 </select>
                                             </div>
-                                            <div class="col-12 col-md mt-4 mt-md-0 ">
-                                                <label class="float-right">{{"Phone Number:"|translate}} </label>
+                                            <div class="col-12 col-md mt-4 mt-md-0  text-align-start">
+                                                <label>{{"Phone Number:"|translate}} </label>
                                                 <input type="number" name="phoneNumber" ng-disabled="progressBarLoading"
                                                     class="form-control"
                                                     placeholder="{{'Enter your phone  number'|translate}}"
@@ -294,8 +294,8 @@
                                         </div>
 
                                         <div class="row mt-4">
-                                            <div class="col">
-                                                <label class="float-right">{{"Message:"|translate}} </label>
+                                            <div class="col text-align-start">
+                                                <label>{{"Message:"|translate}} </label>
                                                 <textarea class="form-control" placeholder="Leave your message here"
                                                     ng-model="callbackModalForm.message" rows="3"></textarea>
                                             </div>

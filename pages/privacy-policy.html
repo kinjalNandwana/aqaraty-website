@@ -1,7 +1,7 @@
-<section class="fdb-block">
+<section class="fdb-block" ng-controller="PrivacyPolicyController">
   <div class="container">
     <div class="row" id="privacy-top">
-      <div class="col text-left text-align-start direction">
+      <div class="col text-left text-align-start {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}}">
 
         <h2>{{"Privacy Policy"|translate}}</h2>
         <br>

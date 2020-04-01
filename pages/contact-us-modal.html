@@ -18,7 +18,7 @@
 
         <form name="callbackForm" novalidate>
           <div class="row">
-            <div class="col text-align-start direction">
+            <div class="col text-align-start {{currentLanguage=='ar'?'direction-rtl':'direction-ltr'}}">
               <label class="float-right">{{"Name:"|translate}}</label>
               <input type="text" name="name" ng-disabled="progressBarLoading" class="form-control"
                 placeholder="Enter your name" ng-model="callbackModalForm.name" required>
@@ -29,15 +29,16 @@
 
           <div class="row mt-4">
             <div class="col-4 col-md-4">
-              <label  class="d-none d-sm-block text-align-start direction ">{{"Country Code:"|translate}}</label>
+              <label
+                class="d-none d-sm-block text-align-start {{currentLanguage=='ar'?'direction-rtl':'direction-ltr'}} ">{{"Country Code:"|translate}}</label>
               <label class="d-block d-sm-none">{{"Co. Code"|translate}}</label>
               <select name="countryCode" ng-model="callbackModalForm.countryCode"
                 ng-init="callbackModalForm.countryCode = '+965'" class="form-control">
                 <option ng-repeat="cityObj in citiCodes" value="{{cityObj.code}}">{{cityObj.code}}</option>
               </select>
             </div>
-            <div  class="col-8 col-md-8 direction text-align-start">
-              <label  class="float-right"> {{"Phone Number:"|translate}}</label>
+            <div class="col-8 col-md-8 {{currentLanguage=='ar'?'direction-rtl':'direction-ltr'}} text-align-start">
+              <label class="float-right"> {{"Phone Number:"|translate}}</label>
               <input type="number" name="phoneNumber" ng-disabled="progressBarLoading" class="form-control"
                 placeholder="Enter your phone  number" ng-model="callbackModalForm.phoneNumber" ng-minlength="4"
                 required>
