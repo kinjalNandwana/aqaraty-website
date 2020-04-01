@@ -330,13 +330,13 @@
         language: "en",
         name: "English",
         dir: 'ltr',
-        imagePath: "/assets/icons/USA.png"
+        imagePath: "assets/icons/USA.png"
       },
       {
         language: "ar",
         name: "Arabic",
         dir: 'rtl',
-        imagePath: "/assets/icons/kuwait.png"
+        imagePath: "assets/icons/kuwait.png"
 
       }
     ];
