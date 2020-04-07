@@ -189,7 +189,7 @@
       $scope.progressBarLoading = true;
       $http({
         method: 'POST',
-        url: 'http://52.220.118.81:3020/shared-resource/webhook/capture-website-contact?organization=5e1ad3b4d0ffee5fb4fc0410',
+        url: 'https://52.220.118.81:3020/shared-resource/webhook/capture-website-contact?organization=5e1ad3b4d0ffee5fb4fc0410',
         data: {
           'name': $scope.callbackModalForm.name,
           'phoneNumber': $scope.callbackModalForm.countryCode + $scope.callbackModalForm.phoneNumber,
@@ -215,7 +215,7 @@
         // s.parentNode.insertBefore(ct, s);
 
         $scope.callbackModalForm = {
-          countryCode: '+91'
+          countryCode: '+965'
         }
         form.$setPristine();
         form.$setUntouched();
@@ -238,7 +238,7 @@
       $http({
         method: 'POST',
         // url: '/shared-resource/webhook/support/contact-us/send-email',
-        url: 'http://52.220.118.81:3020/shared-resource/webhook/capture-website-contact?organization=5e1ad3b4d0ffee5fb4fc0410',
+        url: 'https://52.220.118.81:3020/shared-resource/webhook/capture-website-contact?organization=5e1ad3b4d0ffee5fb4fc0410',
         data: {
           'name': $scope.callbackModalForm.name,
           'phoneNumber': $scope.callbackModalForm.countryCode + $scope.callbackModalForm.phoneNumber,
@@ -884,7 +884,7 @@
       $scope.progressBarLoading = true;
       $http({
         method: 'POST',
-        url: 'http://52.220.118.81:3020/shared-resource/webhook/capture-website-contact?organization=5e1ad3b4d0ffee5fb4fc0410',
+        url: 'https://52.220.118.81:3020/shared-resource/webhook/capture-website-contact?organization=5e1ad3b4d0ffee5fb4fc0410',
         data: {
           'name': $scope.callbackModalForm.name,
           'phoneNumber': $scope.callbackModalForm.countryCode + $scope.callbackModalForm.phoneNumber,
@@ -1022,7 +1022,7 @@
       $scope.demoSignupOverlayActive = true;
       $http({
         method: 'POST',
-        url: 'http://52.220.118.81:3020/shared-resource/webhook/demo-registration?organization=5e1ad3b4d0ffee5fb4fc0410',
+        url: 'https://52.220.118.81:3020/shared-resource/webhook/demo-registration?organization=5e1ad3b4d0ffee5fb4fc0410',
         data: {
           'name': $scope.demoSignupForm.name,
           'phoneNumber': $scope.demoSignupForm.countryCode + $scope.demoSignupForm.phoneNumber,
@@ -1032,7 +1032,7 @@
         }
       }).then(function (response) {
         $scope.demoSignupForm = {
-          countryCode: '+91'
+          countryCode: '+965'
         };
         form.$setPristine();
         form.$setUntouched();
@@ -1042,7 +1042,7 @@
         $scope.showErrorToast();
       }).finally(function () {
         $scope.demoSignupForm = {
-          countryCode: '+91'
+          countryCode: '+965'
         };
         $scope.progressBarLoading = false;
         setTimeout((() => {
