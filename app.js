@@ -869,7 +869,7 @@
 
   }
 
-  function ContactUsPageController($scope, $controller, $window, $filter, translateService, $http) {
+  function ContactUsPageController($scope, $controller, $window, $filter, translateService, $http, $location) {
 
     $controller('CoreController', {
       $scope: $scope
